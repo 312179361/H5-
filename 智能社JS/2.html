@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="2.css">
+</head>
+<body>
+	<input type="button" value="变绿" onclick="toColor('green')">
+	<input type="button" value="变黄" onclick="toColor('yellow')">
+	<input type="button" value="变蓝" onclick="toColor('blue')">
+
+
+	<input type="button" name="" value="变宽" onclick="toStyle(1,'400px')">
+	<input type="button" name="" value="变高" onclick="toStyle(2,'300px')">
+	<input type="button" name="" value="变绿" onclick="toStyle(3,'green')">
+
+	<input type="button" name="" value="变宽2" onclick="toStyle('width','400px')">
+	<input type="button" name="" value="变高2" onclick="toStyle('height','300px')">
+	<input type="button" name="" value="变绿2" onclick="toStyle('background','green')">
+
+	<div id="div1"></div>
+
+
+<script type="text/javascript">
+	//通过参数改变背景色
+	function toColor (tempColor) {
+		// body... 
+		var tempDiv = document.getElementById('div1');
+		tempDiv.style.background = tempColor;
+	}
+
+	function toStyle (type,tempValue) {
+		// body... 
+
+		var tempDiv = document.getElementById('div1');
+
+		/*
+		// 方法一
+		console.log('aaaa');
+		if (type == 1) {
+			console.log('bbbb');
+			tempDiv.style.width = tempValue;
+		}else if (type == 2) {
+			tempDiv.style.height = tempValue;
+		}else {
+			tempDiv.style.background = tempValue;
+		}
+		
+		*/
+
+		//方法二 利用参数传过来的属性名，用[]获取对应的属性。
+		tempDiv.style[type] = tempValue;
+
+	}
+
+
+	/*
+	1、style加样式  在行间加样式，
+	   style取样式，也是从行间样式取得
+
+	2、class加样式 在样式列表中加样式
+		class取样式 也是从样式列表中取得
+
+		行间样式的优先级 > 样式列表的优先级
+
+	*/
+
+</script>
+
+</body>
+</html>

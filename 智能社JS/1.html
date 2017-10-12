@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 引入css --> 
+	<link id="l1" rel="stylesheet" type="text/css" href="1.css">
+</head>
+<body>
+	<!-- 事件
+	1、onclick 点击
+	2、onmouseover鼠标移入
+	2、onmouseout鼠标移出
+
+	 -->
+
+	<!-- 鼠标移入div1显示block  鼠标移出div1消失none -->
+	<input type="checkbox" name="" onmouseover="document.getElementById('div1').style.display='block';" onmouseout="document.getElementById('div1').style.display='none';" >
+
+	<div id= "div1">为了您的安全</div>
+
+
+	<input type="button" value="换肤按钮1" onclick="skin1()">
+	<input type="button" value="换肤按钮2" onclick="skin2()">
+
+
+	<div id="div2" onmouseover="toGreen(this)" onmouseout="toRed()"></div>
+	
+
+
+	<input type="button" value="显示隐藏" onclick="showHide()"></div>
+	<div id="div3" style="display: block;"></div>
+<!-- a标题结合js 说明点击a执行js代码 -->
+	<a href="javascript:alert('a');">aaaa</a>
+
+	<!-- className -->
+	<input type="button" value="变红-ClassName" onclick="changeClassName()">
+	<div id="div4"></div>
+
+	
+
+	<script type="text/javascript">
+		
+		function toGreen (temp) {
+			// body... 
+			var tempDiv = document.getElementById('div2');
+			tempDiv.style.width = '150px';
+			tempDiv.style.height = '200px';
+			tempDiv.style.background = 'green';
+			// temp.style.width = '100px';
+		}
+
+		function toRed (temp) {
+			// body... 
+			var tempDiv = document.getElementById('div2');
+			tempDiv.style.width = '200px';
+			tempDiv.style.height = '300px';
+			tempDiv.style.background = 'red';
+		}
+
+		function skin1 () {
+			// body... 
+			//通过更换外部css样式，达到换肤效果
+			var tempLink = document.getElementById('l1');
+			tempLink.href = '1.css';
+		}
+
+		function skin2 () {
+			// body... 
+			//通过更换外部css样式，达到换肤效果
+			var tempLink = document.getElementById('l1');
+			tempLink.href = '1-1.css';
+		}
+
+		//显示隐藏
+		function showHide () {
+			// body... 
+			var tempDiv = document.getElementById('div3');
+			console.log(tempDiv.style.display);
+			if (tempDiv.style.display == 'block') {
+
+ 				tempDiv.style.display = 'none';
+			}else {
+				tempDiv.style.display = 'block';
+			}
+		}
+
+
+
+		function changeClassName () {
+			// body... 
+			var tempDiv = document.getElementById('div4');
+			//修改className，就相当于给div4加个class一样
+			console.log('aaaa');
+			tempDiv.className = 'div4Class';
+		}
+
+	</script>
+
+
+
+</body>
+</html>

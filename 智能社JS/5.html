@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="5.css">
+	<title>日历 </title>
+	<script type="text/javascript">
+		
+		
+		window.onload = function () {
+
+			//找到总的div
+			var tempDiv = document.getElementById('tab');
+			//找到所有的li
+			var tempLiArr = tempDiv.getElementsByTagName('li');
+			//找到文字div
+			var txtDiv = tempDiv.getElementsByTagName('div')[1];
+
+			//每个活动
+			var arr111 = new Array('一一一一一一一一一一一一一',
+								'二二二二二二二二二二二二二二',
+								'三三三三三三三三三三三三三三三三',
+								'四四四四四四四四四四四四四四四四',
+								'五五五五五五五五五五五五五五五五',
+								'六六六六六六六六六六六六六六六六六',
+								'七七七七七七七七七七七七七七七七',
+								'八八八八八八八八八八八八八八八八',
+								'九九九九九九九九九九九九九九九九九',
+								'十十十十十十十十十十十十十十十十十',
+								'十一十一十一十一十一十一十一十一',
+								'十二十二十二十二十二十二十二十二');
+
+			//给每个里添加方法
+			for (var i = 0; i < tempLiArr.length; i++) {
+				//给每一个button附上index
+				tempLiArr[i].index = i;
+
+				tempLiArr[i].onmouseover = function (){
+					// alert('aaa');
+					
+					// 首先要先清空所有li样式
+					for (var i = 0; i < tempLiArr.length; i++) {
+						tempLiArr[i].className = '';
+					}
+					//给选中的li改变样式
+					this.className = 'active';
+
+					//给下面的文字div赋值 innerHTML 就是给标签内附上内容
+					txtDiv.innerHTML = '第'+(this.index+1) +'月，你好你好你好'+ arr111[this.index];
+
+				};
+			}
+
+
+			
+
+
+
+		};
+
+		
+
+
+
+	</script>
+</head>
+<body>
+
+	<div id="tab" >
+		
+		<div class='liDiv'>
+			<ul>
+				<li>
+					<h2>1月</h2>
+				</li>
+				<li>
+					<h2>2月</h2>
+				</li>
+				<li>
+					<h2>3月</h2>
+				</li>
+				<li>
+					<h2>4月</h2>
+				</li>
+				<li>
+					<h2>5月</h2>
+				</li>
+				<li>
+					<h2>6月</h2>
+				</li>
+				<li>
+					<h2>7月</h2>
+				</li>
+				<li>
+					<h2>8月</h2>
+				</li>
+				<li>
+					<h2>9月</h2>
+				</li>
+				<li>
+					<h2>10月</h2>
+				</li>
+				<li>
+					<h2>11月</h2>
+				</li>
+				<li>
+					<h2>12月</h2>
+				</li>
+			</ul>
+
+		</div>
+		
+
+		<!-- 下面的div -->
+	<div class="txtBack"></div>
+
+	</div>
+
+
+
+
+
+	要学习06
+	
+	
+</body>
+</html>

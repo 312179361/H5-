@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全选 反选 不选</title>
+	<link rel="stylesheet" type="text/css" href="4.css">
+
+	<script type="text/javascript">
+		
+		window.onload = function () {
+
+			//先找到包含选择框的div
+			var inputsDiv = document.getElementById('inputsDiv');
+			//再从div中去的选择框数组
+			var inputsArr = inputsDiv.getElementsByTagName('input');
+
+			// 全选点击事件
+			var btn1 = document.getElementById('btn1');
+			btn1.onclick = function  () {				
+				for (var i = 0; i < inputsArr.length; i++) {
+					inputsArr[i].checked = true;
+				} 
+			};
+
+			//不选点击事件
+			var btn2 = document.getElementById('btn2');
+			btn2.onclick = function  () {
+				for (var i = 0; i < inputsArr.length; i++) {
+					inputsArr[i].checked = false;
+				}
+			};
+
+
+			//反选点击事件
+			var btn3 = document.getElementById('btn3');
+			btn3.onclick = function () {
+				for (var i = 0; i < inputsArr.length; i++) {
+
+					inputsArr[i].checked = !inputsArr[i].checked;
+					
+				 } 
+			};
+
+
+
+
+		// 选项卡
+		//先找到div1
+		var tempDiv1 = document.getElementById("div1");
+		var tempBtns = tempDiv1.getElementsByTagName("input");
+
+		var tempDivArr = tempDiv1.getElementsByTagName("div");
+		//遍历所有按钮，给每个按钮添加方法
+		for (var i = 0; i < tempBtns.length; i++) {
+			//给按钮新加一个index属性，标记点击的是第几个按钮
+			tempBtns[i].index = i;
+
+			tempBtns[i].onclick = function () {
+				// body... 
+
+				for (var i = 0; i < tempBtns.length; i++) {
+					tempBtns[i].className = '';//先把所有的按钮变为空
+					tempDivArr[i].style.display = 'none';//把下面的所有div隐藏
+				}
+				//然后改变点击按钮的颜色，通过className改变css
+				this.className = 'active';
+				//显示对应的div
+				tempDivArr[this.index].style.display = 'block';
+
+			};
+			
+		}
+
+
+
+
+
+			
+		};
+
+
+
+
+	</script>
+</head>
+<body>
+	
+
+
+<input id="btn1" type="button" name="" value="全选">
+<input id="btn2" type="button" name="" value="不选">
+<input id="btn3" type="button" name="" value="反选">
+
+<div id="inputsDiv">
+	
+	<input type="checkbox" name=""><br>
+	<input type="checkbox" name=""><br>
+	<input type="checkbox" name=""><br>
+	<input type="checkbox" name=""><br>
+	<input type="checkbox" name=""><br>
+	<input type="checkbox" name=""><br>
+	<input type="checkbox" name=""><br>
+	<input type="checkbox" name=""><br>
+	<input type="checkbox" name=""><br>
+	<input type="checkbox" name=""><br>
+</div>
+
+
+
+
+<div id="div1">
+	
+	<input class="active" type="button" value="教育">
+	<input type="button" value="培训">
+	<input type="button" value="招生">
+	<input type="button" value="出国">
+	
+	<!-- 默认让第一个div显示 -->
+	<div style="display: block;">111</div>
+	<div>222</div>
+	<div>333</div>
+	<div>444</div>
+
+
+
+
+</div>
+
+</body>
+</html>

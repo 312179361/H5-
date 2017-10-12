@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>提取事件</title>
+
+	<link rel="stylesheet" type="text/css" href="3.css">
+	<script type="text/javascript">
+	
+	//onload这个匿名函数，是页面都加载完成后才去执行的。保证顺序问题	
+	window.onload = function() {
+		//如果没有onload，那么这个btn就不存在，因为此时还没有执行到按钮哪一行。
+		var btn1 = document.getElementById('btn1');
+			btn1.onclick = function () {  //利用匿名函数(没有名字的函数)，类似于block。即点击(onclick)时，就执行这个匿名函数
+				// body... 
+				alert('a');
+			};
+
+
+		//获取所有的div 获取一组元素 getElementsByTagName
+		var aDiv = document.getElementsByTagName('div');
+
+		// aDiv[0].style.background = 'red';
+		for (var i = 0; i < aDiv.length; i++) {
+			aDiv[i].style.background = 'red';
+		}
+
+	};
+
+		
+
+	</script>
+</head>
+<body>
+	
+	<!-- 这个地方不写onclick，将点击事件写在Js中 -->
+	<input id="btn1" type="button" name="" value="按钮">
+
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+
+</body>
+</html>

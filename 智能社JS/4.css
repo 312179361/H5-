@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+#div1 div {
+	width: 200px;
+	height: 200px;
+	background: #cccccc;
+	border: 1px solid #999;
+	/*让所有的div都消失*/
+	display: none;
+}
+
+#div1 .active{
+background: yellow;
+}
