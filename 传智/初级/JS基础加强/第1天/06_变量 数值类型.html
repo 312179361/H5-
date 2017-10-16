@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量 数值类型</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var name111 = 60;
+		var name, sex;//同时定义多个变量 中间用 逗号 分隔
+		console.log(name111);
+
+
+		var a = 1;
+		var b = 2;
+		var tmp = a;
+		a = b;
+		b = tmp;
+		console.log("a="+a);
+		console.log("b="+b);
+
+
+		// JS是弱类型语言，即不用制定类型
+		//typeof 可以看变量类型 两种写法
+		console.log(typeof a);
+		console.log(typeof(a));
+
+		//无穷大  Infinity
+		//无穷小  -Infinity
+		//最大值  Number.MAX_VALUE
+		//最小值  Number.MIN_VALUE
+
+		// NaN 非数值
+		var num = "123";
+		//判断是不是数字 isNaN
+		if (!isNaN(num)) {
+			console.log("数字");
+		}else {
+			console.log('不是数字');
+		}
+
+
+	</script>
+	
+</body>
+</html>

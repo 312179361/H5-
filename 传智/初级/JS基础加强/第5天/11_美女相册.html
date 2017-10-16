@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11</title>
+</head>
+<body>
+	
+<ul>
+	
+	<li>
+		<a id="link1" href="picture/1_big.jpg" title="美女1" onclick="showBigImg(this); return false;"><img src="picture/1_small.jpg" width="100px"></a>
+	</li>
+
+	<li>
+		<a href="picture/2_big.jpg" title="美女2" onclick="showBigImg(this);return false"><img src="picture/2_small.jpg" width="100px"></a>
+	</li>
+
+	<li>
+		<a href="picture/3_big.jpg" title="美女3" onclick="showBigImg(this); return false"><img src="picture/3_small.jpg" width="100px"></a>
+	</li>
+
+	<li>
+		<a href="picture/4_big.jpg" title="美女4" onclick="showBigImg(this);return false"><img src="picture/4_small.jpg" width="100px"></a>
+	</li>
+
+
+
+
+	<img id="bigImage" src="picture/450x650.png" width="450px">
+</ul>
+
+
+
+<script type="text/javascript">
+/*
+	//找到id是link1的dom对象，即a标签
+	//要等标签生成后，在获取对应的dom对象，即写在a标签后面
+	var link1 = document.getElementById("link1");
+	console.log(link1.id);
+	//给link1注册单击事件
+	//事件三要素
+	//	1、事件源，即事件的触发者 link1
+	//	2、事件处理程序，onclick==下面的匿名函数 
+	//	3、事件名称 click
+	
+	link1.onclick = function() {
+		// body... 
+		alert("hahaha");
+		//取消事件的后续，即取消a标签的跳转
+		// return false;
+	};
+*/
+
+/*
+
+	//给多个a标签 注册事件
+	//获取页面上的所有a标签
+	var links = document.getElementsByTagName("a");
+
+	for (var i = 0; i < links.length; i++) {
+		 var link = links[i];
+		 //给link注册事件
+		 link.onclick = function () {
+		 	// body... 
+		 	console.log(i);
+
+		 	return false;
+		 }
+   
+
+	}
+	*/
+	
+
+	function showBigImg (link) {
+		// body... 
+		// console.log("aaaa");
+		var bigImg = document.getElementById("bigImage");
+		bigImage.src = link.href;
+		// return false;
+	}
+
+</script>
+
+</body>
+</html>

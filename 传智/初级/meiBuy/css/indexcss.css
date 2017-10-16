@@ -1,0 +1,436 @@
+@charset "utf-8";
+html{
+	font:12px '宋体';
+}
+a{
+	color: #000;
+}
+
+/*头部样式*/
+.top {
+	background-color: #F7F7F7;
+	height: 26px;
+	/*头部下边线 solid实线 */
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.top_page {
+	width: 970px;
+	height: 26px;
+	margin: 0 auto;
+	/*background-color: red;*/
+}
+
+.top_page_l {
+	/*行高为26 就上下居中了*/
+	line-height: 26px;
+}
+
+.top_page_r ul li {
+	/*左浮动*/
+	float: left; 
+	/*为了有间距*/
+	padding-right: 10px;
+	/*行高为26 就上下居中了*/
+	line-height: 26px;
+}
+.top_page_r ul li s {
+	width: 18px;
+	height: 12px;
+	background:url(../images/sprite.png);
+	display: inline-block;
+	/*上下居中*/
+	vertical-align: middle;
+}
+
+.logo {
+
+	width: 970px;
+	height: 98px;
+	/*background-color: red;*/
+	margin: 0 auto;/*居中*/
+}
+.logo_l {
+	width: 160px;
+	height: 55px;
+	background-color: red;
+	margin: 24px 0 19px 9px;/*上右下左*/ 
+	background: url(../images/sprite.png) -20px 0; /*将图片左偏移，就可以只显示logo了*/
+	text-indent: -1000em;/*缩进：只是为了不让看见文字，但是这样可以增加权重。和便于搜索*/
+}
+.logo_r {
+	margin-top: 29px;
+	width: 530px;
+	height: 42px;
+	/*background-color: pink;*/
+	border: 1px solid #c9c9c9;
+
+
+}
+
+.logo_r_content {
+	margin: 5px 5px 5px 4px;
+}
+
+.logo_r_search {
+	width: 418px;
+	height: 28px;
+	border: 1px solid #C9C9C9;
+	color: #999999;
+
+}
+.logo_r_btn {
+	width: 99px;
+	height: 30px;
+	color: white;
+	background-color: #2f70d0;
+}
+
+.navi {
+	/*background: pink;*/
+	width: 970px;
+	height: 25px;
+	margin: 0 auto;/*居中*/
+	border-bottom: 2px solid #0266a3 /*下边框 即有一条蓝色的长线*/
+}
+
+.navi li {
+	/*将navi 下的li标签，左对齐，这样就排成一行，和在li标签中写fl是一样的*/
+	float: left;
+	line-height: 25px;/*文字上下居中 设置成行高和div一样高*/
+	padding: 0px 15px 0px 15px;
+	font-size:14px;
+	font-weight: bold;/*加粗*/
+}
+
+.navi li a {
+	/*设置导航文本颜色，因为a不能继承父标签的颜色，所以只能单独设置 ，不能写在li标签中*/
+	color: #0266a3;
+
+}
+
+/*鼠标移入事件 是移入li标签就改变，*/
+.navi li:hover {
+	background-color: #0266a3;
+
+}
+/*鼠标移入事件 当移入li标签a标签颜色变白色，*/
+.navi li:hover a {
+	color: white;
+}
+
+
+.banner {
+	width: 970px;
+	height: 210px;
+	/*background-color: pink;*/
+	margin: 0 auto;/*居中*/
+	margin-top: 10px;
+
+}
+
+
+.subNavi {
+	background-color: #e8f0f6;
+	width: 200px;
+	height: 210px;
+	margin-right: 11px;
+}
+
+.ad {
+
+	width: 520px;
+	height: 210px;
+	background-color: yellow;
+}
+
+.message {
+	width: 230px;
+	height: 210px;
+	/*background-color: blue; */
+}
+
+.subNavi h2 {
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	font-weight: bold;/*加粗*/
+	background-color: #0266a3;
+	color: white;
+	padding-left: 20px;
+}
+
+
+
+.subNavi s {
+	display:inline-block;
+	width: 15px;
+	height: 13px;
+	background:url(../images/sprite.png) -190px 0;
+	vertical-align: middle;
+	/*background-color: green;*/
+}
+
+.subNavi li {
+	/*background-color: yellow;*/
+	vertical-align: middle;
+	padding-top: 12px;
+	margin-left: 9px;
+	font-size: 15px;
+	height: 15px;
+}
+
+.subNavi li a {
+	/*background-color: green;*/
+	padding-left: 7px;
+	line-height: 15px;
+}
+
+.message_top {
+	background-color :#F7FAFF;
+	height: 95px;
+	border: 1px solid #dddddd;
+
+}
+
+.message_top .fw {
+	padding: 7px 0 0 18px;
+	font-weight: bold;
+
+}
+
+.message_top s {
+	margin: 20px 10px 0 10px;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: url(../images/sprite.png) -250px 0;
+}
+
+.message_top .cheap {
+	margin-top: 25px;
+
+}
+
+.message_bottom {
+	margin-top: 21px;
+	background-color: #F7FAFF;
+	height: 92px;
+	
+}
+.message_bottom .findMessage {
+	padding-top: 11px;
+	text-align: center;/*文本居中*/
+	font-size: 14px;
+	color: #333333;
+}
+
+.message_bottom .phone {
+	margin-top: 10px;
+	text-align: center;
+	color: #3f9ce0;
+}
+
+.message_bottom s {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	vertical-align: middle;
+	background:url(../images/sprite.png) -60px -60px;
+	/*background-color: red;*/
+	margin-right: 5px;
+}
+
+.message_bottom .qqImg {
+	padding-top: 
+	background: red;
+}
+
+.message_bottom .qqBtn {
+	width: 20px;
+	height: 24px;
+	background: url(../images/sprite.png) -20px -60px;
+	margin-top: 9px;
+	margin-left: 75px;
+}
+
+.material {
+	background-color: pink;
+	width: 950px;
+	height: 34px;
+	border-top: 2px solid #c3d7e4;
+	margin:0 auto;
+	margin-top: 14px;
+	line-height: 34px;
+	background-color: #ecf1f7;
+	border-width: bold;
+	padding-left: 20px;
+}
+
+.product {
+	width: 970px;
+	height: 345px;
+	/*background: pink;*/
+	margin:0 auto;
+	margin-top: 12px;
+
+}
+
+.product_left {
+	width: 738px;
+	height: 345px;
+	/*background-color: yellow; */
+	border: 1px solid #d8d8d8;
+}
+
+
+.product_l_top {
+	height: 155px;
+	width: 712px;
+	padding: 17px 0 0 26px;
+	/*background-color: green;*/
+}
+
+.product_l_t_product1 {
+	/*margin: 17px 0 0 26px;*/
+
+	width: 350px;
+	height: 146px;
+	/*background: red;*/
+}
+
+.product_l_t_product1 .buy {
+	width: 99px;
+	height: 143px;
+	/*background: pink;*/
+}
+
+.product_l_t_product1 .buy .productImage {
+	border: 1px solid #cacaca;
+	height: 100px;
+	/*background: red;*/
+
+}
+
+.product_l_t_product1 .buy .productImage s {
+	display: inline-block;
+	width: 90px;
+	height: 70px;
+	background: url(../images/sprite.png) -20px -100px;
+	margin:10px 0px 0 4px;
+
+}
+.product_l_t_product1 .buy .buyBtn {
+	margin-top: 15px;
+	width: 99px;
+	height: 26px;
+	background-color: red;
+	color: white;
+
+}
+.product_l_t_product1 .explain {
+	width: 250px;
+	height: 143px;
+	/*background: teal;*/
+}
+.product_l_t_product1 .explain .productName {
+	padding: 10px 0 0 10px;
+	font-size: 14px;
+
+}
+
+.product_l_t_product1 .explain .detail {
+	padding: 13px 0 0 15px;
+	color: #863e01;
+
+}
+.product_l_t_product1 .explain .price {
+	padding: 20px 0 0 11px;
+	
+}
+.product_l_t_product1 .explain .price  span {
+	color: red;
+}
+.product_l_t_product1 .explain .price  s {
+	text-decoration: line-through;/*删除线*/
+}
+
+.product_l_t_product1 .explain .buyed {
+	padding: 10px 0 0 11px;
+	font-size: 14px;
+
+}
+
+.product_l_line {
+	margin: 0 4px 0 4px;
+	border-top: 1px solid #cccccc;
+}
+
+.product_right {
+	width: 220px;
+	height: 345px;
+	border: 1px solid #cccccc;
+	/*background-color: yellow;*/
+}
+
+.product_right h2 {
+	height: 28px;
+	line-height: 28px;
+	padding-left: 15px;
+	border-bottom: 1px solid #cccccc;
+}
+
+.product_right ul {
+	padding-top: 11px;
+}
+
+.product_right li {
+	height: 23px;
+	/*background: red;*/
+	padding-left: 26px;
+}
+
+.zy {
+	width: 970px;
+	height: 500px;
+	background-color: teal;
+	margin:0 auto;
+}
+
+.link {
+	width: 970px;
+	height: 103px;
+	margin:0 auto;
+	margin-top: 11px;
+	border-top: 1px solid #dddddd;
+	
+	color: #666666;
+
+	border-bottom: 3px solid #cccccc;
+}
+
+.link .link_p1 {
+	margin-top: 30px;
+}
+.link .link_p2 {
+	margin-top: 14px;
+	margin-left: 59px;
+}
+
+.aboutMe {
+	height: 50px;
+	width: 970px;
+	margin: 0 auto;
+}
+.aboutMe p {
+	margin-top: 14px;
+	text-align: center;
+}
+
+
+
+
+
+
+
+

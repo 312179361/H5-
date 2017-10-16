@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		
+	//转换成字符串 
+	//1、toString()  括号内的参数是转换成几进制，如toString(8)
+	var aaa = 123;
+	var bb = aaa.toString();
+	console.log(bb);
+
+	//2、String()函数，有些不能用toString，就可以用String函数。如null和Undefined就要用String函数
+	var ccc = String(aaa);
+	console.log(ccc);
+
+	//3、字符串拼接  +号拼接 一个数字一个字符串，会将数字转换成字符串
+	var ddd = "321";
+	console.log(aaa+ddd);//加号会吧123从数字变为字符串，然后进行拼接
+
+	//转换成数值类型
+	// Number() 可以把任意值转换成数值。如果字符串不是一个数值字符，返回NaN
+	// parseInt() 把字符串转换为整数   两个参数，第二个参数是进制    如果开头是数字，中间有不是数字的，可以从开头转换到不是数字的第一个字符那里，如123a->123
+	// parseFloat() 把字符串转换为浮点数   如果开头是数字，中间有不是数字的，可以从开头转换到不是数字的第一个字符那里，如123a->123
+	var str1 = "12.32a";
+	var num1 = Number(str1);
+	console.log(num1);
+
+	console.log(parseFloat(str1));
+	console.log(parseFloat(str1));
+
+
+	//转换布尔类型
+	//Boolean()
+	var boo = Boolean(123);
+	console.log(boo);
+	//结合if语句
+	if (123) {
+		
+	}
+
+	
+
+	</script>
+
+
+	
+</body>
+</html>
