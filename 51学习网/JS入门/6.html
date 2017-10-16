@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS--6</title>
+</head>
+<body>
+<h3>函数</h3>
+<script type="text/javascript">
+	
+//函数
+/*
+function 函数名() {
+	函数体
+}
+
+*/
+
+
+//函数声明 -- 无返回值无参数
+function fun1 () {
+	// body... 
+	alert('无参数无返回值');
+}
+//调用函数
+// fun1();
+
+
+//有参数无返回值  参数不用制定类型
+function fun2 (name ,age) {
+	// body... 
+	alert('姓名：'+name+'年龄;'+age)
+}
+
+//有返回值无参数
+function fun3 () {
+	// body... 
+	return "无参数有返回值";
+
+}
+
+//有参数有返回值
+function fun4 (num1 , num2) {
+	// body... 
+	return num1 + num2;
+}
+
+</script>
+
+<input type="button" value="无参数无返回值" onclick="fun1()">
+<input type="button" value="有参数无返回值" onclick="fun2('张三',18)">
+<input type="button" value="无参数有返回值" onclick="alert(fun3())">
+<input type="button" value="有参数有返回值" onclick="alert(fun4(10 ,20))">
+
+
+<script type="text/javascript">
+
+//arguments 即参数数组
+	function fun5 () {
+		// body...
+		return arguments.length; //参数的个数，可以通过下标去获取某一个参数
+	}
+
+	var num = fun5('name','age','职业');
+	alert(num);//因为传递了三个参数，所以为3
+
+
+</script>
+
+<script type="text/javascript">
+	//利用arguments 动态判断参数个数
+	function fun6 () {
+		// body... 
+		if (arguments.length == 0) {
+			return "helo world";
+		}else if (arguments.length == 1) {
+			return "hello" + arguments[0];
+		}else if (arguments.length > 1) {
+			return "hello" + arguments[0] + arguments[1];
+		}
+	}
+
+	var val = fun6();
+	alert(val);
+	var val2 = fun6("tongli");
+	alert(val2);
+	var val3 = fun6("tongli" ,"刘亦菲");
+	alert(val3);
+</script>
+
+<script type="text/javascript">
+
+//通过arguments可以动态获取参数个数，只需要写一个函数就可以了
+function fun7 () {
+	// body...  
+	var sum = 0;
+	for (var i = 0; i < arguments.length; i++) {
+		sum += arguments[i]
+	}
+	return sum;
+}
+
+	alert(fun7(1,2));
+	alert(fun7(1,2,3));
+	alert(fun7(1,2,3,4));
+
+</script>
+
+
+	
+</body>
+</html>

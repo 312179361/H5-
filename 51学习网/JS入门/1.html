@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS--1</title>
+	<!-- 第二种嵌入js的方式 src是引入的地址 -->
+	<!-- <script type="text/javascript" src="1.js"></script> -->
+</head>
+<body>
+<h3>嵌入js的三种方式；document；alert；onclick；</h3>
+
+
+<!-- 嵌入js的第一种方式  js代码需要写在script标签内部 -->
+ <!-- <script type="text/javascript">
+	document.write("我的第一个JS代码");
+</script>  -->
+
+ <!--  嵌入script的三种方式 
+	 1、写在script中
+	 2、用外部js文件引入
+	 3、直接写在html标签中 -->
+
+
+
+<!-- 第三种嵌入js方式 -->
+<!-- <input type="button" value="按钮" onclick="alert('第三种嵌入方式')"> -->
+	
+
+
+
+
+
+	<!-- doucument 
+	除了直接输入文字外，他还支持带有html标签的输出内容
+	-->
+	<script type="text/javascript">
+		document.write('输出一个标题');//普通的字体
+		document.write('<h3>输出一个标题</h3>');//和h3一样的字体
+		document.write('第一行文字<br>第二行文字<br>第三行文字<br>');//可以换行
+		document.write('输出列表项：<br> <li>列表项1</li> <li>列表项2</li>');
+
+	</script>
+
+
+
+<!-- alert 弹出框 -->
+<script type="text/javascript">
+	alert('欢迎来到JS的世界');
+
+</script>
+
+
+<!-- onclick 单击事件 -->
+<input type="button" value="按钮" onclick="alert('恭喜你点击了这个按钮')">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

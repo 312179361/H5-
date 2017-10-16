@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS--7</title>
+</head>
+<body>
+	<h3>对象和数组</h3>
+
+<!-- 函数 -->
+	<script type="text/javascript">
+	
+		//创建对象的方法一， 不带初始值
+		var people = new  Object();
+		//创建对象的方法二， 不带初始值
+		// var people = {};
+
+		people.name = '宋江';
+		people.sex = '男';
+		people.age = 40;
+
+		alert(people.name);
+		// 不仅可以用点语法访问，还可以用[]访问，注意要加引号
+		// alert(people['age']);
+
+		//delete删除对象的属性
+		delete people.age;
+		alert(people.age);
+
+
+		//创建对象 带有初始值
+		var people1 = {
+			name : '林冲',//问号 逗号分隔
+			age : 39,
+			sex : '男'
+		}
+		alert(people1.name);
+
+	</script>
+
+
+<script type="text/javascript">
+	//定义一个函数
+	function say () {
+		return '吃俺老孙一棒';
+	}
+
+
+	var people2 = new Object();
+	people2.name = '孙悟空';
+	people2.age = 40;
+	people2.sex = '男';
+	people2.sa = say;//属性是个函数
+
+
+	//调用people2的sa属性 ，即
+	alert(people2.sa());//由于这个属性是函数，所以加上();
+
+</script>
+
+
+<!-- 数组 -->
+<script type="text/javascript">
+	//数组创建
+	var arr1 = new Array();//空数组
+	var arr2 = new Array('苹果','香蕉','桔子','葡萄');//带有初值
+	var arr3 = new Array(4);//指定了数组长度，虽然制定了长度，但是如果arr3[4] = '樱桃',那么长度就为5
+	var arr4 = [];//利用[]创建
+	var arr5 = ['苹果','香蕉','桔子','葡萄'];
+
+	alert(arr2.length);//数组长度
+	arr2.length = 6;//制定了数组长度
+	alert(arr2.length);
+
+	//读取元素
+	var a1 = arr5[1];
+	document.write(a1 + "<br>");
+
+	//添加元素，即oc中的addobject
+	arr5.push("西瓜");
+	document.write(arr5 + "<br>");
+
+	//在数组顶端添加元素 返回值为数组长度，但不建议用，
+	var arrLeg = arr5.unshift("火龙果");
+	document.write(arrLeg + "<br>");
+	document.write(arr5 + "<br>");
+
+	//删除元素 但是长度不变
+	delete arr5[2];
+	document.write(arr5 + "<br>");
+
+
+	//删除末尾元素(改变数组长度) 返回删除的元素
+	var delVar = arr5.pop();
+	document.write(arr5 + "<br>");
+	document.write(delVar + "<br>");
+
+
+	//删除顶端元素(改变数组长度) 返回删除的元素
+	var delVar2 = arr5.shift();
+	document.write(arr5 + "<br>");
+	document.write(delVar2 + "<br>");
+
+
+	
+	var fruitArr = new Array("苹果","梨","葡萄");
+	document.write(typeof fruitArr + "<br>");
+	document.write(fruitArr + "<br>");
+	//toString()改变类型，从object->string 以字符串输出
+	document.write(typeof fruitArr.toString() + "<br>");
+	document.write(fruitArr + "<br>");
+	document.write(typeof fruitArr + "<br>");
+
+
+	var fruitArr2 = new Array("苹果","梨","葡萄");
+	//join() 就是在各个元素中添加一些东西，但是不改变数组，只是输出效果变了
+	document.write(fruitArr2.join('-'));//在元素中加上-
+	document.write(fruitArr2+ "<br>");
+
+	//reverise 倒序排列
+	fruitArr2.reverse();
+	document.write(fruitArr2+ "<br>");
+
+
+	//sort排序
+	var fruitArr3 = new Array("5个苹果","2个梨","8个葡萄");
+	var num3 = [10,9,6,2];
+	document.write(fruitArr3 + "<br>");
+	document.write(num3 + "<br>");
+
+	fruitArr3.sort();//按照首字母排序，或者首次数字大小
+	num3.sort();
+
+	document.write(fruitArr3 + "<br>");
+	document.write(num3 + "<br>");
+
+	//如果想要按数字大小排序，就要用sort()带参数的，这个参数是个函数，即sortFun
+	num3.sort(sortFun);
+	document.write(num3 + "<br>")
+	//
+	function sortFun (arr1, arr2) {
+		if (arr1 > arr2) {
+			return 1;
+		}else if (arr1 < arr2) {
+			return -1;
+		}else {
+			return 0;
+		}
+	}
+
+
+	//合并数组，将多个数组合并成一个数组
+	var fruitArr4 = new Array("1苹果","2梨","3葡萄");
+	var fruitArr5 = new Array("4香蕉","5桔子","6火龙果");
+	var conArr = fruitArr4.concat(fruitArr5);
+	document.write(conArr);
+	conArr = conArr.concat("7榴莲");
+	document.write(conArr + "<br>");
+
+
+	/*splice方法 ：删除、替换、插入元素  返回的是删除的元素
+	1、会改变原数组
+	2、第一个参数为起始位置
+	3、第二个参数为删除的元素个数
+	4、第三个参数为插入元素，可选
+
+*/
+	var arr6 = new Array("元素0","元素1","元素2","元素3","元素4","元素5");
+	//在第1个位置，删除0个元素，添加元素A和元素B
+	var splice1Arr = arr6.splice(1, 0, '元素A', '元素B');
+    document.write(arr6 + "<br>");
+    document.write(splice1Arr+ "<br>");
+
+    //在第1个位子，删除两个元素，不添加元素
+    var spliceArr2 = arr6.splice(1, 2, );
+    document.write(arr6 + "<br>");
+    document.write(spliceArr2 + "<br>");
+
+    //在第一个位置，删除两个元素，添加一个元素
+    var spliceArr3 = arr6.splice(1, 2, "添加元素");
+    document.write(arr6 + "<br>");
+    document.write(spliceArr3 + "<br>");
+
+    /*
+	slice方法
+	1、切取部分作为新数组返回，不会对原数组改变
+	2、第一个参数为其实位置索引
+	3、第二个参数为结束位置索引，
+	4、若省略第二个参数则直接切取到结尾
+    */
+   	var arr7 = new Array("元素0","元素1","元素2","元素3","元素4","元素5");
+	var slice1Arr = arr7.slice(1, 4);
+	document.write(slice1Arr+ "<br>");
+	document.write(arr7+ "<br>");
+
+
+	/*
+		for in 
+	*/
+		var people2 = { 
+			name : '吴用',//问号 逗号分隔
+			age : 39,
+			sex : '男'
+		};
+
+		//可以循环对象属性
+		for (x in people2) { //这里的x是属性名
+			// statement
+			document.write(people2[x] + "<br>");
+			document.write(x + "<br>");
+
+		}
+
+		for (x in arr7) { //这里的x是数组的下标
+			// statement
+			document.write(arr7[x] + "<br>");
+			document.write(x + "<br>");
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

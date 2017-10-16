@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS--3</title>
+</head>
+<body>
+	<h3>bool类型  Undefined  Null 数组</h3>
+	
+
+	<script type="text/javascript">
+		var a = true;
+		var b = false;
+
+		if (b) {
+			alert("bool值为真");
+		}else {
+			 alert("bool值为假");
+		}
+
+		var m = 5;
+		var n = 3;
+		alert(m > n);
+
+
+		/*
+		注意**：
+			非零即真 0和NaN为false
+			非空的字符串为真 空字符串为假
+			Object的任何对象都是真
+
+		*/
+
+
+
+		// 在声明变量，没有赋值，这个变量就是undefined类型
+		//如果没有声明变量，二区typeof访问，也是undefined
+		var aa ;
+		alert(typeof aa);
+
+
+		/* null
+			null和Undefined的区别
+			null已定义，并初始化为null。即有值，这个值为空
+			nudefined未定义，或者未初始化。即没有值
+		*/
+
+		var nullValue = null;
+		alert(nullValue);
+		var nullValue2 = 100;
+		nullValue2 = null;//利用null清空变量
+		alert(nullValue2);
+
+	</script>
+
+
+	<script type="text/javascript">
+		//数组  定义1
+		var arr1 = ['对象0','对象1','对象2','对象3'];
+		alert(arr1[0]);
+
+		//定义2
+		var arr2 = new Array('对象0','对象1','对象2','对象3');
+		alert(arr2[1]);
+
+		//定义3
+		var arr3 = new Array();
+		arr3[0] = "对象0";
+		arr3[1] = "对象1";
+		arr3[2] = "对象2";
+		alert(arr3[2]);
+
+
+	</script>
+	
+
+	<script type="text/javascript">
+		// 对象的定义 {name:value} --- 有点像ios中的字典
+		var person = {name:'小明',age:'18'};
+		//通过点语法访问对象的属性
+		alert(person.name);
+		alert(typeof person);
+
+	</script>
+	
+	
+	
+</body>
+</html>

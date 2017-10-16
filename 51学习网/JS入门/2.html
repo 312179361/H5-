@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS-2</title>
+</head>
+<body>
+<h3>常量 变量 常用数据类型 typeof</h3>
+
+<!-- 变量声明 var。 必须用 字母、下划、美元符号开头-->
+<script type="text/javascript">
+	var x = 10;
+	x = 20;//重新赋值
+	document.write(x+'<br>');
+
+	//声明多个变量
+	var y=10 ,z=20;
+	document.write('y='+y+',z='+z);
+	var m = "hello";
+
+
+</script>
+
+<script type="text/javascript">
+//在上个script中声明，在下面任何一个script中都可以使用，他们是相通的
+	document.write('<br>m='+m);
+
+</script>
+
+
+
+<script type="text/javascript">
+ // typeof输出类型 
+	var n = 123;
+	alert(typeof(n));//输出n的类型
+
+// 字符串
+var name1 = "佟力";
+var name2 = "郑丽方";
+//用+拼接两个字符串
+alert(name1 + name2);
+
+/*转义字符
+换行：\n
+回车：\r
+退格：\b
+反斜杠：\\
+双引号：\"
+*/
+
+var str1 = "111111111111\n";
+var str2 = "222222222222";
+var str3 = str1 + str2;
+alert(str3);
+
+</script>
+
+
+
+<script type="text/javascript">
+// 数值型 number	
+var a = 20;
+//用科学计数法
+var c = 3.14e2;//e2 = *10的2此房
+alert(c);
+
+var num1 = 10;
+var num2 = 20;
+var num3 = num1 + num2;
+alert("num3="+num3);
+</script>
+
+
+
+
+
+
+
+
+
+	
+</body>
+</html>

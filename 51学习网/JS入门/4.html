@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS--4</title>
+</head>
+<body>
+<h3>运算符</h3>
+
+<script type="text/javascript">
+/*
+加号运算符
+文本相加，就是文本的拼接
+如果数字和字符串相加，结果将成为字符串
+*/
+
+	// var txt1 = 'I love';
+	// var txt2 = 'you';
+	// var txt3 = 10;
+	// var txt4 = txt1 + ' ' + txt2 + txt3;
+	// alert(txt4);
+
+
+//+= -= *= /= %= ++ -- 和C语言的一样
+
+//比较运算符 ==  === !=  !==  <=  >=
+//=== 和== 的区别，===(全等),值和类型都要一样
+
+var a = 2015;
+var b = '2015';
+alert(a==b);//这样是true。
+alert(a===b);//这样是false.因为类型不一样
+
+
+//!==
+alert(a!=b); //false，值是一样的，所以false
+alert(a!==b); //true，值虽然一样，但是类型不一样，所以true
+
+//其余的比较运算符就不说了，和C语言一样
+/*
+注意
+一个数值和一个字符串 字符串会自动转化为数值进行比较
+若两个都是字符串，则比较首个数字的大小
+字母字符串会转换成对应的ascii码
+*/
+var c = '305';
+var d = '2015';
+alert(c<d);//比较第一个数字，即3>2
+
+var e = 'a';
+var d = 'b';
+alert(e<d); //比较的是ascii码
+
+
+
+//逻辑运算符
+/*
+&& and 且   
+|| or  或
+! not  非
+*/
+
+var f = 2015;
+var g = 2016;
+var h = 2017;
+alert( f>g && f<h);
+
+
+//条件运算符 即三目运算符
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+	
+</body>
+</html>

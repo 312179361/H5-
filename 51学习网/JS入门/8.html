@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>8时间日期</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		/*
+			创建时间对象的4个方法
+
+		*/
+		//方法1
+		var date1 = new Date();
+		document.write(date1);
+
+		//方法2 即1970年1月1号经过了多少毫秒
+		var date2 = new Date(1000);
+		document.write(date2);
+		//法3，制定年月日
+		var date3 = new Date(2017,1,24);//注意月份，0~11
+		document.write(date3);
+		//法4，制定年月日时分秒，
+		var date4 = new Date(2017,1,24,10,10,10)
+		document.write(date4+"<br>");
+
+
+		//计算从1970年到指定日期的毫秒数
+		var date5 = new Date();
+		document.write(Date.parse(date5));
+		/*parse参数支持的时间格式：
+			1/24/2017
+			January 24,2016
+			Sun Jan 24 2016 10:10:10 GMT+0800
+			如果输入的格式不对，就会返回Nan
+		*/
+
+		
+
+
+
+	</script>
+	
+</body>
+</html>

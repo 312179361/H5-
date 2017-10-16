@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>7-1练习</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	//练习阶乘 n! = n*(n-1)! ，1! = 1
+	function jiecheng (n) {
+		// body... 
+		if (n == 1) {
+			return 1;
+		}else {
+			return n * jiecheng(n-1);
+		}
+
+	}
+
+	//调用
+	var result = jiecheng(5);
+	document.write(result + "<br>");
+
+
+
+	//1000~9999之间的回文数
+	var arr1 = new Array();
+	function huiwen () {
+		// body... 
+		for (var i = 1000; i < 9999; i++) {
+			var gw = i%10;//个位数
+			var sw = Math.floor((i/10)%10);
+			var bw = Math.floor((i/100)%10);
+			var qw = Math.floor((i/1000)%10);
+			if (gw == qw && sw == bw) {
+				arr1.push(i);
+			}
+		}
+		document.write(arr1);
+	}
+
+	//调用
+	var result2 = huiwen();
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+</body>
+</html>
