@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS基础</title>
+
+	<script type="text/javascript">
+		window.onload = function (){
+		//变量类型
+			var a = 12;//number
+		console.log(typeof a);
+
+		a = 'abcde';// string
+		console.log(typeof a);
+
+		a = true; //bool
+		console.log(typeof a);
+
+		a = function () {
+		}; // function类型
+		console.log(typeof a);
+
+		//Undefined类型，1没有定义 2定义了没有赋值
+		var b;		
+		console.log(typeof b);
+
+
+		/*注意：一个变量最好只存一种类型，否则容易混乱*/
+
+//------------------------------------------
+		//显示类型转换
+		// 字符串->数字(整型) parseInt
+		var a = '12';
+		console.log(typeof parseInt(a));
+
+		//NaN-- Not a Number  
+		// isNaN 判断是不是数字，不是数字返回true,是数字返回false
+		if (isNaN(a)) {
+			console.log('不是数字');
+		}else{
+			console.log('是数字');
+		}
+
+		//字符串->数字（浮点）parseFloat
+		var b = '12.1';
+		console.log(parseFloat(b));
+
+
+		//隐示类型转换
+		var num1 = 5;
+		var num2 = '5';
+		console.log(num1==num2);//双等可以隐示类型转换，是将两个类型转换成了相同的，然后比较的。
+
+		var num3 = '12';
+		var num4 = '2';
+		console.log(num3 - num4);//减法可以隐示转换，将两个字符串转换为了数字，然后进行计算
+
+//------------------------------------------
+		//闭包 初步理解：子函数可以使用父函数的变量
+
+		/*命名规则
+		1、知道类型的，用类型前缀(给变量命名最好有前缀，函数命名不用前缀)
+			a--数组--Array
+			b--布尔--bool
+			f--浮点--float
+			fn--函数--function
+			i--整数--Integer
+			o--对象--Object
+			re--正则--RegExp
+			s--字符串--String
+			v--变体变量--Variant
+
+		2、首字母大写，即驼峰命名法
+		*/
+
+
+		要学07-15分钟
+
+		};
+
+		
+
+
+		
+
+	</script>
+</head>
+<body>
+	<H2>JS基础</H2>
+	
+	<!-- 
+	ECMAScript :解析器、即将代码解析为01代码。几乎没有兼容性问题
+	DOM - Document Object Model 。 有一些操作不兼容
+	BOM - Browser Object Model 。 没有兼容问题（即完全不兼容）
+	-->
+	
+
+
+
+
+	
+</body>
+</html>
