@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+		//函数返回值
+		function show () {
+			// body... 
+
+			return 1+2;
+		}
+
+		console.log(show());
+
+
+		//可变参 不定参 参数个数不固定，
+		function show1 () {
+			// arguments 相当于把参数组成一个数组
+			for (var i = 0; i < arguments.length; i++) {
+				console.log(arguments[i]);	
+			}
+		}
+
+		show1(1,3,5);
+
+
+		/*
+		//在ID浏览器可以获取非行间样式
+		div.currentStyle
+		//在 谷歌 火狐浏览器可以获得非行间样式
+		getComputedStyle(div, false).width 
+
+		*/
+
+
+		//样式兼容，
+		function getStyle(obj, name) {
+			//如果IE下
+			if (obj.currentStyle) {
+				return obj.currentStyle[name];
+			}else {
+				//如果不是IE下
+				return getComputedStyle(obj, false)[name];
+			}
+		}
+
+		/*
+			复合样式 ：background 、border 等。即包含了很多
+			单一样式：width、height等。即只有一个
+		*/
+
+
+
+	</script>
+</head>
+<body>
+
+	
+
+	
+</body>
+</html>

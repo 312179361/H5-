@@ -74,7 +74,41 @@
 		*/
 
 
-		要学07-15分钟
+		//真 true、非零数字、非空字符串、非空对象、
+		//假 false、数字零、空字符串、undefined、
+
+
+		// json，类似OC中的字典一样
+		var json = {a:12 ,b:'abc' ,c:true};
+		json.a++;
+		console.log(json.a);
+		console.log(json.b);
+		console.log(json.c);
+
+
+		// for-in
+		var arr = [12,5,7];
+		//数组的遍历，和oc的区别，遍历的i是下标，不是元素
+		for (var i in arr) {
+			// statement
+			console.log(arr[i]);
+		}
+
+		//遍历出来的是json的键 
+		for (var j in json) {
+			// statement
+			console.log(j);
+			//这个地方不能用点语法(json.j)，只能用json[j]
+			console.log(json[j]);
+		}
+
+
+
+
+
+
+
+
 
 		};
 
