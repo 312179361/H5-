@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>无限滚动</title>
+	
+	<style type="text/css">
+	/*	
+	#div1 {
+		width: 200px; height: 200px;
+		background: red;
+		position: absolute;
+		left: 0; margin-top: 50px;
+
+	}
+	*/
+
+	/*让所有的初始化一下*/
+	*{margin: 0;padding: 0;}
+
+	#div1 {
+		width: 800px; height: 293px;
+		margin: 0px auto;
+		/*相对定位*/
+		position: relative;
+		background-color: red;
+		/*超出范围的隐藏*/
+		overflow: hidden;
+	}
+
+	#div1 ul {
+		/*绝对定位*/
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 2400px;
+	}
+
+	#div1 ul li {
+		float: left;
+		width: 200px; height: 293px;
+		list-style: none;/*去掉小圆点*/
+	}
+
+
+
+	</style>
+
+
+	<script type="text/javascript">
+		window.onload = function () {
+		/*
+
+			setInterval(function () {
+				var oDiv = document.getElementById('div1');
+				// offsetLeft 获取绝对左边距
+				oDiv.style.left = oDiv.offsetLeft+10+'px';
+			} ,30);
+
+		*/
+
+
+			var oDiv = document.getElementById('div1');
+			var oUl = oDiv.getElementsByTagName('ul')[0];
+
+			var leftBtn = document.getElementById('btn1');
+			var rightBtn = document.getElementById('btn2');
+			var isLeft = false;//是左移动还是右边移动 默认是右移动
+
+			var speed = 2;
+
+			leftBtn.onclick = function () {
+				isLeft = true;
+				speed = speed + 2;
+				scrollAction(true);
+			};
+
+			rightBtn.onclick = function () {
+				isLeft = false;
+				speed = speed + 2;
+
+				 scrollAction(false);
+			};
+			var timer = null;
+
+			//最开始就要将ul移动到中间哪一组图片
+			oUl.style.left = -oUl.offsetWidth/3 +'px';
+			//首先先开启一下
+			scrollAction(isLeft);
+
+			function scrollAction (isLeft) {
+				//暂停上一个定时器
+				clearInterval(timer);
+
+				timer = setInterval(function () {
+					if (isLeft == true) {
+						//向左滚动 滚动到最右边一组的时候
+						if (oUl.offsetLeft <= -oUl.offsetWidth*2/3) {
+							//拉回中间
+							oUl.style.left = -oUl.offsetWidth/3 +'px';
+						}
+
+						oUl.style.left = oUl.offsetLeft - speed + 'px';
+					}else {
+						//向右边滚动 滚动到最左边一组的时候
+						if (oUl.offsetLeft >= 0) {
+							//拉回中间
+							oUl.style.left = -oUl.offsetWidth/3 +'px';
+						}
+						oUl.style.left = oUl.offsetLeft + speed + 'px';
+					}
+
+
+					}, 30);
+				
+			}
+
+			//给div加个移入事件
+			oDiv.onmouseover = function () {
+				// 当移入定时器暂停
+				clearInterval(timer);
+			}
+			oDiv.onmouseout = function () {
+				// 移出就开启定时器
+				scrollAction(isLeft);
+
+			}
+
+	
+
+		};
+
+
+
+
+		该学11啦啦啦
+
+
+	</script>
+
+</head>
+<body>
+	
+	<!-- <div id="div1"></div> -->
+	<input id="btn1" type="button" value="左滚动">
+	<input id="btn2" type="button" value="右滚动">
+
+
+	<div id="div1">
+		<ul>
+			<li>
+				<img src="images/1_big.jpg">
+			</li>
+			<li>
+				<img src="images/2_big.jpg">
+			</li>
+			<li>
+				<img src="images/3_big.jpg">
+			</li>
+			<li>
+				<img src="images/4_big.jpg">
+			</li>
+			<!-- 再来两组，为了左右滚动 -->
+			<li>
+				<img src="images/1_big.jpg">
+			</li>
+			<li>
+				<img src="images/2_big.jpg">
+			</li>
+			<li>
+				<img src="images/3_big.jpg">
+			</li>
+			<li>
+				<img src="images/4_big.jpg">
+			</li>
+			<!--  -->
+			<li>
+				<img src="images/1_big.jpg">
+			</li>
+			<li>
+				<img src="images/2_big.jpg">
+			</li>
+			<li>
+				<img src="images/3_big.jpg">
+			</li>
+			<li>
+				<img src="images/4_big.jpg">
+			</li>
+
+		</ul>
+
+
+	</div>
+
+
+</body>
+</html>

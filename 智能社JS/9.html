@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器</title>
+
+
+	<script type="text/javascript">
+		
+		window.onload = function() {
+
+			function show () {
+			// body... 
+
+			alert('aaa');
+		}
+
+		/*
+		// 定时器1 一直执行
+		//参数1：函数  第二个参数毫秒 
+		setInterval(show, 1000);//即每1000毫秒执行以下show函数
+
+
+		//定时器2：只执行一次
+		setTimeout(show, 1000);
+
+
+
+		*/
+
+		/*
+		var openBtn = document.getElementById('btn1');
+		var closeBtn = document.getElementById('btn2');
+		//声明一个定时器
+		var timer = null;
+
+		openBtn.onclick = function () {
+			// body... 
+			//开启定时器，
+			timer = setInterval(function (){
+				alert('aaaa');
+			}, 2000);
+		};
+
+
+		//停止定时器
+		closeBtn.onclick = function () {
+			//停止定时器 参数：制定关闭的是哪个定时器
+			clearInterval(timer);
+		};
+		*/
+
+		
+		
+		//日期对象
+		var oDate = new Date();//创建当前对象
+		 
+		var aa = oDate.getHours();//获取小时
+		var bb = oDate.getMinutes();//获取分钟
+		var cc = oDate.getSeconds();//获取秒数
+
+		alert(aa+'---'+bb+'---'+cc);
+
+		var dd = oDate.getFullYear();//获取年
+		var ee = oDate.getMonth() + 1;//获取月 从0~11
+		var ff = oDate.getDate();//获取日
+		var gg = oDate.getDay();//获取星期
+		/* 
+		0 周日  
+		1 周一
+		2 周二
+		3 周三
+		4 周四
+		5 周五
+		6 周六
+		*/
+		alert(dd+'---'+ee+'---'+ff+'---'+gg);
+
+		
+
+
+		/*
+		时钟
+
+		//获取h2
+		var tempClock = document.getElementById('clock');
+
+		//声明一个函数，将时分秒，从数字变为字符串，并且不足两位补零
+		function changeInt (tempInt) {
+			// body... 
+
+			if (tempInt < 10) {
+				return '0'+tempInt;
+			}else {
+
+				 return ''+tempInt;//利用空字符串拼接，可以达到数字转字符串的效果
+			}
+		}
+
+		//获取时间，然后转化，然后赋值
+		function showClock () {
+			// body... 
+			//获取当前时间
+			var currentTime = new Date();
+			//获取时分秒
+			var tempHour = currentTime.getHours();
+			var tempMin = currentTime.getMinutes();
+			var tempSec = currentTime.getSeconds();
+
+			//将时分秒转化为字符串并且补零
+			var tempHourStr = changeInt(tempHour);
+			var tempMinStr = changeInt(tempMin);
+			var tempSecStr = changeInt(tempSec);
+
+			tempClock.innerText = tempHourStr+ ':' +  tempMinStr + ':' + tempSecStr; 
+		}
+
+		
+		//定时器
+		var timer = setInterval(showClock ,1000);
+
+		//由于定时器是一秒后执行的，所以要首先执行以下函数
+		showClock();
+
+		*/
+
+		/*
+		var str = 'abcdefg';
+		//获取字符串的某一位字符 charAt(下标)
+		//charAt 和 []效果以下，但是[]不兼容低版本的浏览器，如ie7
+		alert(str.charAt(4)+'----'+str[4]);
+		*/
+
+
+};
+
+
+		
+
+	</script>
+
+</head>
+<body>
+	
+	<input id="btn1" type="button" value="开启">
+	<input id="btn2" type="button" value="关闭">
+	
+
+	<h2 id="clock"></h2>
+	
+
+
+</body>
+</html>

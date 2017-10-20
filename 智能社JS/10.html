@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>延时提示框</title>
+
+	<style type="text/css">
+
+		#div1 {
+			float: left;
+			margin: 10px;
+			width: 50px;height: 50px;
+			background: red;
+		}	
+
+		#div2 {
+			float: left;
+			width: 250px; height: 180px;
+			background: yellow;
+			/*开始黄色不显示*/
+			display: none;
+		}
+		
+	</style>
+
+
+	<script type="text/javascript">
+		window.onload = function (){
+
+			var oDiv1 = document.getElementById('div1');
+			var oDiv2 = document.getElementById('div2')
+			var tempTimer = null;
+			/*
+			oDiv1.onmousemove = function (){
+				//当移入到div1上，就让div2显示
+				oDiv2.style.display = 'block';
+				//关闭定时器
+				clearInterval(tempTimer);
+			};
+
+			oDiv1.onmouseout = function () {
+				//利用定时器，延迟隐藏
+				tempTimer = setTimeout(function() {
+					oDiv2.style.display = 'none';
+				}, 500);
+			};
+
+			oDiv2.onmousemove = function () {
+				clearInterval(tempTimer);
+			};
+
+			oDiv2.onmouseout = function() {
+				tempTimer = setTimeout(function() {
+					oDiv2.style.display = 'none';
+				}, 500);
+			}
+			*/
+
+			//对上面的方法，我们可以简化 每两个合并
+			oDiv1.onmouseout = oDiv2.onmouseout = function () {
+				//利用定时器，延迟隐藏
+				tempTimer = setTimeout(function() {
+					oDiv2.style.display = 'none';
+				}, 500);
+			};
+
+			oDiv1.onmousemove = oDiv2.onmousemove = function (){
+				//当移入到div1上，就让div2显示
+				oDiv2.style.display = 'block';
+				//关闭定时器
+				clearInterval(tempTimer);
+			};
+
+
+
+
+
+		};
+
+
+
+	</script>
+
+
+
+
+
+</head>
+<body>
+
+	<div id='div1'></div>
+	<div id="div2"></div>
+	
+</body>
+</html>
