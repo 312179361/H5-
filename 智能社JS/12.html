@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+
+
+	<script type="text/javascript">
+	
+		//封装一个从一个父节点中选取className的节点 参数1：父节点 参数2className的值
+		function getByClass(oParent, sClass) {
+			var aResult = [];
+			var aEle = oParent.getElementsByTagName('*');
+			for (var i = 0; i < aEle.length; i++) {
+				if (aEle[i].className == sClass) {
+					aResult.push(aEle[i]);
+				}
+			}
+			return aResult;
+		}
+
+
+		window.onload = function () {
+			// body... 
+			// var oUl = document.getElementById('ul1');
+
+			/*节点有两种，文本节点和元素节点
+			文本节点是 只有文字的和空格回车的
+			元素节点，就是平时说的标签
+			*/
+
+			/*
+			//childNodes 子节点数组  包含元素节点和文本节点，ie6~8不包含文本节点
+			alert(oUl.childNodes.length);
+
+			for (var i = 0; i < oUl.childNodes.length; i++) {
+				//nodeType 节点的类型 
+				//3是文本节点，
+				//1是元素节点
+				alert(oUl.childNodes[i].nodeType);
+				if (oUl.childNodes[i].nodeType == 1) {
+					oUl.childNodes[i].style.background = 'red';
+				}
+			}
+
+
+			//children 子节点数组，只包含元素节点，不会包含文本节点
+			alert(oUl.children.length);
+
+
+			//parentNode 父节点
+			alert(oUl.parentNode);
+			
+*/
+		/*
+			var oUl2 = document.getElementById('ul2');
+			var as = oUl2.getElementsByTagName('a');
+			for (var i = 0; i < as.length; i++) {
+				//a元素的点击方法
+				as[i].onclick = function (){
+					//隐藏a的父节点
+					this.parentNode.style.display = 'none';
+				};
+			}
+
+			//offsetParent 获取页面上有定位的父节点
+*/
+
+
+			var oUl = document.getElementById('ul1');
+			//firstChild 适用于Ie6~8
+			//firstElementChild 适用于高版本的
+			if (oUl.firstElementChild) {
+				oUl.firstElementChild.style.background = 'red';
+
+			}else {
+				oUl.firstChild.style.background = 'red';	
+			}
+			//类似的还有lastChild和lastElementChild
+			//兄弟节点下一个节点 nextSibling nextElementSibling
+			//     	 上一个节点 previousSibling previousElementSibling
+
+
+
+
+			/*操作元素属性操作
+			 1、点语法 2、中括号
+			 3、dom方式*/
+
+			 var oTxt = document.getElementById('txt1');
+			 var oBtn = document.getElementById('btn1'); 
+			 oBtn.onclick = function () {
+			 	// oTxt.value = '第一种方法';
+			 	// oTxt['value'] = '第二种方法'; 
+
+			 	//第三种方法 参数1：属性名  参数2：属性值
+			 	oTxt.setAttribute('value', '第三种方法');
+			 };
+
+
+
+
+			 //用classname选取元素
+			 var oUl3 = document.getElementById('ul3');
+			 /*
+			 var aLi = oUl3.getElementsByTagName('li');
+			 for (var i = 0; i < aLi.length; i++) {
+			 	//如果classname是box的话，
+			 	if (aLi[i].className == 'box') {
+			 		aLi[i].style.background = 'red';
+			 	}
+			 }
+			 */
+
+			 //上面注释的可以用这个函数替换
+			 var oBoxs = getByClass(oUl3, 'box');
+			 for (var i = 0; i < oBoxs.length; i++) {
+			 	oBoxs[i].style.background = 'red';
+			 }
+
+		};
+	</script>
+
+</head>
+<body>
+	
+	<ul id="ul1">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+
+	<ul id="ul2">
+		<li>第一行<a href="javascript:;">隐藏</a></li>
+		<li>第二行<a href="javascript:;">隐藏</a></li>
+		<li>第三行<a href="javascript:;">隐藏</a></li>
+		<li>第四行<a href="javascript:;">隐藏</a></li>
+		<li>第五行<a href="javascript:;">隐藏</a></li>
+	</ul>
+	
+
+	<input id="txt1" type="text" >
+	<input id="btn1" type="button" value="按钮">
+
+
+	<ul id="ul3">
+		<li class="box"></li>
+		<li class="box"></li>
+		<li></li>
+		<li class="box"></li>
+		<li></li>
+	</ul>
+
+</body>
+</html>

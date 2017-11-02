@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        window.onload = function () {
+            var oBtn = document.getElementById('btn1');
+            var oUl = document.getElementById('ul1');
+            var oTxt = document.getElementById('txt1');
+
+            oBtn.onclick = function () {
+                //创建一个节点/元素
+                var oLi = document.createElement('li');//创建一个li
+                //给li添加文本
+                oLi.innerHTML = oTxt.value;
+                //添加Dom元素 appendChild 添加子节点(添加到末尾)
+//                oUl.appendChild(oLi);
+                //插入Dom元素 insertBefore 参数1：插入的元素 参数2：位置，在谁之前
+                //首先获取所有的li
+                var allLi = oUl.getElementsByTagName('li');
+                //如果有li就插入到最前面
+                if (allLi.length > 0){
+                    oUl.insertBefore(oLi, allLi[0]);//在第0个li前面插入
+                }else  {
+                    //如果没有li就添加
+                    oUl.appendChild(oLi);
+                }
+
+
+
+
+
+
+            };
+
+            //删除Dom元素
+            var oUl2 = document.getElementById('ul2');
+            var as = document.getElementsByTagName('a');
+            for (var i = 0; i < as.length; i++ ){
+                as[i].onclick = function () {
+                    //从父节点删除子节点
+                    oUl2.removeChild(this.parentNode);//此时this是<a>，要删的是<li>
+                };
+
+            }
+
+
+
+            //文档碎片 现将节点放到文档碎片中，然后最后将碎片添加，即只渲染一次即可
+            var oUl3 = document.getElementById('ul3');
+            //创建文档碎片
+            var oFrag = document.createDocumentFragment();
+
+            for (var i = 0; i < 10000; i++) {
+
+                var oLi3 = document.createElement('li');
+
+                //先将li加到文档碎片中
+                oFrag.appendChild(oLi3);
+            }
+            //最后将文档碎片放到ul中
+            oUl3.appendChild(oFrag);
+
+        };
+    </script>
+
+</head>
+<body>
+    <input id="txt1" type="text">
+    <input id="btn1" type="button" value="创建">
+
+    <ul id="ul1">
+
+    </ul>
+
+
+
+
+    <ul id="ul2">
+        <li>第一行<a href="javascript:;">隐藏</a></li>
+        <li>第二行<a href="javascript:;">隐藏</a></li>
+        <li>第三行<a href="javascript:;">隐藏</a></li>
+        <li>第四行<a href="javascript:;">隐藏</a></li>
+        <li>第五行<a href="javascript:;">隐藏</a></li>
+    </ul>
+
+    <ul id="ul3"></ul>
+
+
+
+</body>
+</html>
