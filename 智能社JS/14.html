@@ -74,7 +74,7 @@
         var searBtn = document.getElementById('btn2');
         var searTxt = document.getElementById('sear');
         searBtn.onclick = function () {
-
+            /*
             for (var i = 0; i < oTab.tBodies[0].rows.length; i++) {
                 var str1 = oTab.tBodies[0].rows[i].cells[1].innerHTML;//table中的
                 var str2 = searTxt.value;//搜索框中
@@ -86,9 +86,6 @@
                 //这样就可以进行模糊搜索，即只要输入框有一部分内容就可以，不用输入全
                 if (str1.toLowerCase().search(str2.toLowerCase()) >= 0 ) {
 
-
-
-
                     oTab.tBodies[0].rows[i].style.background = 'red';
                 }else {
                     oTab.tBodies[0].rows[i].style.background = '';
@@ -97,8 +94,58 @@
 
 
             }
+            */
+            /*
+            //多个关键字搜索
+            //1、分割关键字
+            var keywordArr = searTxt.value.split(' ');//以空格分割
+            //循环每一行,
+            for (var i = 0; i < oTab.tBodies[0].rows.length; i++){
+                //先让背景清空
+                oTab.tBodies[0].rows[i].style.background = '';
+                var oStr = oTab.tBodies[0].rows[i].cells[1].innerHTML;
+                //让每一行和关键字数组比较
+                for (var j = 0; j < keywordArr.length; j++){
+                    //如果包含关键字，变色
+                    if (oStr.search(keywordArr[j]) != -1){
+                        oTab.tBodies[0].rows[i].style.background = 'red';
+                    }
+
+                }
+
+            }
+
+            */
+
         };
 
+
+        var sortBtn = document.getElementById('btn3');
+        sortBtn.onclick = function () {
+            //排序
+            for(var i = 0; i < oTab.tBodies[0].rows.length - 1; i++) {
+                for (var j = 0; j < oTab.tBodies[0].rows.length - 1 - i; j++) {
+
+                    console.log(oTab.tBodies[0].rows[j].cells[0].innerHTML);
+                    console.log(oTab.tBodies[0].rows[j+1].cells[0].innerHTML);
+
+
+
+                    if (oTab.tBodies[0].rows[j].cells[0].innerHTML > oTab.tBodies[0].rows[j+1].cells[0].innerHTML) {
+//                        var temp = oTab.tBodies[0].rows[j];
+//                        oTab.tBodies[0].rows[j] = oTab.tBodies[0].rows[j+1];
+//                        oTab.tBodies[0].rows[j+1] = temp;
+
+
+                        oTab.tBodies[0].removeChild(oTab.tBodies[0].rows[j]);
+                        oTab.tBodies[0].insertBefore(oTab.tBodies[0].rows[j-1],oTab.tBodies[0].rows[j]);
+
+
+
+                    }
+                }
+            }
+        }
 
 
         };
@@ -115,6 +162,8 @@
     搜索：<input id="sear" type="text">
     <input id="btn2" type="button" value="搜索">
 
+    <br>
+    排序: <input id="btn3" type="button" value="排序">
 
     <!--表格-->
     <table id="tab1" border="1" width="500" >
@@ -131,24 +180,12 @@
         <!--正式表格-->
         <tbody>
             <!--列-->
-            <tr>
-                <td>1</td>
-                <td>Blue</td>
-                <td>18</td>
-                <td></td>
-            </tr>
+
 
             <tr>
                 <td>2</td>
                 <td>张三</td>
                 <td>19</td>
-                <td></td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>李四</td>
-                <td>20</td>
                 <td></td>
             </tr>
 
@@ -160,11 +197,29 @@
             </tr>
 
             <tr>
+                <td>1</td>
+                <td>Blue</td>
+                <td>18</td>
+                <td></td>
+            </tr>
+
+            <tr>
                 <td>4</td>
                 <td>王昭君</td>
                 <td>21</td>
                 <td></td>
             </tr>
+
+            <tr>
+                <td>3</td>
+                <td>李四</td>
+                <td>20</td>
+                <td></td>
+            </tr>
+
+
+
+
 
         </tbody>
 
