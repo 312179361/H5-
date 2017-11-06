@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #div1 {
+            background: red;
+            width:100px;
+            height: 100px;
+            position: absolute;
+            display: none;/*自定义菜单，先隐藏*/
+        }
+
+
+    </style>
+
+    <script>
+//        window.onload = function () {
+//        var
+
+
+            //右键菜单。默认是弹出菜单
+            document.oncontextmenu = function (eve) {
+                console.log('bb');
+                var oDiv = document.getElementById('div1');
+
+                //右键，让自定义的菜单显示
+                oDiv.style.display = 'block';
+                var oEvent = eve || event;
+                oDiv.style.left = oEvent.clientX + 'px';
+                oDiv.style.top = oEvent.clientY + 'px';
+                return false;//阻止默认事件，即不能弹出菜单
+            };
+
+            //
+            document.onclick = function () {
+                var oDiv = document.getElementById('div1');
+
+                console.log('aaaa');
+              oDiv.style.display = 'none';
+            };
+
+
+            document.onkeydown =function (eve) {
+                var oEvent = eve || event;
+                var oTxt = document.getElementById('txt1');
+                console.log(oEvent.keyCode);
+                if (oEvent.keyCode != 8 && (oEvent.keyCode < 48 || oEvent.keyCode > 57) ){
+
+                        return false;
+
+
+                }
+            };
+
+//        };
+
+
+
+
+    </script>
+</head>
+<body>
+
+
+<div id="div1">
+
+    <ul>
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+        <li>4444</li>
+    </ul>
+
+
+</div>
+
+<input id="txt1" type="text">
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件1</title>
+
+    <style>
+        #div1 {
+            width:200px;
+            height:200px;
+            background: #cccccc;
+            display: none;
+        }
+        #div2 {
+            width:200px;
+            height:200px;
+            background: red;
+            position: absolute;
+
+        }
+
+    </style>
+
+    <script>
+        window.onload = function () {
+
+            /*
+            //点击页面 的方法
+            document.onclick = function (eve) {
+                //event 即事件对象 clientX--可视区鼠标的横坐标
+//                alert(event.clientX + '---'+event.clientY);//event不兼容火狐，不用eve
+//                alert(eve.clientX);//火狐，要通过eve参数
+
+                //为了解决兼容性
+                var oEvent = eve || event;//那个为真，就用哪个
+                alert(oEvent.clientX + '---'+oEvent.clientY);
+            };
+            */
+
+
+            var oBtn = document.getElementById('btn1');
+            var oDiv = document.getElementById('div1');
+            oBtn.onclick = function (eve) {
+                oDiv.style.display = 'block';
+
+                //如果不阻止事件冒泡，就会点击button也执行document的点击事件。即事件是会穿透的
+                var oEvent = eve || event;
+                //取消事件冒泡
+                oEvent.cancelBubble = true;
+
+            };
+
+            document.onclick = function () {
+                oDiv.style.display = 'none';
+            };
+
+
+
+
+
+            document.onmousemove = function (eve) {
+                var oDiv2 = document.getElementById('div2');
+//            console.log('aaaa');
+                var oEve = eve || event;
+
+                //获取可视屏幕到页面头部的距离
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                //由于clientX和clientY是可视屏幕的X和Y值，所以Y值要加上scrollTop
+                oDiv2.style.left = oEve.clientX + 'px';
+                oDiv2.style.top = oEve.clientY + scrollTop + 'px';
+
+            };
+
+
+
+        };
+
+
+
+
+
+    </script>
+</head>
+<body style="height: 2000px;">
+
+    <input id="btn1" type="button" value="显示">
+    <div id="div1"></div>
+
+
+    <div id="div2"></div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+    <style>
+        div{
+            width:20px;
+            height:20px;
+            position: absolute;
+            top:300px;
+            left:300px;
+            background: red;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            //onkeydown 键盘按下事件
+            document.onkeydown = function (eve) {
+                var oEvent = eve || event;
+                //keyCode 就是键盘的编码
+//          alert(oEvent.keyCode);
+
+
+                console.log(oEvent.keyCode);
+
+                switch (oEvent.keyCode) {
+                    case 37:
+                        oDiv.style.left = oDiv.offsetLeft-10+'px';
+                        break;
+                    case 38:
+                        oDiv.style.top = oDiv.offsetTop-10+'px';
+                        break;
+                    case 39:
+                        oDiv.style.left = oDiv.offsetLeft+10+'px';
+                        break;
+                    case 40:
+                        oDiv.style.top = oDiv.offsetTop+10+'px';
+                        break;
+                    default:
+                        break;
+
+                }
+
+
+
+
+            };
+        };
+
+
+
+    </script>
+</head>
+<body>
+
+    <div id="div1"></div>
+
+</body>
+</html>

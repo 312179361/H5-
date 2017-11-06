@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var oFor = document.getElementById('form1');
+            //onsubmit 即提交时候的操作
+            oFor.onsubmit= function () {
+                alert('aaa');
+
+            };
+
+            oFor.onreset = function () {
+                alert('是否要重置');
+
+            };
+
+
+
+        };
+
+    </script>
+</head>
+<body>
+
+    <!--action 是服务器的地址-->
+    <form id="form1" action="http://www.zhinengshe.com/">
+        <!--name 是服务器标识是那个元素的,即参数名，很重要-->
+        用户名：<input type="text" name="user">
+        <br>
+        密码： <input type="password" name="pass">
+        <input type="submit" value="登录">
+        <!--这样出来的结果就是  http://www.zhinengshe.com/?user=xxx&pass=xxx -->
+        <input type="reset" value="重置">
+    </form>
+
+</body>
+</html>

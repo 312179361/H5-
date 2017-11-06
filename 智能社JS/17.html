@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出</title>
+
+    <style>
+        #div1 {
+            width:200px;
+            height:200px;
+            background: red;
+            /*透明度*/
+            filter: alpha(opacity:30);/*IE*/
+            opacity: 0.3;/*火狐*/
+
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            oDiv.onmouseover = function () {
+              startMove(100);
+            };
+            oDiv.onmouseout = function () {
+              startMove(30);
+            };
+
+
+        };
+
+
+
+
+        var timer = null;
+        var alpha = 30;//默认透明度
+
+        function startMove(iTarget) {
+            var oDiv = document.getElementById('div1');
+
+            clearInterval(timer);//先关闭上一个
+            //开启下一个
+            timer = setInterval(function () {
+                var speed = 0;
+                if (alpha < iTarget){
+                    speed = 10;
+                }else {
+                    speed = -10;
+                }
+
+                if (alpha == iTarget){
+                    //关闭
+                    clearInterval(timer);
+                }else  {
+                    alpha +=speed;
+                    //设置div的透明度
+                    oDiv.style.filter = 'alpha(opacity:'+alpha+')';
+                    oDiv.style.opacity = alpha/100.0;
+
+                }
+
+            },30);
+        }
+
+
+    </script>
+</head>
+<body>
+
+
+    <div id="div1"></div>
+
+    运动16 17 18 19没有学习，以后命名为17-x
+
+
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运动</title>
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            background: red;
+            /*绝对定位*/
+            position: absolute;
+            top:50px;
+            left:10px;
+        }
+        #div2{
+            width:150px;
+            height:200px;
+            background: green;
+            /*绝对定位*/
+            position: absolute;
+            top:300px;
+            left:-150px;
+
+        }
+        #div2 span {
+            /*绝对定位*/
+            position: absolute;
+            width:20px;
+            height:60px;
+            line-height: 20px;
+            background: blue;
+            right:-20px;/*居右边-20*/
+            top:70px;
+        }
+
+
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var oBtn = document.getElementById('btn1');
+            oBtn.onclick = function () {
+                startMove();
+            };
+
+            var timer = null;
+            //运动函数
+            function startMove() {
+                //找到div
+                var oDiv = document.getElementById('div1');
+                //先把上次的定时器关闭
+                clearInterval(timer);
+                //开启这次定时器
+                timer = setInterval(function () {
+                    //定时器方法
+                    if (oDiv.offsetLeft >= 300){//到300，就关闭定时器
+                        //关闭定时器
+                        clearInterval(timer);
+                    }else {
+                        oDiv.style.left = oDiv.offsetLeft+1+'px';
+
+                    }
+                },30);
+            }
+
+
+            //找到div
+            var oDiv2 = document.getElementById('div2');
+            var oSpan = oDiv2.getElementsByTagName('span')[0];
+            oDiv2.onmousemove = function () {
+              startMove2();
+            };
+
+            oDiv2.onmouseout = function () {
+                console.log('aaa');
+                startMove3();
+            };
+
+            //分享运动
+            function startMove2() {
+
+                //先关闭定时器
+                clearInterval(timer);
+                //开始这次定时器
+                timer = setInterval(function () {
+                    if (oDiv2.offsetLeft < 0){
+                        //
+                        oDiv2.style.left = oDiv2.offsetLeft + 5 + 'px';
+                    }else {
+                        clearInterval(timer);
+
+                    }
+                },30);
+            }
+            //分享运动关闭
+            function startMove3() {
+
+                //先关闭定时器
+                clearInterval(timer);
+                //开始这次定时器
+                timer = setInterval(function () {
+                    if (oDiv2.offsetLeft > -150){
+                        //
+                        oDiv2.style.left = oDiv2.offsetLeft - 5 + 'px';
+                    }else {
+                        clearInterval(timer);
+
+                    }
+                },30);
+            }
+
+
+        };
+
+
+        
+    </script>
+
+</head>
+<body>
+    <input id="btn1" type="button" value="开始运动">
+    <div id="div1"></div>
+
+
+    <div id="div2">
+        <span>分享到</span>
+
+    </div>
+
+</body>
+</html>

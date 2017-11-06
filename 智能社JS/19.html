@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width:20px;
+            height:20px;
+            position: absolute;
+            background: red;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        window.onload  = function () {
+
+        };
+
+        document.onmousemove = function (eve) {
+
+            var divArr = document.getElementsByTagName('div');
+            //倒序for循环
+            for (var i = divArr.length-1; i > 0; i--) {
+                //后一个div跟随上一个div
+                divArr[i].style.left = divArr[i-1].offsetLeft+'px';
+                divArr[i].style.top = divArr[i-1].offsetTop+'px';
+            }
+
+            //第一个div跟着鼠标
+            var oEvent = eve || event ;
+            divArr[0].style.left = oEvent.clientX + 'px';
+            divArr[0].style.top = oEvent.clientY + 'px';
+        };
+
+
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+
+
+</body>
+</html>
