@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义滚动条</title>
+
+    <style>
+        #parent {
+            background: #cccccc;
+            width:600px;
+            height:20px;
+            position: relative;
+            margin: 10px auto;
+        }
+
+        #div1 {
+            background: red;
+            width:20px;
+            height: 20px;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+
+        #div2 {
+            background: green;
+            width:0px;
+            height: 0px;
+            /*透明度*/
+            filter: alpha(opacity:0);/*ie*/
+            opacity: 0;/*火狐*/
+        }
+        #div3 {
+            width:200px;
+            height:200px;
+            border:1px solid;
+            overflow: hidden;
+            position: relative;
+        }
+        #div4 {
+            position: absolute;
+            top:0px;
+            left: 0px;
+        }
+
+    </style>
+
+    <script>
+        window.onload = function () {
+            var oParent = document.getElementById('parent');
+            var oDiv1 = document.getElementById('div1');
+            var oTxt2 = document.getElementById('txt1');
+            var oDiv2 = document.getElementById('div2');
+
+            var oDiv3 = document.getElementById('div3');
+            var oDiv4 = document.getElementById('div4');
+
+
+
+            oDiv1.onmousedown = function (eve) {
+                var oEvent = eve || event;
+
+                //左边的距离
+                var disX = oEvent.clientX - oDiv1.offsetLeft;
+
+                document.onmousemove = function (eve) {
+                    var oEvent = eve || event;
+
+                    var l = oEvent.clientX - disX;
+                    //防止越界
+                    if (l < 0) {
+                        l = 0;
+                    }
+                    if (l > oParent.offsetWidth - oDiv1.offsetWidth){
+                        l = oParent.offsetWidth - oDiv1.offsetWidth;
+                    }
+
+                    oDiv1.style.left = l +'px';
+
+                    var scale = l / (oParent.offsetWidth - oDiv1.offsetWidth);
+
+                    oTxt2.value = scale;
+
+                    oDiv2.style.width = 50 * scale + 'px';
+                    oDiv2.style.height = 50 * scale + 'px';
+                    //修改透明度
+                    oDiv2.style.filter = 'alpha(opacity:'+scale*100+')';
+                    oDiv2.style.opacity = scale;
+
+                    oDiv4.style.top  = - (oDiv4.offsetHeight - oDiv3.offsetHeight)*scale + 'px';
+
+
+
+                };
+
+                document.onmouseup = function () {
+                    //松开鼠标
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                };
+
+
+            };
+
+
+
+        };
+
+    </script>
+
+</head>
+<body>
+
+    <div id="parent">
+        <div id="div1"></div>
+    </div>
+    <input id="txt1" type="text">
+
+    <div id="div2"></div>
+
+
+    <div id="div3">
+
+        <div id="div4">
+            貂蝉最早出现于《三国演义》前身《三国志平话》中。貂蝉只是她的小名，本姓任，是吕布的原配妻子，两人在家乡失散后流落一方，沦为成为王允的婢女。王允得知后其身世后心生一计，设家宴款待太师董卓，让貂蝉与董卓见面。王允又设宴招待吕布赴会，让他貂蝉画像与元配妻子相会，并承诺改日让他们正式团聚。之后王允便送貂蝉到董卓家，董卓误以为是王献给自己的厚礼，喜出望外，当晚便共赴云雨之好。吕布得知董卓的行为后，勃然大怒，提剑入堂杀害醉倒的董卓。在《三国演义》中，貂蝉则是因遭十常侍之乱，避难出宫，为司徒王允收留为歌女。[2]  。貂蝉见东汉王朝被奸臣董卓所操纵，在月下焚香祷告上天，愿为主人担忧。恰巧为王允瞧见。于是，王允便将貂蝉收为义女，定下连环美人计，离间董卓与养子吕布的关系。王允先把貂蝉暗地里许配给吕布，再明着把貂蝉献给董卓做妾。貂蝉嫁给董卓之后对吕布暧昧送情，周旋于父子二人之间。一日，吕布乘董卓上朝时，入董卓府探望貂蝉，貂蝉和吕布相约来到凤仪亭相会。貂蝉假意对吕布哭诉被董卓霸占之苦，吕布愤怒。正巧被董卓回府撞见，发怒抢过吕布的方天画戟，直刺吕布，吕布飞身逃走，从此两人互相猜忌，王允便说服吕布，铲除了董卓。从而留下一个“吕布戏貂蝉”的千古传说。[3]在第十九回“下邳城曹操鏖兵，白门楼吕布殒命”中，吕布被曹操军队围困，貂婵不愿丈夫单独突围，矢言要与他「生则同居，死则同穴，至死不分离。」吕布深受感动，放弃陈宫妙计，每日只与貂蝉作乐，置前线的战事于不顾。最后被擒杀。
+        </div>
+    </div>
+</body>
+</html>

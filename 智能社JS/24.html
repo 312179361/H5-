@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //封装绑定函数
+        function myAddEvent(obj, eve, fn) {
+            if (obj.attachEvent){
+                obj.attachEvent('on'+eve, fn);
+            }else {
+                obj.addEventListener(eve,fn,false)
+
+            }
+        }
+
+        window.onload = function () {
+            var oBtn = document.getElementById('btn1') ;
+            /*
+            //绑定事件可以绑定多个事件
+            if (oBtn.attachEvent) {//处理兼容性
+                //绑定事件attachEvent(事件名， 函数)。只能在IE
+                oBtn.attachEvent('onclick', function () {
+                    alert('a');
+                });
+
+                //在绑定一个事件
+                oBtn.attachEvent('onclick', function () {
+                    alert('b');
+                });
+
+            }else  {
+                //绑定事件addEventListener(事件名，函数，false) 适用于火狐 chrome IE9
+                oBtn.addEventListener('click', function () {
+                    alert('a');
+                } , false);
+                oBtn.addEventListener('click', function () {
+                    alert('b');
+                } , false);
+            }
+*/
+            //利用封装的函数  进行事件绑定
+            myAddEvent(oBtn,'click',function () {
+                alert('a');
+            } );
+            myAddEvent(oBtn,'click',function () {
+                alert('b');
+            } );
+
+            //解除绑定detachEvent() 和 removeEventListener()
+
+
+
+
+
+
+        };
+    </script>
+
+</head>
+<body>
+
+
+<input id="btn1" type="button" value=按钮>
+
+</body>
+</html>
