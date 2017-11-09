@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>返回固定广告</title>
+
+    <style>
+        #div1{
+            background: red;
+            width:200px;
+            height:100px;
+            position: absolute;
+            bottom:0px;
+            right:0;
+        }
+    </style>
+
+
+    <script>
+
+        window.onload = function () {
+            var oBtn1 = document.getElementById('btn1');
+
+            oBtn1.onclick = function () {
+                if (document.documentElement.scrollTop) {
+                    document.documentElement.scrollTop = 0+'px';
+                }else  {
+                    document.body.scrollTop = 0+'px';
+                }
+
+            };
+        };
+
+
+        //onscroll页面滚动出发的事件  onresize当可视窗口大小改变
+        window.onscroll= window.onresize = function () {
+            var oDiv = document.getElementById('div1');
+            //scrollTop
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            //距离可视窗口顶部的距离 = clickHeight - div的高度
+            var toTopHeight = document.documentElement.clientHeight - oDiv.offsetHeight;
+
+            //div距离页面的高度 = scrollTop + 距离可视窗口顶部的距离
+            oDiv.style.top = scrollTop + toTopHeight + 'px';
+
+
+
+        }
+        
+        
+    </script>
+
+</head>
+<body style="height: 2000px;">
+
+<div id="div1">
+
+    <input id="btn1" type="button" value="返回顶部">
+</div>
+
+</body>
+</html>

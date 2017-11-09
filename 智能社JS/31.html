@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cookie</title>
+
+    <script>
+
+        /*
+        //过期时间
+        var oDate = new Date();
+        oDate.setDate(oDate.getDate() + 1);//计算几天以后是什么时间
+        //设置cookie 格式：名字=值  expires是过期时间
+        document.cookie = 'user=TongLi1;expires='+oDate;
+//        document.cookie = 'pass=123456';//这里不会覆盖，是添加
+
+*/
+
+        //封装的设置cookie
+        function setCookie(name, value, iDay) {
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate()+iDay);
+
+            console.log(name + '=' +value +';expires='+oDate);
+            document.cookie = name+'='+value+';expires='+oDate;
+        }
+
+        //封装的访问cookie
+        function getCookie(name) {
+            //先通过分号分割
+            var arr = document.cookie.split('; ');
+            //循环数组
+            for (var i = 0; i < arr.length; i++) {
+                //通过等号分割 arr2[0]是名字 arr[1]是值
+                var arr2 = arr[i].split('=');
+                if (arr2[0] == name) {
+                    return arr2[1];
+                }
+
+            }
+            return '';//如果都找不到cookie就返回空字符串
+        }
+
+        //封装的删除cookie
+        function removeCookie(name) {
+            setCookie(name,1, -1);//-1天过期，就是删除cookie
+        }
+
+
+        //调用
+        setCookie('userName','blue',2);
+        setCookie('passWord','123456',5);
+
+        //访问cookie
+        alert(getCookie('userName'));
+
+        //删除cookie
+        removeCookie('userName');
+
+        alert(getCookie('userName'));
+
+
+    </script>
+</head>
+<body>
+
+    <!--cookie 用来保存信息的-->
+    <!--比如自动登录，记住用户名-->
+
+    <!--一般来说一个域名，共享一套cookie-->
+
+    <!--数量、大小有限。 很小4-10K左右-->
+
+    <!--过期时间-->
+
+
+
+
+
+
+</body>
+</html>
