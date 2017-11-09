@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        window.onload = function () {
+            var oTxt = document.getElementById('txt');
+            var oBtn = document.getElementById('btn');
+
+            oBtn.onclick = function () {
+                //12345679            @ qq           . com
+                // 一串英文、数字、下划线 @ 一串英文、数字 . 一串英文
+                //^和$代表行首和行尾
+                var re = /^\w+@[1-9a-z]+\.[a-z]+$/i;
+
+                //正则检验test 正确返回true错误返回false
+                //字符串一部分符合要求就返回true
+                if (re.test(oTxt.value)){
+                    alert('正确');
+
+                }else {
+                    alert('错误');
+                }
+
+            };
+        };
+
+    </script>
+
+</head>
+<body>
+
+<input id="txt" type="text">
+<input id="btn" type="button" value="检验">
+
+</body>
+</html>

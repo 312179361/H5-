@@ -3,8 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <title>正则</title>
+
+    <script>
+        /*
+        //一些字符串操作
+
+        var str = 'abcdefg';
+        //1、搜索
+        alert(str.search('b'));
+
+        //2、substring
+        alert(str.substring(2));//截取从2到最后的字符串
+        alert(str.substring(2,5));//截取2~5之间的字符串(不包括结束位置)
+        //3、截取2位置的一个字符
+        alert(str.charAt(2));
+
+        var str1 = '1-2-3-4-5-6-7-8-9';
+        //4、切分字符串成数组
+        alert(str1.split('-'));
+
+    */
+
+        /*
+        //正则 创建正则（JS风格）
+        var re = new RegExp('a');
+        var str = 'Abced';
+        alert(str.search(re));
+        //per风格
+        var re1 = /a/;
+        alert(str.search(re1));
+
+        // i--ignore 忽略大小写
+        var str2 = 'Abcdefg';
+//        var re2 = new RegExp('a','i');//可是找到大写A和小写a JS风格
+        var re2 = /a/i;//per风格
+        alert(str2.search(re2));
+        */
+
+        /*
+        var str3 = 'absf 45 23 vacie 2';
+        //找到第一个数字出现的位置
+        var re3 = /\d/;  // \d是转义，代表数字
+        alert(str3.search(re3));
+
+        //match 把匹配的内容提取出来
+        //g--global 代表找到全部;
+        // +是量词，代表若干，即可以匹配多个连续数字
+        var re4 = /\d+/g;
+        alert(str3.match(re4));
+        */
+
+        /*
+        //replace替换
+        var str = 'abc aaa Arew';
+        //这样就可以把所有的a替换成0
+        var re = /a/g;
+        alert(str.replace(re, '0'));
+
+        //把a和c都替换为***
+        var re2 = /a|c/g;
+        alert(str.replace(re2,'***'));
+        */
+
+        /*
+        //方括号-元字符
+        //[abc] 代表或的意思。
+        var str = 'apc xpc bpc spc tpc cpc';
+        //可以知道apc bpc cpc
+        var re = /[abc]pc/g;
+        alert(str.match(re));
+
+        var str1 = '12fe5f16ef56aef';
+        // [ - ]范围，
+        var re1 = /[a-z]/g;//即找到字母
+        alert(str1.match(re1));
+        //[^ - ]除了这个范围，
+        var re2 = /[^a-z]/g;//即除了字母之外的
+        alert(str1.match(re2));
+        */
+
+
+        window.onload = function () {
+            //过滤Html标签
+            var otxt1 = document.getElementById('txt1');
+            var otxt2 = document.getElementById('txt2');
+            var btn = document.getElementById('btn1');
+
+            btn.onclick = function () {
+                //将html过滤 标签：<任意字符> 任意字符不能有尖括号;
+                var re = /<[^<>]+>/g;
+                otxt2.value = otxt1.value.replace(re,'');
+            };
+
+
+        };
+
+
+        /*转义字符
+         .  任意字符
+
+        \d  数字
+        \w  英文、数字、下划线
+        \s  空白字符
+
+        \D  除了数字
+        \W  除了英文、数字、下划线
+        \S  除了空白字符
+         */
+
+        //量词：
+        /* 1、 个数 {n}正好出现n次.
+            [1-9]\d{8}正好8位,首位不是0
+
+           2、{n,m}最少n次 最多m次
+            \d{4,10} 4到10位
+
+           3、{n,}最少n次，最多无限
+           + 等同于 {1,}
+
+           4、？问号，最少0次，最多1次
+           等同于{0，1}
+           如区号 可有可无
+           (0\d{2,3}-)?   //首位是0，后面有2-3位数字，最后是横杠，这个区号可有可无
+
+           5、*星号，出现0次到无限次 即任意次
+
+        */
+
+
+        /*
+            ^ 不在[]中，只有^ 代表行首
+            $ 代表行尾
+        */
+
+
+
+
+
+
+
+    </script>
+
 </head>
 <body>
+
+
+<textarea id="txt1" cols="30" rows="10"></textarea>
+<input id="btn1" type="button" value="转换">
+<textarea id="txt2" cols="30" rows="10"></textarea>
 
 </body>
 </html>
