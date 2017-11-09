@@ -2,11 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>Ajax</title>
+
+    <script>
+        window.onload = function () {
+            var oAJax = new XMLHttpRequest();
+//            var oAJax =  createXMLHttpRequest();
+//
+
+            oAJax.open('GET','https://www.baidu.com',true);
+
+            oAJax.send();
+
+
+
+                oAJax.onreadystatechange = function () {
+
+                alert(oAJax.readyState);
+                if (oAJax.readyState == 4) { //读取完成
+
+                    if (oAJax.status == 200) {
+                        alert('成功'+ oAJax.responseText);
+                    }else {
+                        alert('失败' + oAJax.status);
+                    }
+                }
+            };
+
+        };
+
+    </script>
+
+
 </head>
 <body>
 
-
+<input type="button" value="点击">
 
 </body>
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用json实现面向对象</title>
+
+
+    <script>
+        /*用json实现面向对象
+        有点：简单
+        缺点：不适合多个对象
+
+        json整个程序里只有一个，
+        */
+        var json = {
+            name: 'tongLi',
+            qq:'312179361',
+            showName : function () {
+                alert(this.name);
+            },
+            showQQ : function () {
+                alert(this.qq);
+            }
+        };
+
+
+        //调用函数
+        json.showName();
+        json.showQQ();
+
+    </script>
+</head>
+<body>
+
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象--自定义类 属性 方法</title>
+
+    <script>
+        /*
+        var arr = [];
+        //给数组添加一个属性
+        arr.name = '我是数组的属性';
+        //给数组添加一个方法 methodOne是方法名。等号后的是具体方法
+        arr.methodOne = function () {
+            //this代表这个实例对象，即arr
+            alert(this.name);
+        };
+
+        //访问属性
+        alert(arr.name);
+        //调用方法 不要忘记加上小括号()
+        arr.methodOne();
+
+        */
+
+
+        //构造函数--作用是添加属性，有点像便利构造器
+        function CreatPeople(name , qq) {
+            /*
+            当在创造构造函数时，加上new。系统会自动 创建自定义对象 如下
+            var this = new Object();
+            */
+
+            //两个属性
+            this.name = name;
+            this.qq = qq;
+
+            /*系统也会自动返回这个对象
+            return this;
+            */
+        }
+
+        //利用构造函数得到一个对象 类名叫creatPeople。 加上new，系统会自动创造对象和返回对象
+        var people = new CreatPeople('TongLi' ,'312179361');
+        //prototype(原型) 是给这个类（CreatPeople）添加实例方法
+        CreatPeople.prototype.showName = function () {
+            //方法
+            alert('My name is ' + this.name);
+        }
+
+        CreatPeople.prototype.showQQ = function () {
+            //方法
+            alert('my qq is ' + this.qq);
+        }
+
+        //调用方法
+        people.showName();
+        people.showQQ();
+        //创建第二个人
+        var people2 = new CreatPeople('XiaoKeAi', '123456789')
+        //调用方法
+        people2.showName();
+        people2.showQQ();
+
+        //
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+
+
+</body>
+</html>
