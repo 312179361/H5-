@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tempM">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+    <script>
+        console.log('123456');
+
+        var app = angular.module('tempM',[]);
+
+        app.controller('cont1', function ($scope, $http) {
+//            $http.get(url,参数)
+            console.log('1234567');
+            $http.get('https://api.nongyao001.com:7001/api/IsUserRegistry',{
+                params:{mobile:'18538075702'}
+            }).success(function (res) {
+                alert(res);
+            }).error(function () {
+                alert('失败了')
+            });
+
+
+
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+<div ng-controller="cont1">
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

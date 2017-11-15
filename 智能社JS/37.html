@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tempModel">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+    <script>
+        var app = angular.module('tempModel',[]);
+        app.controller('cont1',function ($scope) {
+            //给$scope创建一个数组数据源
+            $scope.dataSource = [
+                {name:'萝莉',age:16,time:1510202913369},
+                {name:'御姐',age:20,time:1510302910369},
+                {name:'女王',age:25,time:1510102911169}
+            ];
+        });
+
+
+        app.controller('cont2',function ($scope) {
+            $scope.isHidden = true;
+
+        })
+
+    </script>
+
+
+</head>
+<body>
+<!--引入controller-->
+<div ng-controller="cont1">
+    <ul>
+        <li ng-repeat="item in dataSource">
+            <h3>{{item.name}}</h3>
+            <!--currentcy过滤价格，可以让其变为价格样式-->
+            <span>{{item.age|currency}}</span>
+            <!--date过滤时间-->
+            <i>{{item.time|date:"yyyy年MM月dd日 HH:mm:ss"}}</i>
+        </li>
+    </ul>
+
+</div>
+
+<div ng-controller="cont2">
+    <input type="button" value="显示隐藏" ng-click="isHidden=!isHidden">
+    <!--ng-hide是否隐藏 ng-show是否显示-->
+    <div style="width: 200px;height: 200px;background: #cccccc" ng-hide="isHidden"></div>
+
+
+    <!--ng-clack 延迟。当页面还没有加载完，就先隐藏，等加载完就显示 -->
+
+</div>
+
+
+</body>
+</html>

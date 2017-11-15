@@ -43,8 +43,9 @@
             var as = document.getElementsByTagName('a');
             for (var i = 0; i < as.length; i++ ){
                 as[i].onclick = function () {
-                    //从父节点删除子节点
+                    //从父节点删除子节点  parentNode是找到父节点
                     oUl2.removeChild(this.parentNode);//此时this是<a>，要删的是<li>
+
                 };
 
             }

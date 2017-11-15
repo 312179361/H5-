@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--用ng-app 给module起个名字-->
+<html lang="en" ng-app="tempModel">
+<head>
+    <meta charset="UTF-8">
+    <title>angular和JavaScript的互通</title>
+
+    <script src="angular.js"></script>
+
+    <script>
+
+        //指定是哪个module
+        var app = angular.module('tempModel', []);
+        //创建controller，并起名 一个model可以有多个controller.
+        //angular将所有东西都存在$scope中。$scope这个名字是固定的，不能改变
+        app.controller('tempController',function ($scope) {
+            //在$scope中创建了a并初始化
+             $scope.a = 12;
+        });
+
+        //又创建一个controller，一个module可以有多个controller
+        app.controller('tempController2',function ($scope) {
+            //给$scope创建一个angularAlert函数 这样就可以将angular和JS连接起来了
+            $scope.angularAlert = function (s) {
+                //里面是原生JS的alert
+                window.alert(s);
+            };
+
+        });
+
+
+
+
+    </script>
+
+</head>
+<body>
+<!--引入controller 那么在这个div内，就可以用tempController的东西了-->
+<div ng-controller="tempController">
+    <!--这里就可以用controller中创建的a了，就不用ng-init了-->
+    <span>{{a}}</span>
+
+</div>
+
+
+<div ng-controller="tempController2">
+    <!--ng-model获取数据-->
+    <input type="text" ng-model="str">
+    <!--将数据给自定义的angularAlert-->
+    <input type="button" value="按钮" ng-click="angularAlert(str)">
+
+</div>
+
+
+</body>
+</html>

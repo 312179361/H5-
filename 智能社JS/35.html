@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>angular2</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+
+<!-- angular通过数组创建列表 -->
+<ul ng-init="arr=['a','b','c']">
+    <li ng-repeat="aaa in arr">{{aaa}}</li>
+    <li ng-repeat="(index,value) in arr">{{index}}--{{value}}</li>
+
+</ul>
+
+<!-- angular通过json创建列表 -->
+
+<ul ng-init="json={a:'abc',b:'bcd',c:'cde'}">
+    <li ng-repeat="(key,value) in json">{{key}}={{value}}</li>
+
+</ul>
+
+
+
+<ul ng-init="userList = [{name:'TongLi',age:'18'},{name:'刘亦菲',age:'20'},{name:'杨幂',age:'22'}]">
+    <li ng-repeat="tempJson in userList">
+        姓名：{{tempJson.name}}---年龄：{{tempJson.age}}
+    </li>
+
+
+
+</ul>
+</body>
+</html>
