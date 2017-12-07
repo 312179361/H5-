@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位1</title>
+	<style type="text/css">
+		strong {
+			display: block;/*可以让行内元素变为块状元素*/
+			/*display 设置为 none，让生成的元素根本没有框。这样，该框及其所有内容就不再显示,即消失。*/
+		}
+
+		/*CSS 有三种基本的定位机制：普通流、浮动和绝对定位。
+		除非专门指定，否则所有框都在普通流中定位。
+		块级框从上到下一个接一个地排列。
+		行内框在一行中水平布置
+		*/
+
+		/* 
+		position属性，可以选择4种不同类型的定位
+
+		static
+    	元素框正常生成。块级元素生成一个矩形框，作为文档流的一部分，行内元素则会创建一个或多个行框，置于其父元素中。
+
+		relative 相对定位
+    	元素框偏移某个距离。元素仍保持其未定位前的形状，它原本所占的空间仍保留。
+
+		absolute 绝对定位
+   		元素框从文档流完全删除，并相对于其包含块定位。包含块可能是文档中的另一个元素或者是初始包含块。元素原先在正常文档流中所占的空间会关闭，就好像元素原来不存在一样。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。
+
+		fixed 固定定位
+    	元素框的表现类似于 absolute，相对于窗口的定位。
+    	 */
+
+
+		.rel_left {
+			position: relative;/*相对定位*/
+			left: -20px;
+		}
+		.rel_right {
+			position: relative;/*相对定位*/
+			left: 20px;
+		}
+		.abs {
+			/*绝对定位不受原位置影响，可以在任意位置*/
+			position: absolute;/*绝对定位*/
+			left: 100px;
+			top: 300px;
+		}
+		.fix {
+			/*固定定位就是相对于窗口的位置，即页面滑动，不会改变元素位置*/
+			position: fixed;/*固定定位*/
+			left: 5px;
+			top: 400px;
+		}
+
+		img {
+			position: absolute;
+			left: 5px;
+			bottom: 0px;
+		}
+
+
+	</style>
+</head>
+<body style="height: 2000px">
+	<!-- 块状元素 独自占一行 -->
+	<p>123</p>
+	<p>123</p>
+
+	<!-- 行内元素 不独自占一行 -->
+	<strong>123</strong>
+	<strong>123</strong>
+	
+	<h3 class="abs">这个绝对定位</h3>
+
+	<h3>这个是正常的位置</h3>
+	<h3 class="rel_left">这个是偏左的位置(相对定位)</h3>
+	<h3 class="rel_right">这个是偏右的位置(相对定位)</h3>
+
+	<h3 class="fix">这个是固定定位</h3>
+
+
+	<img src="images/1_big.jpg">
+
+	<p>标题：美女</p>
+	<p>内容：这个美女真是美美哒</p>
+	
+</body>
+</html>

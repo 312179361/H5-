@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对齐</title>
+	<style type="text/css">
+		.div1 {
+			height: 200px;
+			width: 200px;
+			background-color: red;
+			margin-left: auto; /*左距离自动 如果没有右边距离，就是右对齐*/
+			margin-right: auto;/*右距离自动 如果没有左边距离，就是左对齐*/
+			/*左距离和右距离都是自动，那么就是居中*/
+		}
+
+
+		.div2 {
+			background-color: yellow;
+			height: 200px;
+			width: 200px;
+			/*利用绝对定位 和左右 在进行左右对齐*/
+			position: absolute;
+			right: 0;
+		}
+		
+		.div3 {
+			background-color: blue;
+			height: 200px;
+			width: 200px;
+			/*利用左右浮动进行 居左居右对齐*/
+			float: left;
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+	<div class="div1"></div>
+
+	<div class="div2"></div>
+
+
+	<div class="div3"></div>
+	
+</body>
+</html>

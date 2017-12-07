@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css文本样式和字体</title>
+
+	<style type="text/css">
+		
+		#p1 {
+			background-color: yellow;
+			/*缩进*/
+			text-indent: 2em;
+
+			text-align: left;
+
+			/*单词间距*/
+			word-spacing: 20px;
+
+			/*字符间距*/
+			letter-spacing: 20px;
+
+			/*text-transform有五个值none没有改变 uppercase全部大写 lowercase全部小写 capitalize首字母大写*/
+			text-transform: capitalize;
+
+			/*text-decoration有五个值
+			none 没有改变
+			underline 下划线
+			overline 上划线
+			line-through 中间贯穿线
+			blink	让文本闪烁
+			*/
+			text-decoration: underline overline;
+
+			/*处理空白符 normal是合并，pre是不合并空白符，详见表格*/
+			white-space: pre;
+		}
+
+		#p2 {
+			/*默认5种通用字体
+			Serif 字体
+   			Sans-serif 字体
+  			Monospace 字体
+    		Cursive 字体
+    		Fantasy 字体
+			*/
+			font-family: sans-serif;
+
+			/*字体风格
+			italic 文本斜体显示
+			oblique 文本斜体显示
+			斜体（italic）是一种简单的字体风格，对每个字母的结构有一些小改动，来反映变化的外观。与此不同，倾斜（oblique）文本则是正常竖直文本的一个倾斜版本。
+			通常情况下，italic 和 oblique 文本在 web 浏览器中看上去完全一样
+			*/
+			font-style: oblique;
+
+			/*小型大写字母*/
+			font-variant: small-caps;
+
+			/*字体加粗 100~900九个级别，nonrmal是400 700是bold*/
+			font-weight: bold;
+
+			/*字体大小*/
+			font-size: 30px;
+
+		
+
+		}
+		
+
+		/*书写顺序不要变*/
+		a:link {color: white;}/*未被访问的连接*/
+		a:visited {color: yellow;}/*已被访问的连接*/
+		a:hover {color: green;}/*鼠标指针移动到链接上*/
+		a:active {color: blue;}/*正在被点击的链接*/
+
+
+	</style>
+</head>
+<body bgcolor="red">
+
+	<h1 style="background-color: red">123456</h1>
+	<p id="p1">我是一个小学生.a b c   d e f g, Abcdefg</p>
+	<p>我是一个小学生.a b c   d e f g, abcdefg</p>
+
+	<p id="p2">自定义字体，萌萌哒Abcdefg</p>
+	<p>自定义字体，萌萌哒Abcdefg</p>
+
+
+	<a href="http://www.baidu.com">百度一下，你就知道</a>
+
+</body>
+</html>
+

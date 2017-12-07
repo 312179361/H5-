@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位2</title>
+
+	<style type="text/css">
+		.scroll {
+			width: 100px;
+			height: 200px;
+			overflow: scroll;/*溢出的部分可以进行滚动显示*/
+			overflow: hidden;/*溢出的部分隐藏*/
+		}
+
+		.clip {
+			position: absolute;
+			/*上 宽 高 左  四个方向的剪裁*/
+			clip: rect(0px 200px 150px 10px);
+		}
+
+		.top {
+			/*.top图片和文字顶部对其*/
+			vertical-align: text-top;
+		}
+		.bottom {
+			/*.bottom图片和文字顶部对其*/
+			vertical-align: text-bottom;
+		}
+		.zIndex {
+			position: absolute;
+			top: 700px;
+			z-index: -1;/*改变优先级，就可以进行层叠样式的改变，是的图片在文字下*/
+			
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div class="scroll">
+		这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。默认值是 visible。
+	</div>
+
+	<img class="clip" src="images/4_big.jpg">
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+
+	<p>
+这是一幅<img class="top" border="0" src="images/qq.png" />位于段落中的图像。
+</p> 
+
+<p>
+这是一幅<img class="bottom" border="0" src="images/qq.png" />位于段落中的图像。
+</p>
+
+
+<img class="zIndex" src="images/1_big.jpg">
+<p>优先级高，所以在上面，原本是在图片下面的</p>
+
+
+
+
+</body>
+</html>
