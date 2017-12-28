@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>王者荣耀导航栏</title>
+
+	<style type="text/css">
+		body {
+			background-color: #000;
+		}
+
+
+		a {
+			/*转换为行内块元素，这样即是一行，也可以设置大小*/
+			display: inline-block;
+			width: 200px;
+			height: 50px;
+			background-color: orange;
+			text-align: center;
+			/*在一行盒子中，我们设定行高为盒子的高度，就可以水平居中*/
+			line-height: 50px;
+			color: white;
+			font-size: 22px;
+
+			/*文本修饰 text-decoration
+				none
+				underline 下划线
+				overline 上划线
+				line-through 删除线
+			*/
+			text-decoration: none;/*取消下划线*/
+
+		}
+		/*连接伪类选择器，当鼠标放上去的时候*/
+		a:hover {
+			background: url(images/btn1.png) no-repeat;
+			/*这是背景图片的大小*/
+			background-size: 200px 50px;
+
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+	<a href="#">专区说明</a>
+	<a href="#">申请资格</a>
+	<a href="#">兑换奖励</a>
+	<a href="#">下载游戏</a>
+	
+</body>
+</html>

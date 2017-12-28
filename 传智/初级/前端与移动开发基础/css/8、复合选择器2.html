@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复合选择器-属性选择器</title>
+
+
+	<style type="text/css">
+		
+		/*属性选择器 用中括号表示，括号内是属性名 选取标签带有特殊属性的选择器
+		*/
+		a[title] {
+			color: red;
+		}
+		/*选择出来的是属性type为text的标签*/
+		input[type=text] {
+			color: red;
+		}
+		
+		/* ^= 代表以某某某开头。下面的即，以font开头的class属性*/
+		div[class^=font]{
+			color: pink;
+		}
+		/* $= 代表以某某某结尾。下面的即，以footer开头的class属性 */
+		div[class$=footer] {
+			color: blue
+		}
+
+		/* *= 代表包含了某某某。下面的即，class属性值中间包含了tao */
+		div[class*=tao] {
+			color: green;
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+	
+	<!-- title即 鼠标放上去后，会显示title的文字 -->
+	<a class="aaa" href="#" title="我是百度">百度</a>
+	<a href="#" title="我是网易">网易</a>
+	<a href="#">淘宝</a>
+	<a href="#">京东</a>
+	<a href="#">优酷</a>
+
+
+
+	<input type="text" value="文本框">
+	<input type="text" value="文本框">
+	<input type="text" value="文本框">
+	
+	<input type="submit" name="">
+	<input type="submit" name="">
+	<input type="submit" name="">
+	
+	<input type="reset" name="">
+	<input type="reset" name="">
+	<input type="reset" name="">
+
+
+
+	<div class="font12">属性选择器</div>
+	<div class="font12">属性选择器</div>
+	<div class="font24">属性选择器</div>
+	<div class="font24">属性选择器</div>
+	<div class="font24">属性选择器</div>
+	<div class="sub-footer">属性选择器</div>
+	<div class="jd-footer">属性选择器</div>
+	<div class="news-tao-nav">属性选择器</div>
+	<div class="tao-news-header">属性选择器</div>
+
+</body>
+</html>

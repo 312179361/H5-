@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景1</title>
+
+	<style type="text/css">
+		/*背景
+		background-color 背景颜色
+		background-image 背景图片
+		background-repeat 是否平铺
+		background-position 背景位置
+		background-attachment 背景固定还是滚动
+		*/
+		div {
+			width: 250px;
+			height: 300px;
+			background-color: red;
+
+			background-image: url(images/1.jpg);/*默认是平铺效果*/
+			
+			/*
+				repeat 横竖都平铺
+				no-repeat 不平铺
+				repeat-x 横向平铺
+				repeat-y 纵向平铺
+			*/
+			background-repeat: no-repeat;
+			/*background-repeat: repeat-y;*/
+			
+			/*利用方位名词 top bottom left right center 来改变背景图片的位置。默认是左上角 */
+			/*background-position: right top; */
+			/*background-position: center center;*/ /*居中*/
+			/*如果方位名词只写一个，另一个默认为center*/
+
+			/*精确单位 用像素*/
+			/*background-position: 10px 20px ;*/  /*x 和 y*/
+			
+			/*搭配使用，*/
+			background-position: 10px center; /*横向10 纵向居中*/
+
+
+
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+
+	<div></div>
+	
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>标签类型</title>
+
+	<style type="text/css">
+		img {
+			width: 100px;
+			height: 100px;
+		}
+
+
+		div {
+			background-color: red;
+			width: 100px;
+			height: 100px;
+			/*块转行内*/
+			display: inline;
+		}
+
+		span {
+			background-color: yellow;
+			width: 100px;
+			height: 100px;
+			/*行内转块*/
+			display: block;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- 标签一般分为 块级标签(block-level )  和  行内标签(inline-level) -->
+	<!-- 块级标签通常会独占一行或多行，可以对其设置宽度、高度、对齐等属性。常用于网页布局和网页结构的搭建 -->
+	<!-- 块级元素的特点
+		1、总是从新行开始
+		2、高度、行高、外边距内边距等都可以设置
+		3、宽度默认是100%
+		4、可以容纳内联元素和其他元素
+	 -->
+
+
+	<!-- 行内元素不占有独立的区域，仅仅靠自身的字体大小和图片尺寸来支撑结构，一般不可以设置宽度、高度、对其等属性，常用于页面文本的样式 -->
+	<!-- 行内元素的特点 
+	1、不独占一行，和相邻行内元素一行
+	2、宽高无效，但水平方向的padding和margin可以设置，垂直方向无效
+	3、默认宽度就是它本身内容的宽度
+	4、行内元素只能容纳文本或其他行内元素（a标签特殊）
+
+	-->
+
+	<!-- 注意：1、链接里不能再放链接
+		 	  2、p里面不能放块级元素，还有h1~h6 dt等，他们都是文字块级元素，里面不能放块级元素
+		 	   -->
+
+
+	<!-- 第三种 行内块元素(inline-block)。在行内元素中有几个特殊的标签如img input td等，他们可以设置宽高 -->
+	<!-- 行内款元素特点
+		1、和相邻的行内元素(行内块)在一行上，但是之间会有空白缝隙
+		2、默认宽度就是它本身内容的宽度
+		3、高度、行高、外边距内边距都可以设置
+
+	 -->
+
+
+	 <!-- 标签累心搞得转换 -->
+	 <!-- 块转换行内  display:inline -->
+	 <!-- 行内转换块  display:block -->
+	 <!-- 转换为行内块  display:inline-block -->
+
+	 <div>123</div>
+	 <div>456</div>
+
+	 <span>abc</span>
+	 <span>def</span>
+	
+	
+
+</body>
+</html>

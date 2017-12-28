@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>凸凹字</title>
+
+	<style type="text/css">
+		body {
+			background-color: #ccc;
+		}
+		
+		div {
+			font-size:  80px;
+			font-weight: 700;
+			color: #ccc;
+
+		}
+
+		/*伪类选择器，选择第一个div*/
+		div:first-child {
+			/*文字阴影  水平 垂直 模糊距离 阴影颜色*/
+			text-shadow: 1px 1px 1px #000 , -1px -1px 1px #fff;/*右下为黑色阴影 左上为浅色阴影 多个阴影用逗隔开*/
+			
+		}
+		
+		div:last-child {
+			/*左上为黑色阴影 右下为浅色阴影 多个阴影用逗隔开*/
+			text-shadow: 1px 1px 1px #fff, -1px -1px 1px #000;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div>我是凸起的文字</div>
+	<div>我是凹下的文字</div>
+	
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复合选择器-伪元素选择器(css3)</title>
+
+	<style type="text/css">
+		/*
+			回顾 .xxx 类选择器
+				:xxx 伪类选择器
+		*/
+
+		/* ::xxx伪元素选择器 */
+		
+		/* ::first-letter 选择第一个字 */
+		p::first-letter {
+			color: red;
+			font-size: 30px;
+		}
+
+		/* ::first-line选择第一行 */
+		p::first-line {
+			color: green;
+		}
+
+		/* ::selection即用鼠标选择的文字 */
+		p::selection {
+			color: pink;
+		}
+		
+		/*div::before 在div内部前面插入content内容，content还是包含在div中*/
+		div::before {
+			content: "我";
+			color: red;
+		}
+
+		/*div::after 在div内部后面插入content内容，content还是包含在div中*/
+		div::after {
+			content: "今年18岁";
+			color: green;
+
+		} 
+
+	</style>
+</head>
+<body>
+
+	<h1>国家宝藏</h1> 
+
+	<p>由央视与故宫博物院、上海博物馆、南京博物院、湖南省博物馆、河南博物院、陕西历史博物馆、湖北省博物馆、浙江省博物馆、辽宁省博物馆九大国家级重点博物馆合作，在文博领域进行深入挖掘。</p>
+	 
+	<div>今年</div>
+
+
+
+
+
+</body>
+</html>

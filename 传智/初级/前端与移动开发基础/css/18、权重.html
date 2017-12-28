@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>权重</title>
+
+		<style type="text/css">
+			nav ul li {
+				/*权重为 nav0，0，0，1 ul 0，0，0，1 li 0，0，0，1 叠加为0，0，0，3*/
+				color: blue;
+			}
+
+			ul li {
+				/*权重 ul 0，0，0，1 li 0，0，0，1 两个叠加0，0，0，2*/
+				color: green;
+			}
+
+			li {
+				/*权重 为0，0，0，1*/
+				color: red;
+			}
+
+			/*注意：继承的权重为0 虽然是类选择器，但是li继承的，所以权重为0,所以li不是红色*/
+			.redClass {
+				color: red;
+			}
+
+
+
+		</style>
+</head>
+<body>
+
+	<nav>
+		<ul>
+			<li>李白</li>
+			<li>程咬金</li>
+			<li>貂蝉</li>
+		</ul>
+	</nav>
+
+
+
+	<div class="redClass">
+		<ul>
+			<li>继承的权重为0</li>
+		</ul>
+
+	</div>
+	
+</body>
+</html>

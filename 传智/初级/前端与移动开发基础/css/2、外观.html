@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>外观</title>
+
+	<style type="text/css">
+	/*css颜色有三种
+	1、预定的颜色值 如red green blue等
+	2、16位进制
+	3、RGB颜色 rgb(255,255,0)或rgb(100%,0%,0%)
+	*/
+	li:first-child {
+		color: red;
+	}
+
+	li:nth-child(2) {
+		color: #ccc;
+	}
+
+
+	li:last-child {
+		color: rgb(0,0,255);
+	}
+
+
+	.newsDiv>p {
+		/*行高，line-height*/
+		line-height: 30px;
+		/*首行缩进 text-inden*/
+		text-indent: 2em;
+		/*字间距 letter-spacing*/
+		letter-spacing: 10px;
+
+	}
+	
+	/*水平对其方式，左 右 中*/
+	.newsDiv>h3 {
+		text-align: center;
+	}
+	
+	.EnglishWord {
+		/*单词间距,只针对英语*/
+		word-spacing: 10px;
+	}
+
+	.alphaWord {
+		/*颜色半透明 rgba 是css3 */
+		color: rgba(255, 0, 0, 0.5);
+	}
+
+	 
+	.shadow {
+		/*文字阴影 text-shadow 是css3*/
+		font-size: 50px;
+		/*4个参数分别为 水平位置 垂直位置 模糊距离(越大越远,越模糊) 阴影颜色*/
+		text-shadow: 8px 5px 3px rgba(0,0,0,0.5);/*前两个参数是必须的*/
+
+	}
+
+	</style>
+</head>
+<body>
+
+	<ol>
+		<li>预定颜色值</li>
+		<li>十六进制颜色值</li>
+		<li>GRB颜色值</li>
+	</ol>
+
+
+	<div class="newsDiv">
+		<h3>石油新闻播报</h3>
+		<p>
+		新华社广州12月18日电（记者吕光一）日前，广东省天然气管网在从化鳌头首站正式开启天然气反输通道，将来自中海油的南海海气和珠海LNG（液化天然气）资源反输到中石油西气东输二线。至此，中海油和中石油联合“保供”每日将可调配725万方天然气输往北方，以缓解今冬北方天然气紧张的状况。
+	</p>
+
+	<p>
+		记者了解到，自9月份开始，国家发改委为了应对今冬明春北方可能出现的天然气供应紧张局面，便将广东管网向西气东输二线反输天然气列为冬季保供重大工程。到12月15日广东管网已投产管道全线升压至6兆帕，具备了向西气东输二线反输天然气的能力。
+	</p>
+
+	</div>
+
+	<p class="EnglishWord">I love you! hello world</p>
+
+
+	<h2 class="alphaWord">文字是可以半透明的</h2>
+
+	<h2 class="shadow">我想要带你去浪漫的土耳其</h2>
+
+	
+</body>
+</html>

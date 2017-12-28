@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css三大特性</title>
+
+	<style type="text/css">
+		
+
+
+		/*CSS三大特性： 层叠性 继承性 特殊性，*/
+		
+
+		/*由于是类选择器，优选级高，所有.girl1是粉色*/
+		.girl1 {
+			color: pink;
+		}
+
+		div {
+			color: red;
+		}
+		/*由于层叠性，蓝色把红色覆盖了，
+		由于继承性，没有给p标签设置颜色，p标签也有了蓝色*/
+		div {
+			color: skyblue;
+		}
+		/*text-xx  font-xx lin-xx color这些可以继承*/
+		
+		/*关于css权重，有公式计算，这就是css的特殊性
+			从左到右，权重越来越小
+			标签选择器权重： 		 0，0，0，1
+			类选择器，伪类选择器：  	 0，0，1，0
+			ID选择器：			 0，1，0，0
+			行内样式：			 1，0，0，0
+			!important：			 ∞ 无穷大
+
+		*/
+
+		div {
+			/*!important 最大的*/
+			color: orange !important;
+			
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div>我是一个好学生</div>
+
+	<div>贾宝玉
+		<p>林黛玉</p>
+	</div>
+
+	<div class="girl1">王昭君</div>
+
+
+	
+</body>
+</html>

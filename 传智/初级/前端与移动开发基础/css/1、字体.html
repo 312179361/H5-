@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字体</title>
+	<style type="text/css">
+		.size {
+			/*文字字号*/
+			font-size: 20px;
+			color: red;
+
+		} 
+		.weight {
+			/*字体粗细*/
+			font-weight: bold;
+		}
+
+		.fontstyle {
+			/*italic斜体 normal正常*/
+			font-style: italic;
+
+		}
+		
+			/*  font属性综合设置， 语法(其中顺序不可变)：
+		选择器 {font:font-style font-weight font-size/line-height font-family ;}
+		*注意：其中不需要的设置可以省略，但必须保留font-size和font-family属性，
+		 */
+		.zonghe {
+			font:italic bold 30px tahoma;
+
+		}
+		
+
+		span{
+			font-size: 100px;
+		}
+	
+		.c-blue {
+			color: blue;
+		}
+		.c-red {
+			color: red;
+		}
+		.c-orange {
+			color: orange;
+		}
+		.c-green {
+			color: green;
+		}
+		
+
+
+	</style>
+</head>
+<body>
+	<p>这是一段文字（原始）</p>
+	<p class="size">这是一段文字</p>
+	<p class="weight">这是一段文字</p>
+
+	<p class="fontstyle">这是一段文字</p>
+
+	<p class="zonghe">这是一段文字(综合)</p>
+
+
+
+	<span class="c-blue">G</span>
+	<span class="c-red">o</span>
+	<span class="c-orange">o</span>
+	<span class="c-blue">g</span>
+	<span class="c-green">l</span>
+	<span class="c-red">e</span>
+
+
+
+
+
+
+</body>
+</html>

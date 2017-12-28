@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择器</title>
+
+	<style type="text/css">
+		/*类选择器*/
+		.font1 {
+			font-size: 13px;
+		}
+
+		.font2 {
+			font-size: 20px;
+		}
+
+		.red-color {
+			color: red;
+		}
+		.green-color {
+			color: green;
+		}
+		
+
+		/*id选择器*/
+		#hello {
+			color: pink;
+		}
+		
+
+		* {
+			/*通配符选择器*/
+			/*color: red;*/
+		}
+
+		/*伪类选择器，用于向某些选择器添加特殊效果*/
+		/* 
+		伪类选择器--连接选择器
+			:link -- 未访问的连接
+			:visited -- 已访问的连接
+			:hover -- 鼠标移动到连接上 
+			:active -- 选定的连接,即点击时
+			这四个顺序不能变，要按照顺序写 
+		*/
+
+		a:link {
+			/*未访问的连接css*/
+			font-size: 50px;
+			color: red;
+		}
+		a:visited {
+			/*访问过的连接*/
+			font-size: 20px;
+			color: yellow;
+		}
+		a:hover {
+			/*鼠标移动到连接上 */
+			font-size: 50px;
+			color: blue;
+		}
+		a:active {
+			/*选定的连接*/
+			color: green;
+		}
+
+	/*伪类选择器--结构选择器*/
+	/*
+	:first-child  选取属于父元素下的首个子元素的制定选择器
+	:last-clild  选取属于父元素下的最后一个子元素的制定选择器
+	:nth-child(n)  匹配属于其父元素的第N个子元素，
+	:nth-last-child(n) 匹配属于其父元素的倒数第N个子元素
+ 
+	其中小括号内为 even为偶数 odd为奇数 n为全部，也可以写简单公式如:2n、2n+1等;
+	*/
+	li:first-child {
+		/*选取了li元素的父元素下的第一个子元素*/
+		color: red;
+	}
+	li:last-child {
+		color: purple;
+	}
+	
+	li:nth-child(3) {
+		/*第三个li元素*/
+		color: yellow;
+	}
+
+	li:nth-last-child(2) {
+		/*倒数第2个li元素*/
+		color: blue;
+	}
+	
+	/*目标选择器，*/
+	:target {
+
+	}
+
+
+	</style>
+
+</head>
+<body>
+
+	<!-- 多个类选择器 中间用空格分割 -->
+	<div class="font1 red-color">貂蝉</div>
+	<div class="font1 green-color">安琪拉</div>
+	<div class="font2 red-color">花木兰</div>
+	<div class="font2 green-color">亚瑟</div>
+	
+	<!-- id选择器 -->
+	<div id="hello">hello Kitty</div>
+
+
+<!-- 类选择器和id选择器的区别：
+	类选择器可以重复使用的，
+	id选择器不可以重复使用
+ -->
+
+
+ 
+
+
+ <p>段落</p>
+<h5>h5h5h5h</h5>
+<h3>h3h3h3</h3>
+
+
+<!-- 伪类选择器其中的 连接伪类选择器 主要针对 a -->
+	<div> <a href="#">秒杀</a> </div>
+
+
+
+<!-- 伪类选择器 之 结构伪类选择器 （css3） -->
+
+	<ul>
+		<li>大娃</li>
+		<li>二娃</li>
+		<li>三娃</li>
+		<li>四娃</li>
+		<li>五娃</li>
+		<li>六娃</li>
+		<li>七娃</li>
+	</ul>
+	
+</body>
+</html>

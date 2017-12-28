@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景缩放</title>
+
+	<style type="text/css">
+		body {
+			background-color: skyblue;
+		}
+		div {
+			width: 400px;
+			height: 500px;
+			background: pink url(images/1.jpg) no-repeat;
+			/*我的插入的图片img 直接通过width和height设置即可*/
+			/*背景图片设置大小用 background-size*/
+			/*background-size: 100px 300px;*/ /*宽度200和高度300*/
+			/*background-size: 200px;*//*只修改宽度，这样高度会按照比例自动变化*/
+
+			/*background-size: 50%;*/ /*缩放宽度至容器宽度的一半*/ 
+			
+			
+			/*cover 将图片铺满容器，超出的部分就隐藏了*/
+			background-size: cover;
+			/*contain 将图片完整显示在容器内，不足的，就露出背景色*/
+			background-size: contain;
+
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+	<div></div>
+	
+</body>
+</html>
