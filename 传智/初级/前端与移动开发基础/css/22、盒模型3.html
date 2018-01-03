@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒模型-外边距(margin)</title>
+
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			/*margin-top: 20px;
+			margin-left: 50px;*/
+			/*margin: 50px;*/
+
+			/*利用margin 让一个盒子水平居中，需要满足两个条件
+			1、必须是块级元素
+			2、盒子必须指定了宽度
+			然后给左右外边距设置为auto就可以了*/
+
+			margin: 30px auto;/*上下30 左右auto*/
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒模型1</title>
+
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 200px;
+
+			border-width: 2px;
+			border-color: blue;
+			/* none无效果 solid单实线 dashed虚线 dotted点线 double双实线  */
+			border-style: solid;
+		}
+
+
+		input {
+			border: 0;/*先让input的默认边框消失*/
+		}
+
+		.user {
+			border-width: 1px;
+			border-color: pink;
+			border-style: solid;
+		}
+		.nc {
+			/*上边框*/
+			border-top-width: 1px;
+			border-top-color: blue;
+			border-top-style: solid;
+			/*下边框*/
+			border-bottom-width: 1px;
+			border-bottom-color: blue;
+			border-bottom-style: solid;
+
+		}
+		.age {
+			border-top: 1px solid red;/*简写*/
+			border-bottom: 1px solid green;
+
+		}
+		.tel {
+			/*简写*/
+			border:1px green solid;
+		}
+
+		table {
+			width: 700px;
+			height: 500px;
+			border: 1px solid red;
+			/*本来边框位会是1+1为2，collapse是合并相邻的边框，这样就是1px了*/
+			border-collapse: collapse;
+		}
+		td {
+			border: 1px solid red;
+		}
+
+		/*圆角边框 css3*/
+		.radius {
+			width: 100px;
+			height: 200px;
+			border: 1px solid blue;
+			/*四个圆角 左上 右上 右下 左下 即顺时针*/
+			/*border-radius: 10px 20px 30px 5px;*/
+			/*如果写一个，就是同时设置四个角*/
+			border-radius: 10px;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div>我是一个盒子</div>
+
+
+	用户名:<input type="text" class="user"> <br>
+	昵称:<input type="text" class="nc">  <br>
+	年龄:<input type="text" class="age">  <br>
+	手机:<input type="text" class="tel">  <br>
+
+
+	<!-- cellpading  cellspacing cell之间的间距为0 -->
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+		</tr>
+		<tr>
+			<td>456</td>
+			<td>456</td>
+			<td>456</td>
+			<td>456</td>
+			<td>456</td>
+		</tr>
+		<tr>
+			<td>789</td>
+			<td>789</td>
+			<td>789</td>
+			<td>789</td>
+			<td>789</td>
+		</tr>
+		<tr>
+			<td>10 11 12</td>
+			<td>10 11 12</td>
+			<td>10 11 12</td>
+			<td>10 11 12</td>
+			<td>10 11 12</td>
+		</tr>
+		</table>
+
+
+		<div class="radius"></div>
+	
+</body>
+</html>

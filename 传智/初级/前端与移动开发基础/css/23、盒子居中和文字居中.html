@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒子居中和文字居中</title>
+	<style type="text/css">
+		
+		div {
+			width: 200px;
+			height: 200px;
+			border: 1px solid pink;
+			/*文字水平居中*/
+			text-align:center;
+			/*盒子居中*/
+			margin: 10px auto;
+
+		}
+
+		section {
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+		}
+
+		section img {
+			/*插入图片也是一个盒子*/
+			/*插入图片的大小通过width和height更改*/
+			width: 280px;
+			height: 200px;
+			/*插入图片更改位置可以通过margin和padding*/
+			margin-top: 10px;
+			margin-left: 10px;
+			/*插入图片占位置，文字不会在图片上面*/
+		}
+
+
+		aside {
+			width: 400px;
+			height: 400px;
+			border: 1px solid purple;
+			background:url(images/3.jpg) 10px 20px no-repeat;/*更改位置为10px和20px 或者用background-position更改*/
+			/*背景图片不占位置，文字在上面*/
+
+			/*更改大小 background-size*/
+			background-size: 200px 200px;
+		}
+	</style>
+</head>
+<body>
+	文字水平居中和盒子水平居中
+	<div>文字居中</div>
+
+	插入图片和背景图片
+	
+	<section>
+		<img src="images/2.jpeg">
+		大乔
+	</section>
+
+	<aside>
+		美女
+	</aside>
+
+</body>
+</html>
