@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>清除浮动</title>
+	<style type="text/css">
+		/*清除浮动，其实不是清除浮动，是清除浮动后的影响
+		  其实本质叫做闭合浮动，即清除浮动就是把浮动的盒子圈到父盒子里，让父盒子闭合不让他们出来影响其他元素*/
+		.div1,.div2,.div3,.div4 {
+			height: 100px;
+			background-color: green;
+		}
+
+		  .father1, .father2, .father3 ,.father4 {
+			background-color: yellow;
+		  }
+		  /*父盒子不设定高度，如果子盒子是标准流，会自动撑开父盒子。
+			但是如果子盒子浮动，那么就无法撑起父盒子
+			需要清除浮动
+		  */
+		  /*
+			清除浮动的四个方法
+			1、额外标签法。即在浮动元素后加一个空标签，然后clear即可.优点：通俗易懂，书写方便；缺点：添加很多无意义的标签，结构较差
+			2、父级添加overflow属性方法。优点：简洁。缺点：内容增多时候容易造成不会自动换行导致内容隐藏掉，无法显示溢出的元素
+			3、after伪元素清除浮动。即额外标签的升级版。优点：符合闭合浮动思想，结构语义化正确。缺点：ie67不支持after,需要使用zoom:1触发;
+			4、使用before和after双伪元素清除浮动
+
+		  */
+
+		  /*父级元素添加overflow属性*/
+		  .father2 {
+		  	overflow: hidden;/*出发BFC BFC可以清除浮动*/
+		  }
+			
+		  .son11 ,.son21 ,.son31 ,.son41 {
+		  	background-color: red;
+		  	width: 200px;
+		  	height: 200px;
+		  	float: left;
+		  }
+		  .son12 , .son22, .son32, .son42 {
+		  	background-color: orange;
+		  	width: 400px;
+		  	height: 200px;
+		  	float: left;
+		  }
+		  .clear1 {
+		  	/*清除浮动 额外标签法 */
+		  	clear: both;
+		  }
+
+			/*利用after伪元素的方法，*/
+		  .clearFix:after {
+			/*里面的具体方法需要记住*/
+			content: ".";/*内容为小点，尽量不要空，否则低版本浏览器会有空隙*/
+			display: block;/*将其转换为块级元素*/
+			height: 0;/*高度为0*/
+			visibility: hidden;/*隐藏盒子，*/
+			clear: both;/*清除浮动*/
+		  }
+		  /*为了适应ie6、7*/
+		  .clearFix {
+		  	*zoom: 1;/* 星号是ie67可以识别的特殊符号，zoom就是ie67清除浮动的方法*/
+		  }
+
+
+		  /*利用before和after双2伪元素的方法*/
+		  .clearFix4:before, .clearFix4:after {
+		  	content: "";
+		  	display: table;/*触发BFC，还可以防止外边距合并*/
+		  }
+		  .clearFix4:after {
+		  	clear: both;/*清除浮动*/
+		  }
+		  .clearFix4 {
+		  	*zoom:1;
+		  }
+
+
+
+
+		  /*-----------------------*/
+	</style>
+</head>
+<body>
+	
+	<div class="father1">
+		<div class="son11">son1</div>
+		<div class="son12">son2</div>
+		<!-- 在浮动标签后，加一个空标签，用作清除浮动 ，即额外标签法-->
+		<div class="clear1"></div>
+	</div>
+	<div class="div1"></div>
+
+
+
+	<hr>
+	<br>
+	<br>
+
+
+
+	<div class="father2">
+		<div class="son21">son1</div>
+		<div class="son22">son2</div>
+	</div>
+	<div class="div2"></div>
+
+	<hr>
+	<br>
+	<br>
+
+
+	<!-- 给父元素在加一个类 -->
+	<div class="father3 clearFix">
+		<div class="son31">son1</div>
+		<div class="son32">son2</div>
+	</div>
+	<div class="div3"></div>
+
+	<hr>
+	<br>
+	<br>
+
+	<div class="father4 clearFix4">
+		<div class="son41">son1</div>
+		<div class="son42">son2</div>
+	</div>
+	<div class="div4"></div>
+
+
+</body>
+</html>

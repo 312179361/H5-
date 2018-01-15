@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒子阴影</title>
+	<style type="text/css">
+		.one {
+			width: 150px;
+			height: 150px;
+			background-color: green;
+			/*阴影  横向距离 纵向距离 模糊程度 阴影大小 颜色 是否是内阴影
+				默认是外阴影 ，如果是内阴影用inset
+			 */
+			box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.5) inset;
+		}
+
+		.two {
+			width: 200px;
+			height: 200px;
+			background: url(images/3.jpg) 0 0 no-repeat red;
+			background-size: 200px 200px;
+			background-position: center ;
+
+			/*圆角*/
+			border-radius: 50%;
+
+			/*阴影 可以添加多个阴影 用逗号分隔*/
+			box-shadow: 20px 15px 20px 5px rgba(255,255,255,0.8) inset ,5px 5px 10px 5px rgba(0,0,0,0.3);
+
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div class="one">盒子阴影</div>
+
+	<div class="two">
+		
+	</div>
+
+</body>
+</html>

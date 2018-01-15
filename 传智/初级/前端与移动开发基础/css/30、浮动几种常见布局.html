@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动几种常见布局</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.top1,
+		.banner1,
+		.main1,
+		.footer1
+		 {
+			width: 960px;
+			margin: 0 auto;
+			text-align: center;
+			margin-bottom: 10px;
+			
+		}
+		.top1 {
+			height: 60px;
+			background-color: red;
+		}
+		.banner1 {
+			height: 100px;
+			background-color: green;
+		}
+		.main1 {
+			height: 200px;
+			background-color: #ccc;
+		}
+		.footer1 {
+			height: 100px;
+			background-color: skyblue;
+		}
+		.left1 {
+			height: 200px;
+			width: 300px;
+			float: left;
+			background-color: orange;
+		}
+		.right1 {
+			height: 200px;
+			width: 650px;
+			float: right;
+			background-color: yellow;
+		}
+
+		/*-------------------------------------*/
+		.banner2,
+		.main2
+		 {
+			width: 960px;
+			margin: 0 auto;
+			text-align: center;
+			margin-bottom: 10px;
+			
+		}
+		.top2 {
+			margin-bottom: 10px;
+			height: 60px;
+			background-color: red;
+		}
+		.banner2 {
+			height: 100px;
+			background-color: green;
+		}
+		.main2 {
+			height: 200px;
+			background-color: #ccc;
+		}
+		.footer2 {
+			height: 100px;
+			background-color: skyblue;
+			margin-bottom: 10px;
+		}
+
+		.main2 li {
+			height: 200px;
+			width: 25%;
+			background-color: yellow;
+			float: left;
+			list-style: none;/*消除小圆点*/
+		}
+		.main2 li:nth-child(2n) {
+			background: orange;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="top1">头部1</div>
+	<div class="banner1">banner1</div>
+	<div class="main1">
+		<div class="left1">左小</div>
+		<div class="right1">右大</div>
+	</div>
+	<div class="footer1">尾部1</div>
+
+
+	<hr>
+	<br>
+	<br>
+
+	<div class="top2">通头部2</div>
+	<div class="banner2">banner2</div>
+	<div class="main2">
+		
+		<ul>
+			<li>平均1</li>
+			<li>平均2</li>
+			<li>平均3</li>
+			<li>平均4</li>
+		</ul>
+
+	</div>
+	<div class="footer2">通尾部2</div>
+
+
+	
+</body>
+</html>

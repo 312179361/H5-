@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动</title>
+	<style type="text/css">
+	
+	/*有三种文档流 标准流 浮动 定位*/
+
+
+	/*标准流 粉色在上面，绿色下面
+	  如果给粉色加上浮动，这样粉色就漂浮起来了不占标准流的位置，会压住标准流，这样绿色就上去了，然后粉色就会盖住绿色的部分
+	*/
+
+		div:first-child {
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			float: left;
+		}
+
+		div:last-child {
+			width: 100px;
+			height: 300px;
+			background-color: green;
+		}
+
+		/*浮动首先创建包含块的概念，就是说，浮动的元素总是找离它最近的父级元素对其，但是不会超出内边距的范围*/
+
+	</style>
+</head>
+<body>
+
+	<div></div>
+	<div></div>
+
+	
+	
+</body>
+</html>

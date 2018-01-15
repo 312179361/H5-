@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动3</title>
+	<style type="text/css">
+		section {
+			width: 800px;
+			height: 500px;
+			background-color: pink;
+		}
+
+		section div:first-child {
+			width: 200px;
+			height: 200px;
+			background-color: purple;
+			/*float: left;*/
+
+
+		}
+
+		section div:last-child {
+			width: 249px;
+			height: 249px;
+			background-color: skyblue;
+			float: right;
+			
+			/*如果上一个浮动，下一个不浮动，下一个会被上一个遮住一部分*/
+			/*如果两个都浮动，则他们会顶部对齐*/
+			/*如果上一个不浮动，下一个浮动，上一个是标准流，下一个是浮动，这样下一个会在标准流下面，即下一个顶部，对齐上一个底部*/
+
+			/*由此推断，一个父盒子里面的子盒子，如果其中一个子级有浮动，则其他子级都需要浮动，这样才能一行对齐*/
+			
+		}
+
+		.one {
+			/*元素添加浮动后，都会有行内块元素的特性。元素大小取决于元素的宽高或者内容的大小*/
+			height: 120px;
+			background-color: green;
+			float: left;/*原本没有指定宽度，是全屏展示。添加了浮动，宽度变成了文字的长度*/
+
+		}
+		span {
+			height: 100px;
+			background-color: hotpink;
+			/*原本高度么有效果，加了浮动，有了行内块的特性，高度可以设置了*/
+			float: left;
+		}
+
+
+	</style>
+</head>
+<body>
+	<section>
+		<div>王昭君</div>
+		<div>貂蝉</div>
+	</section>
+
+	<div class="one">三傻大闹宝莱坞</div>
+	<span>摔跤吧，爸爸</span>
+	<span>摔跤吧，爸爸</span>
+
+</body>
+</html>

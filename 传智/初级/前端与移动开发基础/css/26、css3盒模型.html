@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3盒模型</title>
+
+
+	<style type="text/css">
+		
+		div:first-child {
+			/*box-sizing 是css3的盒模型一种，默认是content-box
+			content-box border和padding会撑开盒模型，即盒模型的视觉宽度为content+border+paddding
+			*/
+			background-color: red;
+			width: 200px;
+			height: 200px;
+			padding: 10px;
+
+		}
+		
+		div:last-child {
+			/*box-sizing 是css3的盒模型一种，默认是content-box,
+			  border-box border和padding不会撑开盒模型，即盒模型的视觉宽度为content
+			*/
+			box-sizing: border-box;
+
+			background-color: green;
+			width: 200px;
+			height: 200px;
+			padding: 10px;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div>123</div>
+	<div>456</div>
+</body>
+</html>
