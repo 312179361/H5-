@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>层序叠加</title>
+	<style type="text/css">
+		div {
+			width: 100px;
+			height: 100px;
+
+		}
+		div:first-child {
+			background-color: pink;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			/*z-index 叠加次序。
+			1、默认是0 如果z-index相同，后面的压着上面的，
+			2、值越大越在上面
+			3、不能加单位
+			4、只有相对定位，绝对定位，固定定位有次属性，其他的没有.即标准流、浮动等没有此属性
+			*/
+			z-index: 1;
+		}
+
+		div:nth-child(2) {
+			background-color: red;
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			
+			z-index: 2;
+
+		}
+
+		div:last-child {
+			background-color: skyblue;
+			position: absolute;
+			top: 40px;
+			left: 40px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div></div>
+	<div></div>
+	<div></div>
+	
+</body>
+</html>

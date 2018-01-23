@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位盒子居中</title>
+
+	<style type="text/css">
+		
+		.father {
+			width: 800px;
+			height: 400px;
+			background-color: pink;
+			margin: 20px auto;
+			position: relative;
+
+		}
+
+		.son {
+			width: 200px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			/*有绝对定位的盒子，margin auto; 是没有效果的，*/
+			/*绝对定位的盒子，居中要计算，
+			1、左边父盒子一半
+			2、左外边距子盒子负一半
+
+			纵向定位类似
+			*/
+			/*横向居中*/
+			left: 50%;/*左移父盒子的一半*/
+			margin-left: -100px;/*左外边距，负的自己的一半*/
+			/*纵向居中*/
+			top: 50%;
+			margin-top: -50px;
+
+
+			
+		}
+	</style>
+</head>
+<body>
+
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	
+</body>
+</html>
