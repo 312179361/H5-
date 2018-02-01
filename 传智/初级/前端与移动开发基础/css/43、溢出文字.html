@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>溢出文字</title>
+
+	<style type="text/css">
+		/*
+		word-break 自动换行
+		normal 使用浏览器的换行规则
+		break all 允许在单词内换行,允许单词拆开显示
+		keep-all  只能在空格或连字符换行，不允许单词拆开显示
+		*/
+		.one {
+			width: 100px;
+			height: 20px;
+			border: 1px solid red;
+			/*word-break: break-all;*/
+			word-break: keep-all;
+		}
+		
+		/*
+		white-space 
+		normal 默认，显示不全就会自动换行
+		nowrap 一行显示不换行
+
+		*/
+		.two {
+			width: 100px;
+			height: 20px;
+			border: 1px solid red;
+			white-space: nowrap;
+
+		}
+
+		/*
+		text-overflow 文字溢出 记住前提是文本要一行显示,再次和overflow属性搭配使用 
+		clip 不显示省略号，直接裁切
+		ellipsis 当对象内文本溢出，超出的部分显示省略号
+		*/
+		.three {
+			width: 100px;
+			height: 20px;
+			border: 1px solid green;
+			/*一行显示*/
+			white-space: nowrap;
+			/*overflow 搭配*/
+			overflow: hidden;
+			/*文字溢出样式*/
+			/*text-overflow: clip;*/
+			text-overflow: ellipsis;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div class="one">
+		my name is lily;
+	</div>
+	<br>
+	<br>
+	<br>
+	<hr>
+
+	<div class="two">
+		我的名字是莉莉安，一个歪果仁
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<hr>
+
+	<div class="three">
+		我的名字是刘亦菲，一个大美女
+	</div>
+	
+</body>
+</html>

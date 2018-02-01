@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>display和visibility</title>
+
+	<style type="text/css">
+		div {
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+
+		div:first-child {
+			/*隐藏元素，不是删除(这个元素还存在)。位置也不存在了*/
+			/*display: none;*/
+			/*显示元素*/
+			/*display: block;*/
+			
+			/*隐藏元素，但是位置还存在*/
+			visibility: hidden;
+			/*显示元素*/
+			visibility: visible;
+
+
+		}
+
+		div:last-child {
+			background-color: purple;
+		}
+
+
+		.code {
+			width: 100px;
+			height: 100px;
+			background-color: orange;
+			text-align: center;
+			line-height: 100px;
+			margin: 10px auto;
+
+			/*子绝父相*/
+			position: relative;
+		}
+
+		.code img {
+			position: absolute;
+			left: 110px;
+			top: 0;
+			/*首先隐藏*/
+			display: none;
+		}
+		
+		/*鼠标经过code时候，img显示*/
+		.code:hover img {
+			display: block;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div></div>
+	<div></div>
+
+
+	<div class="code">扫二维码
+	<img src="images/erweima.png">
+
+	</div>
+	
+</body>
+</html>

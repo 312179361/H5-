@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位模式会转换为行内块</title>
+	<style type="text/css">
+		
+		div {
+			height: 100px;
+			background-color: pink;
+			/*浮动的盒子有模式转换的情况，转换为 行内块元素*/
+			/*float: left;*/
+			/*固定定位和决定定位 也会有模式转换，转换为 行内块元素。相对定位不会有*/
+			position: fixed;
+
+
+			/*小技巧： 行内元素 如果添加了绝对定位或者固定定位或者浮动后，可以不用转换模式(display: block)，直接给高度和宽度就可以了*/
+		}
+
+	</style>
+</head>
+<body>
+	<div>稳住，我们能赢。猥琐发育，别浪</div>
+</body>
+</html>

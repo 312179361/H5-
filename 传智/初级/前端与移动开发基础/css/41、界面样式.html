@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>界面样式</title>
+	<style type="text/css">
+
+		li:nth-child(1) {
+			/*小箭头*/
+			cursor: default;
+		}
+
+		li:nth-child(2) {
+			/*小手*/
+			cursor: pointer;
+		}
+
+		li:nth-child(3) {
+			/*文本样式 */
+			cursor: text;
+		}
+
+		li:nth-child(4) {
+			/*移动样式 */
+			cursor: move;
+		}
+
+
+
+		/*轮廓线 边框外面的线条  平时一般不用，都清除 outline: none;  或者 outline: 0; */
+		input {
+			outline: 2px solid red;
+			outline: none;  /*取消轮廓线*/
+			/*border: 2px solid green;*/
+		}
+
+
+		
+		textarea {
+			resize: none;/*防止文本域拖拽*/			
+			outline: none;
+		}
+
+	</style>
+
+	
+</head>
+<body>
+	<!-- 鼠标样式 -->
+	<ul>
+		<li>小箭头</li>
+		<li>小手</li>
+		<li>文本</li>
+		<li>移动</li>
+	</ul>
+
+	<!-- 轮廓线 -->
+	<input type="text" name="">
+
+
+	<!-- 文本域 -->
+	<textarea cols="20" rows="5"></textarea>
+
+
+</body>
+</html>

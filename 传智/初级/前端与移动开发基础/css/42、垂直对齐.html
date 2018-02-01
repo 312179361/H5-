@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>垂直对齐</title>
+
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 100px;
+			background-color: pink;
+			/*盒子水平居中 即左右auto*/
+			margin-left: auto;
+			margin-right: auto;
+			/*文字水平居中*/
+			text-align: center;
+			
+
+		}	
+
+
+		img {
+			/*垂直居中  对于块级元素无效，只有行内元素和行内块元素可以。
+			  主要用来控制图片或表单与文字的对齐方式*/
+
+			/*中线对齐*/ 
+			/*vertical-align: middle;*/
+			/*基线对齐*/
+			/*vertical-align: baseline;*/
+			/*底线对齐*/
+			/*vertical-align: bottom;*/
+			/*顶线对齐*/
+			vertical-align: top;
+
+		}
+
+		textarea {
+			height: 150px;
+			width: 200px;
+			vertical-align: middle;
+		}
+
+
+		.tempImg {
+			width: 200px;
+			height: 200px;
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+
+	<div>文字文字</div>
+	
+	<hr>
+
+	<!-- 图片和文字，默认的是基线对齐 -->
+	<img src="images/1.jpg"> 一个大美女jpg
+	
+	<hr>
+
+	用户留言<textarea></textarea>
+	
+
+	<!-- 低版本浏览器，下面会有缝隙 因为是基线对齐
+		两种解决方法1、将img转换为块级元素，因为块级元素不会有基线对齐这个说法
+		2、 把img 用vertical-align: top 
+	 -->
+	<div class="tempImg">
+		<img src="images/3.jpg">
+	</div>
+
+	<hr>
+
+
+
+
+
+
+
+</body>
+</html>

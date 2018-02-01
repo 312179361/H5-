@@ -3,248 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>学成网</title>
-	<!-- 样式 -->
-	<style type="text/css">
-		/*初始化*/
-		* {
-			margin: 0;
-			padding: 0;
-		}
-		ul {
-			list-style: none;/*去掉列表小点*/
-		}
-		/*清除浮动*/
-		.clearfix:before, .clearfix:after {
-			display: table;
-			content: "";
-		}
-		.clearfix:after {
-			clear: both;
-		}
-		.clearfix {
-			*zoom: 1;
-		}
-		a {
-			color: #050505;
-			text-decoration: none;/*取消下划线*/
-		}
-		input {
-			border: 0;/*所有表单边框为0*/
-			box-sizing: border-box;
-		}
+	<!-- 引入css样式 -->
+	<link rel="stylesheet" type="text/css" href="style.css">
 
-		.container {
-			/*公共版心*/
-			width: 1200px;
-			margin: 0 auto;
-		}
-
-		/*css初始化结束*/
-
-		body {
-			background-color: #f3f5f7;
-		}
-
-		
-		/*页面头部分*/
-		header {
-			height: 100px;
-			/*background-color: pink;*/
-			overflow: hidden;/*防止外边距合并*/
-		}
-		nav {
-			width: 1366px;
-			height: 42px;
-			/*background-color: purple;*/
-			margin: 26px auto 0;/*上下30 左右0*/
-		}
-		.logo {
-			float:left;
-		}
-		.navbar {
-			float: left;
-			height: 42px;
-			line-height: 42px; /*使得li上下居中，因为可以继承，所以给父级添加*/
-			margin-left: 50px;/*logo和导航栏之间的距离*/
-		}
-		.navbar li {
-			float: left;/*让li浮动*/
-			
-
-		}
-		.navbar li a {
-			padding: 0 10px; /*上下0 左右8*/
-
-			/*a是行内元素，制定高度要转化*/
-			display: block;
-			height: 42px;
-
-		}
-		.navbar li a:hover {
-			/*鼠标放上有底边框*/
-			border-bottom: 2px solid #00a4ff;
-
-		}
-		/*搜索框*/
-		.search {
-			width: 410px;
-			height: 38px;
-			border: 1px solid #00a4ff;
-			float: right;
-		}
-
-		/*属性选择器*/
-		.search input[type=text] {
-			/*background-color: pink;*/
-			width: 360px;
-			height: 38px;
-			padding-left: 20px;
-			float: left;/*加上浮动，就可以取消与submit的缝隙*/
-
-		}
-		.search input[type=submit] {
-			width: 50px;
-			height: 38px;
-
-			float: left;/*加上浮动，就可以取消与text的缝隙*/
-			background:#00a4ff url(images/icon_search.png) center center no-repeat;
-			
-		}
-
-
-		/*个人中心*/
-		.personal {
-			float: right;
-			height: 42px;
-			line-height: 42px;
-			margin-right: 100px;
-			margin-left: 30px;
-		}
-		.personal img {
-			margin: 0 8px;
-		}
-
-
-		/* banner */
-		.banner {
-			height: 420px;
-			background-color: #1c036c;
-		}
-		.banner-in {
-			height: 420px;
-			background-color: pink;
-		}
-		.slidebar {
-			height: 420px;
-			width: 190px;
-			background: rgba(0, 0, 0, 0.3);
-			/*左浮动*/
-			float: left;
-		}
-		.slidebar li a  {
-			color: white;
-			font-size: 14px;
-			padding: 0 20px;/*上下0 左右20*/
-			/*a是行内元素，没有宽高，需要转换*/
-			display: block;
-			height: 45px;
-			line-height: 45px;
-		}
-		.slidebar li a:hover {
-			color:#00a4ff;
-		}
-
-		.slidebar a span {
-			float: right;
-		}
-
-		.timetable {
-			float: right;
-			width: 230px;
-			height: 300px;
-			background-color: white;
-			margin-top: 50px;
-		}
-
-		.timetable dt {
-			height: 50px;
-			background-color: #9bceea;
-			text-align:center;/*文字居中  margin:0 atuo; 是盒子居中*/
-			line-height: 50px;
-			color: white;
-			font-weight: 700;/*文字加粗 不要加单位*/
-			letter-spacing: 2px;/*文字间距*/
-			margin-bottom: 5px;
-		}
-
-		.timetable dd {
-			width: 193px;
-			height: 60px;
-			/*background-color: blue;*/
-			margin: 0 auto;/*盒子居中*/
-			border-bottom: 1px solid #ccc;
-			padding-top: 12px;
-			box-sizing: border-box;
-		}
-		.timetable dd:last-child {/*结构伪类选择器*/
-			border: 0;/*最后一个没有下边框*/
-		}
-		.timetable dd h4 {
-			font-size: 14px;
-			font-weight: normal;/*让粗体不变粗*/
-			color: #4e4e4e;
-
-		}
-
-		.timetable dd p {
-			color: #a5a5a5;
-			font-size: 13px;
-		}
-		.timetable dd a {
-			display: block;
-			height: 38px;
-			border: 1px solid #00a4ff;
-			text-align:center;
-			line-height: 38px;
-			color: #00a4ff;
-			font-weight: 700;
-		}
-
-		.timetable dd a:hover {
-			background-color: #00a4ff;
-			color: white;
-
-		}
-
-		.recommend {
-			margin-top: 8px;
-			height: 60px;
-			line-height: 60px;
-			background-color: #fff;
-			/*盒子阴影 水平位置 垂直位置 模糊距离 颜色*/
-			box-shadow: 0 2px 2px rgba(0,0,0,0.2);
-		}
-		
-		.recommend a {
-			/*background-color: yellow;*/
-			padding: 0 30px;
-			border-right:1px solid #ccc;
-		}
-		.recommend a:hover {
-			color: #00a4ff;
-		}
-		.recommend a:first-child {
-			color: #00a4ff;
-		}
-		.recommend a:last-child {
-			color: #00a4ff;
-			border: 0;
-			float: right;
-			font-size: 14px;
-		}
-
-
-	</style>
 </head>
 <body>
 	<!-- 结构 -->
@@ -325,10 +86,26 @@
 					<a href="#">全部课程</a>
 				</dd>
 			</dl>
+
+
+			<!-- 小圆点 -->
+			<ul class="circle">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
 		</div>
+
+
+
+
+
 	</div>
 
-	<!-- 精品推荐 -->
+	<!-- 精品推荐 导航条 -->
 	<div class="recommend container">
 		<a href="#">精品推荐</a>
 		<a href="#">Jquery</a>
@@ -340,6 +117,135 @@
 		<a href="#">修改兴趣</a>
 
 	</div>
+
+	<!-- 精品推荐大盒子 -->
+	<div class="recom-products container">
+		<!-- 头部 -->
+		<div class="recom-head">
+			<h4>精品推荐</h4>
+			<a href="">查看全部</a>
+		</div>
+		<!-- 精品推荐主体部分  清除浮动，否则，下面的地图会跑上来 -->
+		<div class="recom-bd clearfix">
+			<ul>
+				<li>
+					<img src="images/product1.png" width="233">
+					<h5>Think PHP 5.0 博客系统实战项目演练</h5>
+					<p><span>高级</span>  .  1125人学习</p>
+				</li>
+
+				<li>
+					<img src="images/product1.png" width="233">
+					<h5>Think PHP 5.0 博客系统实战项目演练</h5>
+					<p><span>高级</span>  .  1125人学习</p>
+				</li>
+
+				<li>
+					<img src="images/product1.png" width="233">
+					<h5>Think PHP 5.0 博客系统实战项目演练</h5>
+					<p><span>高级</span>  .  1125人学习</p>
+				</li>
+
+				<li>
+					<img src="images/product1.png" width="233">
+					<h5>Think PHP 5.0 博客系统实战项目演练</h5>
+					<p><span>高级</span>  .  1125人学习</p>
+				</li>
+
+				<li>
+					<img src="images/product1.png" width="233">
+					<h5>Think PHP 5.0 博客系统实战项目演练</h5>
+					<p><span>高级</span>  .  1125人学习</p>
+				</li>
+
+				<li>
+					<img src="images/product1.png" width="233">
+					<h5>Think PHP 5.0 博客系统实战项目演练</h5>
+					<p><span>高级</span>  .  1125人学习</p>
+				</li>
+
+				<li>
+					<img src="images/product1.png" width="233">
+					<h5>Think PHP 5.0 博客系统实战项目演练</h5>
+					<p><span>高级</span>  .  1125人学习</p>
+				</li>
+
+				<li>
+					<img src="images/product1.png" width="233">
+					<h5>Think PHP 5.0 博客系统实战项目演练</h5>
+					<p><span>高级</span>  .  1125人学习</p>
+				</li>
+
+				<li>
+					<img src="images/product1.png" width="233">
+					<h5>Think PHP 5.0 博客系统实战项目演练</h5>
+					<p><span>高级</span>  .  1125人学习</p>
+				</li>
+
+				<li>
+					<img src="images/product1.png" width="233">
+					<h5>Think PHP 5.0 博客系统实战项目演练</h5>
+					<p><span>高级</span>  .  1125人学习</p>
+				</li>
+			</ul>
+
+		</div>
+
+
+	</div>
+
+	<!-- 尾部 -->
+	<footer>
+		<div class="container footer-in">
+			<div class="footer-l">
+
+				<img src="images/logo.png">
+				<p>学成在线学成在线学成在线学成在线学成在线学成在线学成在线学成在线<br>学成在线学成在线学成在线学成在线</p>
+				<a href="#">下载App</a>
+
+			</div>
+
+			<div class="footer-r">
+				<dl>
+					<dt><a href="#">关于学成网1</a></dt>
+					<dd><a href="#">管理团队</a></dd>
+					<dd><a href="#">工作机会</a></dd>
+					<dd><a href="#">客户服务</a></dd>
+					<dd><a href="#">帮助</a></dd>
+				</dl>	
+
+				<dl>
+					<dt><a href="#">关于学成网2</a></dt>
+					<dd><a href="#">管理团队</a></dd>
+					<dd><a href="#">工作机会</a></dd>
+					<dd><a href="#">客户服务</a></dd>
+					<dd><a href="#">帮助</a></dd>
+				</dl>	
+
+				<dl>
+					<dt><a href="#">关于学成网3</a></dt>
+					<dd><a href="#">管理团队</a></dd>
+					<dd><a href="#">工作机会</a></dd>
+					<dd><a href="#">客户服务</a></dd>
+					<dd><a href="#">帮助</a></dd>
+				</dl>	
+			</div>
+
+		</div>
+			
+	</footer>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

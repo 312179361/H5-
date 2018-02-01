@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑动门</title>
+	<style type="text/css">
+		/*核心技术 css精灵（主要是背景位置和盒子padding撑开宽度）*/
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+
+			margin: 1 0px;
+
+			display: inline-block;
+			height: 33px;
+			
+			background: url(images/huadongmen.png) no-repeat;
+			/*不能给宽度，需要缩放的*/
+			/*利用padding撑开盒子*/
+			padding-left: 15px;
+
+			color: white;
+			text-decoration: none;
+			line-height: 33px;
+		}
+
+		a span {
+			display: inline-block;
+			height: 33px;
+
+			/*利用背景图片右对齐 得到右边圆角*/
+			background:url(images/huadongmen.png) no-repeat right;
+			/*不能给宽度，需要缩放的*/
+			/*利用padding撑开盒子*/
+			padding-right: 15px;
+
+			
+		}
+
+	</style>
+</head>
+<body>
+	
+	<!-- 滑动门结构 -->
+	<a href="#">
+		<span>
+			首页
+		</span>
+	</a>
+
+
+	<!-- 滑动门结构 -->
+	<a href="#">
+		<span>
+			刘亦菲
+		</span>
+	</a>
+
+
+	<!-- 滑动门结构 -->
+	<a href="#">
+		<span>
+			王者荣耀
+		</span>
+	</a>
+
+
+	<!-- 滑动门结构 -->
+	<a href="#">
+		<span>
+			旅行青蛙！！！
+		</span>
+	</a>
+
+</body>
+</html>
