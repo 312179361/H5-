@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS的继承、层叠和特殊性</title>
+	<style type="text/css">
+		p{
+			color: red !important; /*设置最高权值*/
+			border:1px solid red;
+		}
+		
+		.first{
+			color: green;
+		}
+
+
+
+	
+
+	</style>
+</head>
+<body>
+
+<!-- 继承。继承是一种规则，它允许样式不仅应用于某个特定html标签元素，而且应用于其后代 -->
+	
+	<p>三国演义中有：<span>刘备</span>、<span>关羽</span>、<span>张飞</span></p>
+	<p>红楼梦中有：<spn>贾宝玉</span>、<span>林黛玉</span></p>
+<!-- 但注意有一些css样式是不具有继承性的 如border:1px solid red; -->
+	<!-- 效果：颜色继承了，不仅p标签是红色，里面的span也是红色
+	p标签有红色边框，但是span没有继承
+ -->
+
+
+
+<!-- 特殊性 -->
+	<p class="first">三国演义中有：<span>刘备</span>、<span>关羽</span>、<span>张飞</span></p>
+	<!-- p和.first都匹配到了p这个标签上，那么颜色却是绿色的，即显示.first的颜色，因为权值不同。标签的权值为1。 类选择器是10. id选择器的权值是100 。 -->
+
+	<!-- 权值例子：
+	p{color:red;} /*权值为1*/
+	p span{color:green;} /*权值为1+1=2*/
+	.warning{color:white;} /*权值为10*/
+	p span.warning{color:purple;} /*权值为1+1+10=12*/
+	#footer .note p{color:yellow;} /*权值为100+10+1=111*/ 
+
+	-->
+
+<!-- 重要性 !important来设置最高权值-->
+	<p class="first">三国演义中有：<span>刘备</span>、<span>关羽</span>、<span>张飞</span></p>
+
+
+
+
+</body>
+</html>

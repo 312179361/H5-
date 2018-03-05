@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单元素</title>
+</head>
+<body>
+
+
+	
+		<form action="">
+			<label>
+				姓名：
+				<input type="text" name="name">
+			</label>
+
+			<label>
+				省份
+				<select>
+					<option value="">河北省</option>
+				</select>
+			</label>
+
+			<label>
+				个人简介；
+				<textarea cols="30" rows="3"></textarea>
+			</label>
+
+			<!-- h5 新增的表单标签 -->
+			<!-- 1、datalist -->
+			<label>
+				课程<input type="text" list="course">
+			</label>
+			<!-- datalist单独使用没有效果，要和input连用。
+				将list的值和datalist的id一样，这样输入就会有输入联想功能
+				value显示在左侧，标签内容在右边，如果两个一样，右边不显示
+				 -->
+			<datalist id="course">
+				<option value="ios">ios1</option>
+				<option value="python">python</option>
+				<option value="php">php</option>
+			</datalist>
+
+			<!-- 2、keygen -->
+			<label>
+				加密类型：<keygen name="an"></keygen>				
+			</label>
+			
+			<!-- 3、output输出 对应input。效果类似于span标签 -->
+			<label>
+				结果：<output>显示结果</output>
+			</label>
+
+			<!-- 4、meter -->
+			<!-- 低于low的是绿色 low和high之间的是黄色，大于high是红色 -->
+			<label>
+				度量器1<meter min="0" max="100" value="50" low="60" high="80"></meter>
+				度量器2<meter min="0" max="100" value="70" low="60" high="80"></meter>
+				度量器3<meter min="0" max="100" value="90" low="60" high="80"></meter>
+
+
+			</label>
+
+
+			<!--  -->
+			<label>
+				<input type="submit" value="保存">
+			</label>
+
+
+
+			
+			
+		</form>
+
+
+	
+</body>
+</html>

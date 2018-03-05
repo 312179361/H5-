@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!-- 在html中加入插入js代码 -->
+	<!-- <script>
+	
+		document.write("hello world");
+		alert("js代码");//提醒框
+	</script> -->
+
+	<!-- 创建一个js外部文件 ，进入外部js文件即可-->
+	<script src="1-1.js"></script>
+
+</head>
+<body>
+
+	<!-- JavaScript语句是发给浏览器的命令。这些命令的作用是告诉浏览器要做的事情。 -->
+
+	<p id="p1">我是第一段文字</p>
+	<p id="p2">我是第二段文字</p>
+	
+
+	<!-- 使用script标签插入js代码，要把js代码写在script标签内部 -->
+	<script type="text/javascript">/*表示在script标签之间的是文本类型，javascript是为了告诉浏览器里面的文本是属于JavaScript语言*/
+		
+	document.write("I ");
+	document.write("love ");
+	document.write("you");
+
+	// 获取到id为p2的元素，从而改变颜色
+	document.getElementById("p2").style.color="blue";
+
+	</script>
+
+
+<!-- 1、放在head部分。在页面中head部分放置<script>元素，浏览器解析head部分就会执行这个代码，然后才解析页面的其余部分。 -->
+<!-- 2、放在<body>部分。JavaScript代码在网页读取到该语句的时候就会执行。 -->
+<!-- 注意: javascript作为一种脚本语言可以放在html页面中任何位置，但是浏览器解释html时是按先后顺序的，所以前面的script就先被执行。比如进行页面显示初始化的js必须放在head里面，因为初始化都要求提前进行（如给页面body设置css等）；而如果是通过事件调用执行的function那么对位置没什么要求的。 -->
+
+
+<form >
+<!-- 点击执行add函数 -->
+<input type="button" value="点击" onclick="add()">
+
+</form>
+
+	
+
+
+</body>
+</html>

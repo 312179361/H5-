@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画(css3)</title>
+
+	<style type="text/css">
+		.one {
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+
+			/* 执行动画
+			   动画名 动画时长 速度曲线(先快后慢等等) 延迟时长 动画次数 是否反方向
+			   infinite无限次
+			   一般来说就用前两个，即动画名 和 动画时长
+			 */
+			/*animation: goAn 2s ease 0s 3 alternate;*/
+			  animation: goAn 2s ease 0s infinite alternate;
+
+
+
+		}
+		/*声明动画 goAn是自定义的动画名 */
+		@keyframes goAn {
+			from {
+				transform: translateX(0);
+			}
+			to {
+				transform: translateX(600px);
+			}
+		}
+
+		.two {
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+
+			animation: goAnTwo 5s;
+		}
+
+		@keyframes goAnTwo {
+			0% {
+				transform: translate3d(10px, 100px ,0);
+			}
+			25% {
+				transform: translate3d(100px, 100px ,0);
+			}
+			50% {
+				transform: translate3d(100px, 400px ,0);
+			}
+			75% {
+				transform: translate3d(10px, 400px ,0);
+			}
+			100% {
+				transform: translate3d(10px, 100px ,0);
+			}
+
+		}
+
+
+	</style>
+
+</head>
+<body>
+
+	<div class="one"></div>
+
+	<div class="two"></div>
+	
+</body>
+</html>

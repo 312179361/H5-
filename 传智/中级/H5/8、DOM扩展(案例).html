@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM扩展标签切换</title>
+	<style type="text/css">
+		nav a {
+			background-color: pink
+		}
+		.active {
+			background: hotpink;
+		}
+
+		#guoji ,#tiyu ,#yule {
+			display: none;
+		}
+
+	</style>
+</head>
+<body>
+	<nav>
+		<!-- 默认给第一个添加active。即表示第一个是默认选中 -->
+		<a href="#" class="active" data-cont='guonei'>国内新闻</a>
+		<a href="#" data-cont='guoji'>国际新闻</a>
+		<a href="#" data-cont='tiyu'>体育新闻</a>
+		<a href="#" data-cont='yule'>娱乐新闻</a>
+	</nav>
+	
+
+	<section id="guonei">1111</section>
+	<section id="guoji">2222</section>
+	<section id="tiyu">3333</section>
+	<section id="yule">4444</section>
+
+	<script type="text/javascript">
+		// 找到所有a标签
+		var navs = document.querySelectorAll('nav a');
+
+
+		for (var i = 0; i < navs.length; i++) {
+			// 给所有a添加点击方法
+			navs[i].onclick = function() {
+				// 找到上一个点击的a
+				var oActive = document.querySelector('.active');
+				// 删除class属性
+				oActive.classList.remove('active');
+
+				//得到上一个点击标签的自定义属性
+				var subCustom = oActive.dataset.cont;
+				
+				// 将上一个点击的内容隐藏
+				var subSection = document.getElementById(subCustom);
+				subSection.style.display = 'none' ;
+
+				// 给点击的a标签，添加类
+				this.classList.add('active');
+
+				// 获取自定义属性
+				var tempCuntom = this.dataset.cont;
+				var tempSection = document.getElementById(tempCuntom);
+				tempSection.style.display = 'block';
+			}
+		}
+
+	</script>
+
+	
+</body>
+</html>

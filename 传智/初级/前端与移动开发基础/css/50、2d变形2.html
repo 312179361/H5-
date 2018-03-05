@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2d变形-</title>
+ 
+	<style type="text/css">
+		 
+		div {
+			font-size: 50px;
+			font-weight: 700;
+			margin: 100px;
+			/*过渡*/
+			transition: all 0.7s;
+		}
+		div:hover {
+			/*变换：倾斜(横向度，纵向度) */
+			/*横向正是向左，纵向正是向上*/
+			transform: skew(10deg, 0);/*横向向左倾斜10度*/
+			transform: skew(0, 5deg);/*纵向向上倾斜5度*/
+		}
+
+	</style>
+</head>
+<body>
+
+	<div>南山南，北海北</div>
+	
+</body>
+</html>

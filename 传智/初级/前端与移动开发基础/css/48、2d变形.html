@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2D变形 移动 缩放 旋转</title>
+
+	<style type="text/css">
+		
+		.one {
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			
+			/*为了好看，来个过渡效果*/
+			transition: all 0.5s ease 0s;
+			
+		}
+
+		.one:active {  /*鼠标点击没有松开鼠标的时候*/
+
+			/*transform 变形 ：translate(x,y)移动*/
+			/*transform: translate(50px,50px);*/
+
+			/*如果只移动x或者y，可以用下面的*/
+			/*transform: translateX(20px);*/
+			transform: translateY(20px);
+		}
+
+
+		.two {
+			width: 200px;
+			height: 200px;
+			background-color: hotpink;
+			/*transform: translate(50%);*//*移动了自己的50%，和父元素没有关系*/
+
+
+			/*以前让定位的盒子对齐*/
+			position: absolute;
+			left: 50%;
+			/*margin-left: -100px;*/
+
+			/*现在的可以利用taansform进行移动，不用计算了*/
+			transform: translate(-50%);
+		}
+
+		.three {
+			width: 100px;
+			height: 100px;
+			background-color: skyblue;
+
+
+		}
+		.three:hover {
+			/*transform 变形 :scale(x,y)缩放*/
+			transform: scale(2, 1.5);
+
+		}
+
+
+		.four {
+			width: 150px;
+			height: 216px;
+			border: 1px solid red;
+			/*超出部分隐藏*/
+			overflow: hidden;
+			
+
+		}
+		.four img {
+			/*过渡动画 因为是图片缩放，所以要加到图片上*/
+			transition: all 1s ease 0s;
+		}
+
+		.four img:hover {
+			/*缩放为原来的1.5倍*/
+			transform: scale(1.5,1.5);
+		}
+		
+
+		.five {
+			margin-top: 50px;
+			margin-left: 200px;
+			transition: all 1s ease 0s;
+
+			/*旋转点设置 默认是center center*/
+			/*transform-origin: top left;*/
+			/*可以设置精确像素点*/
+			transform-origin: 50px 50px;
+		}
+		 
+		.five:hover {
+			/*transform 变形 :rotate(度) 旋转多少度 deg代表度 */
+			transform: rotate(-90deg);
+			
+			
+
+		}
+
+
+	</style>
+</head>
+<body>
+
+	移动<br>		
+
+	<div class="one"></div>
+
+	<div class="two"></div>
+
+	<br>
+	<hr>
+	<br>缩放<br>
+
+	<div class="three"></div>
+
+	<div class="four">
+		<img src="images/1.jpg">
+	</div>
+
+
+	<br>
+	<hr>
+	<br>旋转<br>
+	<img class="five" src="images/3.jpg">
+
+
+</body>
+</html>

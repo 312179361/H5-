@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css代码的缩写</title>
+	<style>
+		p{
+			background-color: yellow;
+			/*一、盒模型代码简写*/
+			/*margin: 10px 15px 12px 14px;*/
+			/*有三种缩写方式*/
+			/*1、如果top、right、bottom、left的值相同可以简写为 如上下左右都是10px*/
+			margin:10px; 
+			/*2、如果上下值相同  左右值相同 如上下为10px 左右为20px*/
+			margin: 10px 20px;
+			/*如果仅仅左右的值一样，上下不一样 如上：10px 下15px 左20px右20px*/
+			margin: 10px 20px 15px;			
+
+			/*注意：padding、border的缩写方法和margin是一致的。*/
+
+
+
+
+			/*二、颜色值简写*/
+			color: #000000;
+			/*当颜色是16进制的色彩值时，如果每两位的值相同，可以缩写一半。*/
+			color: #000;/*和#000000一样*/
+			color: #369;/*和#336699一样*/
+
+
+
+			/*三、字体缩写*/
+			font-style: italic;
+			font-variant: small-caps;
+			font-weight: bold;
+			font-size: 12px;
+			line-height: 1.5em;
+			font-family: "宋体",sans-serif;
+			/*可以简写为下面的形式*/
+			font:italic  small-caps  bold  12px/1.5em  "宋体",sans-serif;
+
+		}
+
+	</style>
+</head>
+<body>
+
+
+
+<p>测试文本、测试文本、测试文本、测试文本、测试文本、测试文本、测试文本、测试文本、测试文本、测试文本、测试文本、测试文本、测试文本、测试文本、测试文本、测试文本、</p>
+
+
+	
+</body>
+</html>

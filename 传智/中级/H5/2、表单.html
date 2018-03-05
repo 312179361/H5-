@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单</title>
+</head>
+<body>
+	<!-- 表单 -->
+	<form action="">
+		<!-- 输入域，即用一个矩形框圈住内容 -->
+		<fieldset>
+			<!-- 标题legend -->
+			<legend>输入类型</legend>
+			<!-- label的for和input的Id相同，这样点击label就可以聚焦到input上 -->
+			<label for="demo">
+				姓名:
+				<input type="text" id="demo">
+			</label>
+
+
+			<!-- h5中增添了一些新的类型
+				email 邮箱
+				tel  电话
+				url 地址
+				number 数字
+				search 搜索，没有啥效果，主要是体现语义性
+				range 滑块
+				color 调取拾色器
+				time 选择时间
+				date 选择日期，年月日
+				datetime 日期和时间(浏览器暂不支持)
+				month  年和月，不含日
+				week  周，可以选择第几周
+			 -->
+
+			 <label>
+			 	email
+			 	<input type="email" name="">
+
+			 </label>
+
+			  <label>
+			 	tel
+			 	<input type="tel" name="">
+
+			 </label>
+
+			  <label>
+			 	url
+			 	<input type="url" name="">
+
+			 </label>
+
+			 <label>
+			 	number
+			 	<!-- 谷歌中，只能输入数字 step步长，即增加或者减小以4位单位 -->
+			 	<input type="number" step="4" min="8" max="20">
+
+			 </label>
+			
+			 <label>
+			 	search
+			 	<input type="search" name="">
+
+			 </label>
+
+ 			<label>
+			 	range
+			 	<input type="range" value="30">
+
+			 </label>
+
+			 <label>
+			 	color
+			 	<input type="color" >
+
+			 </label>
+			
+			<label>
+			 	time
+			 	<input type="time" >
+			 </label>
+
+			 <label>
+			 	date
+			 	<input type="date" >
+			 </label>
+
+			 <label>
+			 	datetime
+			 	<input type="datetime" >
+
+			 </label>
+
+			 <label>
+			 	month
+			 	<input type="month" >
+				<input type="submit">
+			 </label>
+
+			 <label>
+			 	week
+			 	<input type="week" >
+				<input type="submit">
+			 </label>
+
+
+
+
+		</fieldset>
+
+
+	</form>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS进阶4-1</title>
+</head>
+<!-- 页面加载事件 -->
+<body onload="messageFun()">
+	
+<script type="text/javascript">
+	/*
+	主要事件
+	onclick 鼠标单击
+	onmouseover 鼠标经过
+	onmouseout  鼠标移开
+	onchange  文本框内容改变
+	onselect 文本框内容被选中
+	onfoucus  光标聚集
+	onblur    光标移开
+	onload    网页导入
+	onunload  关闭网页
+	*/
+
+
+	function addFun () {
+		var numA, numB ,sum;
+		numA = 6;
+		numB = 8;
+		sum = numA + numB;
+		document.write("两数和："+sum);
+	}
+
+	function messageFun () {
+		alert("请输入姓名");
+	}
+
+	//关闭网页事件，只要网页关闭或者刷新，就会触发
+	//注意：不同浏览器对onunload事件支持不同。
+	window.onunload = closeFun;
+	function closeFun () {
+		alert("确定要关闭网页"); 
+	}
+
+</script>
+
+
+	<button onclick="addFun()">点击</button>
+
+	<button onmouseover="addFun()">鼠标经过</button>
+
+
+	<button onmouseout="addFun()">鼠标移开</button>
+
+	<!-- 光标聚集 -->
+	<input type="text" name="username" value="请输入姓名" onfocus="messageFun()">
+	
+	<!-- 光标失焦,即光标移开 -->
+	<input type="text" name="username" value="请输入姓名2" onblur="messageFun()">
+	
+	<!-- 内容选中，即选中输入框的内容 -->
+	<input type="text" name="username" value="请输入姓名3" onselect="messageFun()">
+
+	<!-- 内容改变，即内容先改变，然后光标失焦-->
+	<input type="text" name="username" value="请输入姓名3" onchange="messageFun()">
+
+	<!-- 加载事件,即页面加载完成后.需要卸载body内 -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伸缩布局3</title>
+	<style type="text/css">
+		
+		section {
+			width: 1000px;
+			height: 600px;
+			border: 1px solid pink;
+			margin: 100px auto;
+
+			/*这两句话一定要有，否则下面align-content就不起效果*/
+			display: flex;
+			/*flex-flow 就是flex-direction和flex-wrap一起的简写 方向和是否一行显示*/
+			flex-flow: row wrap;
+			
+			/*多行垂直排列方式
+			stretch 默认值 拉伸至容器
+			center 居中
+			flex-start 顶部对其
+			flex-end 底部对其
+			space-between 之间有空隙
+			space-around 之间和顶部底部都有空隙
+
+
+			*/
+			align-content: flex-start;
+
+		}
+
+		div {
+			width: 250px;
+			height: 200px;
+		}
+
+		div:nth-child(1) {
+			background-color: red;
+		}
+		div:nth-child(2) {
+			background-color: orange;
+			/*修改排列顺序。数字越小，位置越靠前，0是默认的*/
+			order: 1;
+		}
+		div:nth-child(3) {
+			background-color: yellow;
+		}
+		div:nth-child(4) {
+			background-color: green;
+			/*修改排列顺序。数字越小，位置越靠前，0是默认的*/
+			order: -1;
+		}
+		div:nth-child(5) {
+			background-color: skyblue;
+		}
+		div:nth-child(6) {
+			background-color: blue;
+		}
+		div:nth-child(7) {
+			background-color: purple;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+	<section>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+	</section>
+	
+</body>
+</html>

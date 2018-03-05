@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单属性</title>
+</head>
+<body>
+	
+	<!-- <form id="123form" novalidate> -->
+	<form id="123form" >
+
+		<fieldset>
+			<legend>表单属性</legend>
+			<!-- placeholder -->
+			<label>
+				placeholder:
+				<input name="hold" type="text" placeholder="请输入placeholder" >
+			</label>
+			
+			<!-- 自动获取焦点 -->
+			<label>
+				autofocus:
+				<input name="autofocus" type="text" autofocus>
+			</label>
+
+			<!-- multiple 多文件上传  -->
+			<label>
+				multiple:
+				<input type="file" multiple >
+			</label>
+
+			<!-- autocomplete 自动完成 即如果输入，提交了，再次输入的话，就会有上次输入的提示
+			on是开启，off是关闭。默认是开启的 -->
+			<label>
+				autocomplete:
+				<input type="text" autocomplete="on" name="complete">
+			</label>
+
+			<!-- No validate 关闭验证 form标签的属性 关闭后下面的邮箱就不会验证是不是邮箱了-->
+			<label>
+				email:
+				<input type="email" name="email" >
+			</label>
+
+			<!-- required 保证不能为空 -->
+			<label>
+				required:
+				<input type="text" required >
+			</label>
+			
+			<!-- pattern 的值是正则表达式，即要符合这个正则  -->
+			<label>
+				pattern:
+				<!-- 纯数字 -->
+				<input type="text" pattern="\d+">
+
+			</label>
+
+
+			<label>
+				<input type="submit"  value="提交">
+			</label>
+
+
+
+
+
+		</fieldset>
+	</form>
+
+
+	<!-- form属性，这样即使不在form 标签内的，也可以进行提交。需要form属性值和form标签的Id一致 -->
+	<label>
+		<input type="text" name="form" form="123form">
+	</label>
+	
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS进阶3-1</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		
+	/*定义函数
+
+	function 函数名 (参数) {
+		函数体
+	}
+	*/
+	//1、无参数 无返回值
+	function addFun1 () {
+		sum = 3+2;
+		alert(sum);
+	}
+
+	//第一种执行函数。在script标签内执行
+	// addFun();
+
+	//2、有参数无返回值
+	function addFun2 (x ,y) {
+
+		alert(x+y);
+	}
+
+	//3、无参数 有返回值
+	function addFun3 () {
+		// body... 
+	 sum = 1 + 2;
+	 return sum;
+	}
+	document.write(addFun3());
+
+
+	//4、有参数有返回值
+	function addFun4 (x,y) {
+		sum = x + y;
+		return sum;
+	}
+	document.write(addFun4(2 ,3));
+
+	</script>
+
+	<!-- 第二种执行函数。在html中通过按钮调用 -->
+	<button onclick="addFun1()">点击 无参数 无返回值</button>
+	<!-- 数字当参数 -->
+	<button onclick="addFun2(1,2)">点击 有参数 无返回值</button>
+	<!-- 字符串当参数 -->
+	<button onclick="addFun2('1','2')">点击 有参数 无返回值2</button>
+
+
+
+</body>
+</html>

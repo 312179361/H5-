@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义属性</title>
+
+
+</head>
+<body>
+
+	<nav>
+		<!-- 自定义属性，格式：data-* 要有前缀，后面id才是属性名 -->
+		<a href="#" data-id="123" >链接1</a>
+		<a href="#">链接2</a>
+	</nav>
+
+
+
+	<!--  -->
+	<script type="text/javascript">
+		//读取属性
+		// 先取到元素
+		var oA = document.querySelector('nav a');
+		// 读取属性 getAttribute
+		var resultStr = oA.getAttribute('data-id');
+		alert(resultStr);
+
+
+		// 设置属性
+		oA.setAttribute('data-name', 'tongli');
+		alert(oA.getAttribute('data-name'));
+
+		// 以上设置和读取会不断操作DOM，影响性能。
+		// H5提供了dataset 可以获取所有的自定义属性
+		var customData = oA.dataset;
+		console.log(customData);
+
+		// 读取某一属性 因为data-是前缀，其实name才是属性名
+		console.log(customData.name);
+
+		// 设置属性，
+		customData.age = '18';
+		console.log(customData.age);
+
+
+	</script>
+	
+</body>
+</html>

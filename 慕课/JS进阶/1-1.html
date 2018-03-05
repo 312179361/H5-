@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS进阶1-1</title>
+</head>
+<body>
+	<script type="text/javascript">
+		document.write("JS进阶篇");
+		alert("关注JS");
+
+		var myname = "小丸子";
+		document.write(myname);
+		var myAge = 10;
+		document.write(myAge);
+		var isMan = false;//布尔值，true和false
+		document.write(isMan);
+		//数字类型相加
+		document.write(myAge+1);
+		//字符串拼接，记得字符串，需要加引号
+		document.write(myname+"今年"+myAge+"岁了"+"<br>");
+
+
+		/*
+			算数操作符 +  -  *  /
+			比较操作符 <   >   <=   >=   ==   !=
+			逻辑操作符  &&   ||   ！
+			++ --
+
+		*/
+
+
+
+		/*
+		数组
+		*/
+		//定义数组
+		var myArr = new Array(); //new Array(3); 就是规定了长度，但是依然可以存储超出长度的，所以可以不写长度限制
+		myArr[0]=1;
+		myArr[1]=2;
+		myArr[2]=3;
+
+		document.write("数组第0个是"+myArr[0]);
+		document.write("数组第1个是"+myArr[1]);
+		document.write("数组第2个是"+myArr[2]+"<br>");
+
+		//创建带赋值 两种方法
+		var myArr2 = new Array(100 ,99 , 98);
+		var myArr3 = [50 ,40, 30];
+		//增加一个元素，就是使用一个未用的索引即可
+		myArr3[3] = 20; //原本最大的索引到2，
+
+		document.write("数组为：" + myArr3);
+
+		//数组长度  arr.length
+		document.write("数组长度"+myArr3.length + "<br>");
+
+		//二维数组
+		//定义
+		var erarr = new Array();//先声明一维
+		for (var i = 0; i < 2; i++) { //一维长度为2
+			erarr[i] = new Array(); //在声明二维
+			for (var j = 0; j < 3; j++) { //二维数组的长度为3
+				erarr[i][j] = i+j;  //赋值，每个数组元素的值为i+j
+			}
+		}
+
+		document.write(erarr + "<br>");
+
+		//第二种定义
+		var erarr1 = [[0 , 1 , 2 ],[1 , 2 , 3]]
+		document.write(erarr1);
+
+
+
+
+
+	</script>
+
+	
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小汽车案例</title>
+	<style type="text/css">
+		img {
+
+			animation: carMove 5s;
+			/*无限循环*/
+			animation-iteration-count: infinite;
+		}
+
+
+
+		@keyframes carMove {
+			0% {
+				transform: translate3d(0, 0, 0);
+			}
+
+			50% {
+				transform: translate3d(1000px, 0, 0);
+			}
+			51% {
+				/*汽车掉头*/
+				/*如果有多组变形，都属于transform就用空格隔开 */
+				transform: translate3d(1000px, 0, 0) rotateY(180deg);
+			}
+			100% {
+
+				transform: translate3d(0, 0, 0) rotateY(180deg);
+
+			}
+		
+
+
+		}
+
+	</style>
+</head>
+<body>
+	<img src="images/car.jpg">
+</body>
+</html>

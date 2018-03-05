@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<style>
+		div{
+			/*粗细为2px 演示为实心 颜色为红色的边框*/
+			border: 2px solid red;/*简写*/
+
+			/*分开写 效果和上面一样 样式有dashed虚线 dotted点线 solid实线*/
+			border-width: 2px;
+			border-style: solid;
+			border-color: red;
+			
+			/* 设置制定方向的边框，如只要下边框*/
+			border-bottom: 1px solid red;
+			
+			width: 200px;/*内容宽度*/
+			padding: 20px;/*填充*/
+			border: 1px solid red;/*边框*/
+			margin: 10px;/*边距*/
+
+		}
+
+		.padding{
+			padding: 20px 10px 15px 30px;/*分别设置上右下左四个方向的填充*/
+	
+			/*也可以分开写*/
+			padding-top: 20px;
+			padding-right: 10px;
+			padding-bottom: 15px;
+			padding-left: 30px;
+			
+			/*如果上下左右都一样的，也可以这样写*/
+			padding: 10px;
+
+
+			/*如果上下一样 左右一样。可以这样写*/
+			padding: 10px 20px;/*上下是10 左右是20*/
+		}
+
+		.margin {
+			background-color: yellow;
+			margin: 20px 10px 15px 30px;/*分别设置上右下左四个方向的边距*/
+			/*也可以分开写*/
+			margin-top: 20px;
+			margin-right: 10px;
+			margin-bottom: 15px;
+			margin-left: 30px;
+			
+			/*如果上下左右都一样的，也可以这样写*/
+			margin: 10px;
+
+
+			/*如果上下一样 左右一样。可以这样写*/
+			margin: 10px 20px;/*上下是10 左右是20*/
+
+
+		}
+
+	</style>
+</head>
+<body>
+	
+块标签都具有盒子模型的特点。
+盒子模型有内容，内填充（padding）、边框（border）、外边距（margin） 组成
+一个标签的大小是有 内容+边框+内填充组成的，
+
+
+<!-- 盒模型的边框 可以设置粗细、样式、颜色 -->
+<div>红楼梦</div> <div>西游记</div>
+
+
+<!-- 盒模型的宽度和高度 ，一个元素实际的宽度 = 左边距 + 左边框 + 左填充 + 内容宽度 + 右填充 + 右边框 + 右边距 。高度同理-->
+
+
+<!-- 填充padding -->
+<div class="padding">三国演义</div>
+
+
+<!-- 边界 margin -->
+
+<div class="margin">水浒传</div>
+
+
+
+</body>
+</html>

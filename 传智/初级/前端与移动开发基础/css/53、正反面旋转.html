@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正反面旋转</title>
+
+	<style type="text/css">
+		div {
+			width: 250px;
+			height: 350px;
+			margin: 100px auto;
+
+			/*子绝父相*/
+			position: relative;
+
+		
+		}
+
+
+		div img {
+			position: absolute;
+
+			/*过度效果*/
+			transition: all 1s;
+		}
+
+		div img:first-child {
+			/*修改下位置，将第一张图片放在上面*/
+			z-index: 1;
+
+			/*只要不是正面，就隐藏。即反面就隐藏,这样翻转就可以显示第二张图片*/
+			backface-visibility: hidden;
+
+		}
+		
+		/*当鼠标移动到div上时，两个img都翻转*/
+		div:hover img { 
+			/*旋转180度*/
+			transform: rotateY(180deg);
+		}
+	</style>
+</head>
+<body>
+	
+
+	<div>
+		<img src="images/6.jpg">
+		<img src="images/7.jpg">
+
+	</div>
+</body>
+</html>

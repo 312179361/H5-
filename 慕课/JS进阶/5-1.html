@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算机练习5-1</title>
+</head>
+<body>
+<script type="text/javascript">
+		
+		function addFun () {
+			
+		//获取第一个输入框的值
+		var oneNum = document.getElementById("one").value;
+		//将字符串变为数字
+		var n1 = parseInt(oneNum);
+
+		//获取第一个输入框的值
+		var twoNum = document.getElementById("two").value;
+		var n2 = parseInt(twoNum);
+
+		//获取符号 +-*/
+		var selectMark = document.getElementById("select").value;
+		var resultN;
+		//进行计算
+		switch (selectMark) {
+			case '+':
+				 resultN = n1 + n2 ;
+				break;
+			case '-':
+				 resultN = n1 - n2 ;
+				break;
+			case '*':
+				 resultN = n1 * n2 ;
+				break;
+			case '/':
+				 resultN = n1 / n2 ;
+				break;
+			default:
+				// statements_def
+				break;
+		}
+
+		//给结果输入框，附上计算的值
+		var resultText = document.getElementById("result");
+		resultText.value = resultN;
+
+		}
+	
+
+	</script>
+	
+	
+	<input id="one" type="text" name="username" placeholder="请输入第一个数">
+	<!-- 计算符号 -->
+	<select id="select">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+	</select>
+
+
+	<input id="two" type="text" name="username" placeholder="请输入第二个数">
+	<!-- 将块状元素变为内联元素 -->
+	<p style="display:inline">=</p>
+	
+	<input id="result" type="text" name="username" onfocus="addFun()" >
+	
+	
+	
+		
+</body>
+</html>

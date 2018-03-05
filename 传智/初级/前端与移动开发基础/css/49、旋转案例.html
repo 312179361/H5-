@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style type="text/css">
+		div {
+			margin: 300px auto;
+			width: 250px;
+			height: 350px;
+			border: 1px solid red;
+			/*子绝父相*/
+			position: relative;
+			
+
+		}
+
+		div img {
+			width: 100%;
+			/*绝对定位不占位置*/
+			position: absolute;
+
+			/*加上动画*/
+			transition: all 1s ease 0s;
+			
+			/*制定旋转点*/
+			transform-origin: 300px 0;
+
+		}
+
+
+		/*当鼠标移动到div上 第6个img旋转 */
+		div:hover img:nth-child(6) {
+			transform: rotate(60deg);
+		}
+
+		div:hover img:nth-child(5) {
+			transform: rotate(120deg);
+		}
+
+		div:hover img:nth-child(4) {
+			transform: rotate(180deg);
+		}
+
+		div:hover img:nth-child(3) {
+			transform: rotate(240deg);
+		}
+
+		div:hover img:nth-child(2) {
+			transform: rotate(300deg);
+		}
+
+		div:hover img:nth-child(1) {
+			transform: rotate(360deg);
+		}
+		
+		
+		
+
+
+
+	</style>
+</head>
+<body>
+
+
+	<div>
+		<img src="images/6.jpg" alt="">
+		<img src="images/7.jpg" alt="">
+		<img src="images/8.jpg" alt="">
+		<img src="images/9.jpg" alt="">
+		<img src="images/10.jpg" alt="">
+		<img src="images/11.jpg" alt="">
+	</div>
+
+
+
+	
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS进阶 6-1</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+// JavaScript中有很多内建的对象 如String、Date、Array等
+//定义一个数组对象
+var objectName = new Array();
+//访问对象属性 。如长度
+objectName.length;
+
+var myStr = "hello world";
+//访问对象的方法.如：大写
+var request = myStr.toUpperCase();
+document.write(request);
+
+
+/* 
+日期对象Date
+*/
+//声明时间对象，并且已经有了初始值，就是当前时间
+var udate = new Date();
+
+//自定义初始值 2012年2月1号
+var d1 = new Date(2011, 1, 1); //有点问题，显示的二月1号
+var d2 = new Date('Oct 1,2012')
+
+
+
+/*
+常用的时间
+
+参考图片一一验证
+
+*/
+
+
+
+/*
+字符串对象
+*/
+var myStr1 = "I love JavaScript";
+//返回指定位置的字符。 如下：下面为3的字符，即l。如果超过了长度，就是一个空字符
+var intStr = myStr1.charAt(3);
+document.write(intStr);
+
+//返回指定的字符串首次出现的位置。参数1：必选，即要检索的字符串，参数2：可选，从哪个下标位置开始检索。如果检索不到，就返回-1
+var firStr = myStr1.indexOf('a',0);
+document.write(firStr);
+
+//字符串分割split() 参数1：必选，即按某个字符分割，参数2：可选，返回值数组的长度
+var resultArr = myStr1.split(' ',2);//即返回的数组为两个元素
+document.write(resultArr+"<br>");
+
+//提取字符串substring() 参数1：必选开始位置，参数2：可选，结束位置。如果不填写就是到字符串的结尾
+var resultStr = myStr1.substring(2,4);
+document.write(resultStr+"<br>");
+
+//提取制定数目的字符substr() 参数1：开始位置，参数2：截取的长度
+var resultStr2 = myStr1.substr(2,6);
+document.write(resultStr2 + "<br>");
+
+
+
+
+/*
+Math对象。提供对数据的数学计算。
+Math是固有对象，不用创建，直接使用
+*/
+var myPi = Math.PI;//π
+document.write(myPi);
+var myAbs = Math.abs(-15);//绝对值
+document.write(myAbs + "<br>");
+/*
+还有很多，可以图片上的
+*/
+
+
+
+/* 数组对象
+*/
+//定义数组
+var myArr1 = new Array();//空数组
+var myArr2 = new Array(3);//定义了一个长度为3的数组
+var myArr3 = [2, 4, 6]; 
+
+// 数组连接concat()。用于连接两个或者多个数组,还可以连接元素。
+var myArr4 = [1, 2, 3];
+var myArr5 = [4, 5, 6];
+var myArr6 = [7, 8, 9];
+var myArr7 = myArr4.concat(myArr5,myArr6,10);
+document.write(myArr7 + "<br>");
+
+//数组拼接成字符串 join()。将数组的每个元素拼接成一个字符串
+var myArr8 = ["I", "love",  "you"];
+var joinStr = myArr8.join(".");//参数可选，是拼接的连接符，如果不填写就是以逗号连接
+document.write(joinStr+"<br>");
+
+//颠倒数组的元素顺序reverse()
+var myArr9 = ["我", "爱", "你"];
+var reverseArr = myArr9.reverse();
+document.write(reverseArr);
+
+
+//选定元素slice()。即从原数组中提取一部分，当做新的数组
+var myArr10 = ["1","2","3","4","5","6","7","8","9"];
+//参数1，必选 起始位置下标。参数2：可选，终止位置下标，如果不写，就是到数组的最后。注意：截取的是从参数1到参数2，不包含参数2
+var sliceArr = myArr10.slice(2, 4);
+document.write(sliceArr + "<br>");
+
+//数组排序sort(方法函数)。
+/*
+1.如果不指定<方法函数>，则按unicode码顺序排列。
+2.如果指定<方法函数>，则按<方法函数>所指定的排序方法排序
+*/
+
+var myArr10 = ["80","16","50","6","100","1"];
+var sortArr1 = myArr10.sort()//按照Unicode排列
+document.write(sortArr1 + "<br>");
+
+//定义方法函数（记住这个函数）
+function sortNum (a,b) {
+	return a - b;//升序
+	// return b - a;//降序
+}
+var sortArr2 = myArr10.sort(sortNum);
+document.write(sortArr2);
+
+
+/*数组很多方法，详见图片*/
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+	
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS设置小技巧2</title>
+
+	<style>
+		
+	.container{
+		height: 100px;
+		line-height: 50px;/*行高（行间距），指在文本中，行与行之间的 基线间的距离 )。*/
+		background-color: #999;
+
+
+	}
+
+
+	table td{
+		height: 200px;
+		background: #ccc;
+	}
+
+
+	a{
+		
+		background-color: #999;
+		width: 500px;/*因为a标签是行内元素，无法直接给定宽度。*/
+		/*要想给定宽度，需要加上如下代码 二选一*/
+		position: absolute;
+
+		float: left;/*或者right*/
+
+	}
+
+	</style>
+</head>
+<body>
+	<!-- 单行文本 -->
+	<div class="container">hello world <br> hello</div>
+
+
+	<!-- 多行文本 -->
+	<!-- 父元素高度确定的多行文本、图片等的竖直居中的方法有两种： -->
+	<!-- 一：使用插入 table  (包括tbody、tr、td)标签，同时设置 vertical-align：middle。 -->
+	
+	<table>
+		<tbody>
+			<tr >
+				<td class="wrap">
+					<div>
+					<p>看我是否可以居中</p>
+					<p>看我是否可以居中</p>
+					<p>看我是否可以居中</p>
+					<p>看我是否可以居中</p>			
+					<p>看我是否可以居中</p>
+
+				</div>
+				</td>
+				
+
+			</tr>
+
+		</tbody>
+
+	</table>
+<!-- 注意*  因为 td 标签默认情况下就默认设置了 vertical-align 为 middle，所以我们不需要显式地设置了 -->
+
+
+
+
+
+
+<!-- 当为元素（不论之前是什么类型元素，display:none 除外）设置以下 2 个句之一：
+ 1. position : absolute 
+ 2. float : left 或 float:right 
+
+简单来说，只要html代码中出现以上两句之一，元素的display显示类型就会自动变为以 display:inline-block（块状元素）的方式显示，当然就可以设置元素的 width 和 height 了，且默认宽度不占满父元素。 -->
+
+
+<a href="fff">aaaa</a>
+
+
+</body>
+</html>

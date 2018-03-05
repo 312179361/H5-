@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS样式基本知识</title>
+	<!-- /*嵌入式css，修改全局的*/ -->
+	<style type="text/css">
+		span{
+			color: red;
+		}
+
+	</style>
+	
+	<!-- 外部式css样式 -->
+<link rel="stylesheet" href="7-1.css" type="text/css">
+
+</head>
+<body>
+
+	<!-- CSS样式有三种方式：内联式、嵌入式、外部式	 -->
+	<!-- 1、内联式。就是把css代码直接写在现有的html标签中 -->
+	<p style="color:red">这里的文字是红色的</p>
+	<!-- css样式都要写在style的双引号中，多条css样式中间用分号分割 -->
+	<p style="color:red ;font-size:12px">这里是12号的红色字</p>
+	<!-- 内联式具有局部性，即设置了第一个span样式 第二个span不受任何影响 -->
+	<p>红楼梦里有<span style="color:red;font-size:12px">贾宝玉</span>、<span style="color:blue;font-size:12px">林黛玉</span>等人物</p>
+	
+
+
+	<!-- 2、嵌入式。把css样式卸载head标签中，可以全局这是css样式 -->
+	<!-- 注意。嵌入式的权重 < 内联式。即如果有内联式也有嵌入式，显示内联式 -->
+	<p>三国演义里有：<span>刘备</span>、<span>关羽</span>、<span>张飞</span></p>
+	
+	
+	
+	<!-- 3、外部式。把css样式卸载一个单独的外部文件中，这个文件以.css为后缀。在<head>内使用<link>标签将css样式文件链接到HTML文件内 -->
+	
+	<!-- 记住他们的优先级：内联式 > 嵌入式 和 外部式 。而嵌入式和外部式，谁在后面，执行谁， -->
+	
+	
+	
+</body>
+</html>

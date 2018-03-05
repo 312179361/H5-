@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM扩展-获取元素</title>
+
+	<style type="text/css">
+
+		.green li {
+			color: blue;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<ul>
+		<li class="red">111</li>
+		<li class="red">222</li>
+		<li class="green">
+			333
+			<ul>
+				<li>333-11</li>
+				<li>333-22</li>
+			</ul>
+		</li>
+		<li class="blue">
+			444
+			<ul>
+				<li>444-11</li>
+				<li>444-22</li>
+			</ul>
+		</li>
+	</ul>
+
+
+	<script type="text/javascript">
+		// 获取元素1 通过className获取元素
+		//这样就获取到了class=red的元素
+		var liSet = document.getElementsByClassName('red');
+		
+		for (var i = 0; i < liSet.length; i++) {
+			liSet[i].style.color = 'red';
+		}
+		console.log(liSet.length);
+
+
+		// 获取元素2 通过css选择器得到元素，不过默认的是符合条件的第一个元素
+		var oli = document.querySelector('.green li');//这样通过css的选择器就可以得到在.green下第一个li元素
+		oli.style.color = 'yellow';
+
+		// 获取元素3 通过css选择器得到元素，是所有符合css的元素
+		// 这样就找到了在.blue下所有li元素
+		var oliSet = document.querySelectorAll('.blue li');
+		for (var i = 0; i < oliSet.length; i++) {
+			oliSet[i].style.color = 'pink';
+		}
+
+
+
+	</script>
+	
+</body>
+</html>

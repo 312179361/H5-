@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>与客户交互</title>
+</head>
+<body>
+
+	
+	<h2>表单 输入框 单选框 复选框 下拉菜单 提交按钮 充值按钮 Label</h2>
+
+	<!-- 表单form是可以把浏览者输入的数据传送到服务器端，这样用户就可以与服务器进行交互了 -->
+	<!-- method是传送方式如get、post等
+	action浏览者输入的数据被传送到的地方,即要传到哪里 -->
+	<form method="get" action="服务器文件">
+		<label for="username">用户名</label>
+		<!-- 输入框input	 -->
+		<input type="text" name="username">
+		<label for="pass">密码</label>
+		<input type="password" name="pass">
+	</form>
+	<!-- 注意*  只有在form内的东西才能提交到服务器中 -->
+
+
+
+
+	<!-- 文本输入框、密码输入框 -->
+	<!-- type是类型，text是文本输入框，password是密码输入框
+	name是为文本框命名，以为后台程序使用
+	value是文本框设置默认值，一般是提示作用 -->
+
+	<input type="text" name="myName" value="佟力">
+	<input type="password" name="pass" value="123456" >
+	
+	<br>
+
+	<!-- textarea 文本域，即多行输入框 -->
+	<!-- cols列数一般就是一行多少个字，rows行数， -->
+	<textarea cols="30" rows="10">窗前明月光，疑是地上霜。举头望明月，低头思故乡</textarea>
+
+
+
+
+	<!-- 单选框和复选框 -->
+	<!-- 1、type:
+
+   当 type="radio" 时，控件为单选框
+
+   当 type="checkbox" 时，控件为复选框
+
+	2、value：提交数据到服务器的值（后台程序PHP使用）
+
+	3、name：为控件命名，以备后台程序 ASP、PHP 使用
+
+	4、checked：当设置 checked="checked" 时，该选项被默认选中 -->
+	<input type="radio" value="man" name="sex" checked="checked">男孩
+	<input type="radio" value="woman" name="sex">女孩
+
+	<!-- 注意同一组的单选按钮，name 取值一定要一致，比如上面例子为同一个名称“sex”，这样同一组的单选按钮才可以起到单选的作用 -->
+	<br>
+
+	<input type="checkbox" value="running" name="sport" checked="checked" >跑步
+	<input type="checkbox" value="football" name="sport" >足球
+	<input type="checkbox" value="swimming" name="sport" >游泳
+
+
+
+
+	<!-- 下拉列表框 select-option -->
+	<!-- value就是提交到服务器上的值 
+	selected是默认选择的选项 -->
+	<select >
+		<option value="book">读书</option>
+		<option value="sport">运动</option>
+		<option value="travel" selected="selected">旅游</option>
+
+	</select>
+
+	<br>
+	<!-- 复选下拉列表 加上属性multiple -->
+	<select multiple="multiple">
+		<option value="book">读书2</option>
+		<option value="sport">运动2</option>
+		<option value="travel" selected="selected">旅游2</option>
+	</select>
+
+
+
+<form action="get" action="save.php">
+	<input type="text" value="">
+	<!-- 提交按钮 type是submit时，就是提交按钮 value是button上显示的文字-->
+	<input type="submit" value="提交" name="submitBtn">
+	<!-- 重置按钮 type是reset-->
+	<input type="reset" value="重置" name="resetBtn">
+
+</form>
+	
+
+
+<!-- label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用户改进了可用性。如果你在 label 标签内点击文本，就会触发此控件。就是说，当用户单击选中该label标签时，浏览器就会自动将焦点转到和标签相关的表单控件上（就自动选中和该label标签相关连的表单控件上）。 -->
+<!-- 标签的 for 属性中的值应当与相关控件的 id 属性值一定要相同。 -->
+<form>
+ <!-- 因为Label的for和input的id相同，所有点击Label就相当于点击了input -->
+ <label for="male">男</label>
+ <input type="text" name="man" id="male">
+
+<br>
+<label for="female">女</label>	
+<input type="text" name="woman" id="female">
+<br>
+<label for="mail">邮箱</label>
+<input type="text" name="email" id="mail">
+
+
+
+<label for="running">跑步</label>
+<input type="checkbox" id="running" value="running">
+<label for="swimming">游泳</label>
+<input type="checkbox" id="swimming" value="running">
+<label for="football">足球</label>
+<input type="checkbox" id="football" value="running">
+	
+
+	</form>
+</body>
+</html>

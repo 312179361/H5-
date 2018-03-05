@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>认识CSS</title>
+	<style type="text/css">
+/*css 样式由选择符和声明组成，而声明又由属性和值组成，这p就是选择符；大括号及其内部就是声明，声明中冒号前的是属性，冒号后的是值
+选择符：又称选择器，指明网页中要应用样式规则的元素，如下就是是网页中所有的p标签内文字将变成红色，而其他的元素（如ol）不会受到影响*/
+
+	/*改变 p标签的样式*/
+		p{
+		font-size: 12px;/*字号*/
+		color: red;/*颜色*/
+		font-weight: bold;/*加粗*/
+		}
+		/*修改所有span的样式*/
+		span {
+			color: blue;
+		}
+
+	</style>
+</head>
+<body>
+<!-- CSS全称为“层叠样式表 (Cascading Style Sheets)”，它主要是用于定义HTML内容在浏览器内的显示样式，如文字大小、颜色、字体加粗等。 -->
+
+	<p>床前明月光，疑是地上霜。举头望明月，低头思故乡</p>
+	
+	<!-- 一段话，仅仅将四个书名变色，我们可以先用span把四个书名圈起来，然后通过css修改span的样式就可以了 -->
+	四大名著有<span>红楼梦</span>、<span>三国</span>、<span>水浒传</span>、<span>西游记</span>，这些书非常好看。
+
+
+</body>
+</html>

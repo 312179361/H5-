@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伸缩布局</title>
+	<style type="text/css">
+		section {
+			width: 80%;
+			height: 200px;
+			margin: 50px auto;
+			border: 1px solid black;
+			/*利用伸缩布局，里面的元素会随着窗口的大小会缩放*/
+			/*伸缩布局 添加到父元素上*/
+			display: flex;
+
+			/*可以指定缩放最小宽度和最大宽度,*/
+			min-width: 500px;
+			max-width: 1000px;
+			
+			/*排列方式 默认是row，即横向排列，column是纵向排列。row-reverse水平反转排列 column-reverse纵向反转排列*/
+			flex-direction: column;
+		}
+
+
+		section div:nth-child(1) {
+			/*指定份数*/
+			/*flex: 1;*/
+
+			/*固定了宽度，这样第一个div不缩放，剩下的就按照份数据缩放*/
+			width: 100px;
+			background-color: pink;
+		}
+		
+		section div:nth-child(2) {
+			/*指定份数*/
+			flex: 2;
+			background-color: green;
+			/*用伸缩布局后 加上margin盒子也不会掉下去*/
+			margin: 0 10px;
+		}
+
+		section div:nth-child(3) {
+			/*指定份数*/
+			flex: 1;
+			background-color: red;
+		}
+
+	</style>
+</head>
+<body>
+
+	<section>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</section>
+	
+</body>
+</html>

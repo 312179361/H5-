@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伸缩布局2</title>
+
+	<style type="text/css">
+		
+		
+
+		.sec1 {
+			width: 1000px;
+			height: 300px;
+			border: 1px solid pink;
+			margin: 100px auto;
+			display: flex;
+
+
+			/*justify-content 调整主轴对齐 即水平对其
+			
+			/*justify-content: flex-start;*/
+			/*justify-content: flex-end;*/
+			/*justify-content: center;*/
+			/*justify-content: space-between;*/
+			justify-content: space-around;
+
+		}
+
+		.sec1 div {
+			width: 250px;
+			height: 100%;
+		}
+		section div:nth-child(1) {
+			background-color: pink;
+		}
+		section div:nth-child(2) {
+			background-color: green;
+		}
+		section div:nth-child(3) {
+			background-color: skyblue;
+		}
+		section div:nth-child(4) {
+			background-color: red;
+		}
+
+
+		
+		.sec2 {
+			width: 1000px;
+			height: 400px;
+			border: 1px solid pink;
+			margin: 100px auto;
+			display: flex;
+
+		/*align-items 调整纵轴对齐 即垂直对其(一般用于单行)
+			stretch  默认值，即不指定高度的时候，子元素和父元素一样高
+			flex-start 让子元素从父容器的顶部排列
+			flex-end  让子元素从父容器的底部排列
+			center  让子元素从父容器的中间对齐，即垂直居中
+
+			*/	
+		align-items: center;
+
+		}
+		.sec2 div {
+			width: 250px;
+			height: 200px;
+		}
+
+
+		.sec3 {
+			width: 600px;
+			height: 400px;
+			border: 1px solid pink;
+			margin: 100px auto;
+			display: flex;
+			
+			/* nowrap默认值。强制一行显示，显示不下元素会压缩
+				wrap自动换行 显示不下，就换到下一行 
+				wrap-reverse 换行，反转上下行
+				*/
+			flex-wrap: wrap-reverse;
+
+
+		
+		}
+		.sec3 div {
+			width: 250px;
+			height: 200px;
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+
+	<section class="sec1">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</section>
+
+
+	<section class="sec2">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</section>
+
+	<section class="sec3">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+
+	</section>
+
+
+
+
+	
+</body>
+</html>

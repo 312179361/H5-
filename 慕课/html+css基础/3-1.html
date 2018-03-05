@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html标签2</title>
+	<!-- 利用css修改样式 -->
+	<style type="text/css">
+		table tr td,th {
+			/*宽度*/
+			/*width: 500px;*/
+			
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	
+	<h2>这一节包含ul标签、ol标签、div标签、table标签、和table标签的简单样式和标题摘要等</h2>
+
+
+	<!-- ul标签 无序列表 li:列表项  默认每个li前面有个小圆点 -->
+	<ul>
+		<li>我是li1</li>
+		<li>我是li2</li>
+		<li>我是li3</li>
+	</ul>
+	
+
+
+	<!-- ol 有序列表，默认序号从1开始 -->
+	<ol>
+		<li>排行榜1</li>
+		<li>排行榜2</li>
+		<li>排行榜3</li>
+		<li>排行榜4</li>
+
+	</ol>
+
+
+	<!-- div标签，
+	没有实际效果，主要用于布局。可以把一些独立的逻辑部分划分出来，放在一个<div>标签中，这个<div>标签的作用就相当于一个容器 -->
+		
+	<!-- 为div命名，使逻辑更加清晰。id属性来为div标签提供唯一的名称 -->
+	<div id="cat">
+		<h2>cat</h2>
+		<p>猫有HelloKitty、汤姆等</p>
+	</div>
+	
+	<div id="dog">
+		<h2>dog</h2>
+		<p>狗有高飞、哈士奇等</p>
+	</div>
+
+
+
+	<!-- table标签，表格 -->
+	<table>
+	<!-- <tbody>…</tbody>：当表格内容非常多时，表格会下载一点显示一点，但如果加上<tbody>标签后，这个表格就要等表格内容全部下载完才会显示。 -->
+	<tbody>
+	<!-- tr 表格中的一行 -->
+		<tr>
+		<!-- th 表头 默认字体加粗居中 -->
+			<th>书名</td>
+			<th>作者</td>
+			<th>价格</td>
+		</tr>
+
+		<tr>
+		<!-- td 表格中的单元格 -->
+			<td>红楼梦</td>
+			<td>曹雪芹</td>
+			<td>80.0</td>
+		</tr>
+
+		<tr>
+			<td>西游记</td>
+			<td>吴承恩</td>
+			<td>74.2</td>
+		</tr>
+
+	</tbody>
+	</table>
+
+
+
+	<!-- 属性border边框，border越大 边框越粗 -->
+	<table border="1">
+
+	<!-- tr 表格中的一行 -->
+		<tr>
+		<!-- th 表头 默认字体加粗居中 -->
+			<th>书名</td>
+			<th>作者</td>
+			<th>价格</td>
+		</tr>
+
+		<tr>
+		<!-- td 表格中的单元格 -->
+			<td>三国演义</td>
+			<td>罗贯中</td>
+			<td>67.0</td>
+		</tr>
+
+		<tr>
+			<td>水浒传</td>
+			<td>施耐庵</td>
+			<td>70.2</td>
+		</tr>
+
+
+	</table>
+
+
+	<!-- caption标签summary属性，为表格添加标题和摘要 -->
+	<!-- 属性summary就是摘要 摘要的内容是不会在浏览器中显示出来的。它的作用是增加表格的可读性(语义化)，使搜索引擎更好的读懂表格内容，还可以使屏幕阅读器更好的帮助特殊用户读取表格内容。 -->
+	<table summary="这是一个四大名著价格的表格">
+	<!-- caption是表格的标题 -->
+	<caption>价格表</caption>
+		<tr>
+			<th>书名</td>
+			<th>作者</td>
+			<th>价格</td>
+		</tr>
+
+		<tr>
+			<td>三国演义</td>
+			<td>罗贯中</td>
+			<td>67.0</td>
+		</tr>
+
+		<tr>
+			<td>水浒传</td>
+			<td>施耐庵</td>
+			<td>70.2</td>
+		</tr>
+	</table>
+
+
+
+</body>
+</html>

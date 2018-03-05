@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS设置小技巧</title>
+	<style>
+		/*行内元素*/
+		/*div{
+			border: 1px solid red;
+
+		}
+		.txtCenter {
+			text-align: center;
+		}
+		.imgCenter {
+			text-align: center;
+		}*/
+
+
+
+		/*块状元素  设置“左右margin”值为“auto”来实现居中的*/
+		div{
+			border: 1px solid red;
+
+			/*width: 200px;*/
+			/*margin: 20px auto; div标签居中，但是内容不居中。这个行代码表示，左右为auto，上下为20px。*/
+
+			/*text-align: center; 这个只能是div里面的内容居中，div不会居中*/
+			/*可以设置*/
+			margin-left: auto;
+			margin-right:  auto;
+		}
+
+
+		table{
+ 		   border:1px solid;
+    		margin:0 auto;
+		}
+
+
+		.container {
+			text-align: center;
+		}
+		/* margin:0;padding:0（消除文本与div边框之间的间隙）*/
+		.container ul{
+		    list-style:none;消除小圆点
+		    margin:0;
+		    padding:0;
+		    display:inline-block;
+		}
+/* margin-right:8px（设置li文本之间的间隔）*/
+		.container li{
+
+			display:inline-block;
+		    margin-right:8px;
+
+		}
+
+
+	.container333{
+	    float:left;
+	    position:relative;
+	    left:50%
+	}
+
+	.container333 ul{
+	    list-style:none;
+	    margin:0;
+	    padding:0;
+	    
+	    position:relative;
+	    left:-50%;
+	}
+	.container333 li{
+		float:left;
+		display:inline;
+		margin-right:8px;
+		text-align: center;
+	}
+
+
+
+	
+	
+
+	</style>
+
+</head>
+<body>
+
+<!-- 行内元素 用text-align可以进行居中	 -->
+<div class="txtCenter">我想要在父容器中水平位置居中</div>
+
+<div class="imgCenter"><img src="images/4副本.png" width="100" height="100"></div>
+
+
+<!-- 块状元素用text-align就不起作用了。块装元素，又分定宽块状 和 不定宽块状-->
+
+<!-- 定宽块状元素。 即，块状元素的宽度width为固定值 -->
+
+<div>我是定宽块状元素，哈哈，我要水平居中显示。</div>
+
+
+
+<!-- 原因，行内元素的宽度就是页面的宽度，所以不需要设置margin auto来居中;
+而定宽块状元素的宽度是自己设置的，所以要设置margin auto居中 -->
+
+
+<!-- 不定块状元素  宽度不定 -->
+	<!-- 
+	不定宽度的块状元素有三种方法居中（这三种方法目前使用的都很多）：
+    1、加入 table 标签。 利用table标签的长度自适应性
+    2、设置 display: inline 方法：与第一种类似，显示类型设为 行内元素，进行不定宽元素的属性设置
+    3、设置 position:relative 和 left:50%：利用 相对定位 的方式，将元素向左偏移 50% ，即达到居中的目的
+     -->
+
+     方法一，利用table
+<div>
+	<table>
+	<tbody>
+		
+	<tr>
+		<td>
+			<li>文本111</li>
+			<li>文本222222</li>
+			<li>文本333333333</li>
+
+		</td>
+		
+	</tr>
+
+	</tbody>
+</table>
+</div>
+
+
+方法二、
+
+<div class="container">
+    <ul>
+    	<li><a href="#">111</a></li>
+        <li><a href="#">222222</a></li>
+        <li><a href="#">333333333</a></li>
+    </ul>
+</div>
+
+
+方法三、
+
+<!-- 
+假想ul层的父层（即下面例子中的div层）中间有条平分线将ul层的父层（div层）平均分为两份，ul层的css代码是将ul层的最左端与ul层的父层（div层）的平分线对齐；而li层的css代码则是将li层的平分线与ul层的最左端（也是div层的平分线）对齐，从而实现li层的居中。
+ -->
+
+<div class="container333">
+    <ul>
+    	<li><a href="#">111</a></li>
+        <li><a href="#">222222</a></li>
+        <li><a href="#">333333333</a></li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

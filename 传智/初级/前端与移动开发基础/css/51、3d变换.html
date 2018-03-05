@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D变换</title>
+	<style type="text/css">
+		
+		
+
+		/*3d变换  旋转 */
+		.fatherDiv img:nth-child(1) {
+			transition: all 1s ease 0s;
+		}
+
+		.fatherDiv img:nth-child(2) {
+			transition: all 1s ease 0s;
+		}
+
+		.fatherDiv img:nth-child(3) {
+			transition: all 1s ease 0s;
+		}
+
+
+		.fatherDiv img:nth-child(1):hover {
+			/*沿X轴旋转*/
+			transform: rotateX(60deg);
+		}
+
+		.fatherDiv img:nth-child(2):hover {
+			/*沿Y轴旋转*/
+			transform: rotateY(50deg);
+		}
+
+		.fatherDiv img:nth-child(3):hover {
+			/*沿Z轴旋转*/
+			transform: rotateZ(180deg);
+		}
+
+
+		.fatherDiv {
+			/*透视效果，增加透视距离，距离越小，透视效果越明显
+			要给父元素增加透视 */
+			 perspective: 500px;
+		}
+
+
+		.sonDiv {
+			margin: 100px auto;
+			width: 50px;
+			height: 100px;
+			background-color: red;
+			transition: all 1s;
+
+		}
+
+		.sonDiv:hover {
+			/*沿Z轴移动 近大远小 Z越大，效果越明显*/
+			transform: translateZ(90px);
+			/* x和y 可以是px或者百分比  z只能是px */
+			transform: translate3d(10px, 20px, 100px);
+			
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="fatherDiv">
+		X轴旋转
+		<img src="images/6.jpg" alt="">
+
+		Y轴旋转
+		<img src="images/7.jpg" alt="">
+
+		Z轴旋转
+		<img src="images/8.jpg" alt="">
+		<br>
+
+
+		<div class="sonDiv">
+			
+		</div>
+
+	</div>
+
+	
+</body>
+</html>
