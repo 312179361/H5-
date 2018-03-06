@@ -27,7 +27,7 @@ $(function(){
 	区别2：onload是要等全部加载完才执行，包括图片等。$(function(){})只是加载完DOM结构就可以了
 */
 $(function () {
-
+	
 	alert($); //jQuery对象的内部
 	alert($()); //返回jQuery对象
 	alert($('#box')); //返回也是jQuery对象
