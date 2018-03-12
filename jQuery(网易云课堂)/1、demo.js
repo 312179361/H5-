@@ -40,7 +40,7 @@ $(function () {
 
 
 $(function(){
-	// 通过get()函数可以返回DOM元素，不是jQuery对象。括号里代表下标，因为有的可能不止一个
+	// 通过get止一个()函数可以返回DOM元素，不是jQuery对象。括号里代表下标，因为有的可能不
 	alert($('#box').get(0)); //即jQuery->Dom
 	
 });
